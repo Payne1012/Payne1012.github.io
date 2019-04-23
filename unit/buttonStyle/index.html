@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>样式-按钮</title>
+  <link href="css/reset.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	
+
+<style type="text/css">
+body{background: #fff;}
+body, h1, h2, h3, h4, h5, h6, blockquote, p, dl, dt, dd, ul, ol, li, th, td, form, fieldset, legend, button, input, textarea { margin: 0; padding: 0; cursor: pointer }
+em, i { font-style: normal; }
+body, button, input, select, textarea { font: 8px arial, "Microsoft YaHei", "SimHei", "SimSun", sans-serif; }
+button, input, select, textarea, h1, h2, h3, h4, h5, h6 { font-size: 100%; cursor: pointer }
+ol, ul { list-style: none;cursor: pointer  }
+.all{margin-top: 55px;}
+.all h3{ width: 100%;height: height:70px;line-height: 70px; font-size: 32px;background: #f5f4f4;transition: all 0.9s;}
+/* .all h3:hover{text-indent: 150px;background: #fff;} */
+.all ul{clear: both;overflow: hidden;background: #bb8484}
+.all ul li{float: left;width: 33.3333%;height:40px;line-height: 40px;font-size: 20px;background-color: #d0d0d0;background:none;position: relative;transition: all 0.9s;text-indent: 25px;}
+.all ul li span{position: relative;z-index: 2;}
+.all ul li:after{content: '';position: absolute;top: 0;right: 0px;background: #fff;z-index: 1;width: 0%;height: 100%;transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1);}
+.all ul li:hover:after{left:0;right: auto;width: 100%;}
+.all ul li:hover{text-indent: 35px;}
+.all ul li:hover:after, .all ul li:active:after {width: 100%}
+dl dd{width: 275px;}
+
+
+/*  标题 没用 C类-按钮-提交-tj01 */
+.lr{animation-duration: 0.8s; /*动画时间*/}
+.lr:hover{animation-name: aroundAnimation;}
+@keyframes aroundAnimation{
+ 0% {transform: translate3d(0,0,0);}
+ 20% {transform: translate3d(-25px,0,0);}
+ 40% {transform: translate3d(25px,0,0);}
+ 60% {transform: translate3d(-15px,0,0);}
+ 80% {transform: translate3d(15px,0,0);}
+ 100% {transform:translate3d(0,0,0;)}
+}
+
+
+
+
+/*  标题 没用 C类-按钮-提交-tj02 规则*/
+.lr2{transform-origin: 100% 0;transform: translateZ(0);box-shadow: 0 0 1px rgba(0, 0, 0, 0);}
+.lr2:hover{animation-name: wobble-bottom;animation-duration: 1s;animation-timing-function: ease-in-out;animation-iteration-count: 1;}
+@keyframes wobble-bottom{
+  15% {-webkit-transform: skew(-18deg);transform: skew(-18deg);}
+  30% {-webkit-transform: skew(18deg);transform: skew(18deg);}
+  45% {-webkit-transform: skew(-9deg);transform: skew(-9deg);}
+  60% {-webkit-transform: skew(9deg);transform: skew(9deg);}
+  75% {-webkit-transform: skew(-2deg);transform: skew(-2deg);}
+  100% {-webkit-transform: skew(0);transform: skew(0);}
+}
+
+
+/*  标题 没用 C类-按钮-提交-tj03规则*/
+.lr3{position: relative;transition-duration: 0.3s;transition-property: transform;transform: translateZ(0);box-shadow: 0 0 1px rgba(0, 0, 0, 0);background: #fff;}
+.lr3:hover{transform: translateY(-6px);animation-name: hover;animation-duration: 1.5s;animation-delay: 0.3s;animation-timing-function: linear;animation-iteration-count: infinite;animation-direction: alternate;}
+.lr3:before {pointer-events: none;position: absolute;z-index: -1;content: '';top: 100%;left: 5%;height: 10px;width: 90%;opacity: 0;background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);transition-duration: 0.3s;transition-property: transform, opacity;}
+.lr3:hover:before{opacity: 1;transform: translateY(5px);}
+@keyframes hover {
+  50% {transform: translateY(-3px);}
+  100% {transform: translateY(-6px);}}
+
+/*  标题 没用 C类-按钮-提交-tj04规则*/
+
+
+.w_2 a {
+  background: url(images/btn_3.jpg) #ff9900 center right no-repeat;
+  margin-top: 25px;
+  color: #fff;
+  display: block;
+  padding-left: 15px;
+  width: 200px;
+  height: 46px;
+  line-height: 46px;
+}
+
+.w_2 a:hover {
+  padding-left: 22px;
+  text-decoration: underline;
+}
+
+
+
+/* 标题 没用 C类-左右-zy01 */
+.anniu1{position: relative;height: 131px;}
+.anniu1 .aBtn_lb1{position: absolute;display: block; height:131px; width:52px; transition:background .6s;}
+.anniu1 .lBtn_lb1 {top: 0px;left: 0px;background: url(images/arr1.png) no-repeat;}
+.anniu1 .rBtn_lb1 {background: url(images/arr2.png) no-repeat -54px 0px;left:52px;top:0px;}
+.anniu1 .lBtn_lb1:hover{background-position:-54px 0px;}
+.anniu1 .rBtn_lb1:hover{background-position:0px 0px;}
+
+
+/* 标题 没用 C类-左右-zy02 */
+.anniu2{position: relative;height: 131px;}
+.anniu2 .aBtn_lb1{position: absolute;display: block;height:131px; width:52px; transition:opacity .4s;vertical-align: middle;}
+.anniu2 .aBtn_lb1 img{ margin-top: 25px;}
+.anniu2 .lBtn_lb1 {top: 0px;left: 0px;opacity: 0.2;background: #000;text-align: center;vertical-align: middle;}
+.anniu2 .rBtn_lb1 {left:52px;top:0px;opacity: 0.2;background: #000; text-align: center;vertical-align: middle;}
+.anniu2 .lBtn_lb1:hover{opacity: 1;background: #000;}
+.anniu2 .rBtn_lb1:hover{opacity: 1;background: #000;}
+.anniu2 .lBtn_lb1:hover img{animation: none;}
+.anniu2 .rBtn_lb1:hover img{animation: none;}
+.anniu2 .lBtn_lb1 img{animation: moveIconleft ease 1.5s both infinite;}
+.anniu2 .rBtn_lb1 img{animation: moveIconright ease 1.5s both infinite;}
+@-webkit-keyframes moveIconleft {
+    0% {-webkit-transform: translateX(40%);opacity: 0}
+    50% {-webkit-transform: translateX(0%);opacity: 1}
+    100% {-webkit-transform: translateX(-40%);opacity: 0}
+}
+@-webkit-keyframes moveIconright {
+    0% {-webkit-transform: translateX(-40%);opacity: 0}
+    50% {-webkit-transform: translateX(0%);opacity: 1}
+    100% {-webkit-transform: translateX(40%);opacity: 0}
+}
+
+
+/* 标题 没用 C类-左右-zy03 */
+
+
+.anniu5{width: 200px;margin:0 auto;top:65px;height: 131px;}
+a.lr5{display: block;width: 52px;height: 130px;background: rgba(0, 0, 0,0.6);position: relative; float: left;}
+a.lr5:before,a.lr5:after{display: block;height: 6px;background: #fff;position: absolute;border-radius: 25px; transition: .3s;width: 45px; content: "";animation-duration: 0.8s;}
+
+a.left:after{transform-origin:0 3px;transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg); -o-transform:rotate(45deg);top: 61px;left:3.5px;}
+a.left:before{transform-origin:0 3px;transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg); -o-transform:rotate(-45deg);top: 63px;left:3.5px;}
+a.left:hover:after{animation-name: left-top;}
+a.left:hover:before{animation-name: left-bottom;}
+
+
+a.right:after{transform-origin:45px 3px;transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg); -o-transform:rotate(45deg);top: 63px;}
+a.right:before{transform-origin:45px 3px;transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg); -o-transform:rotate(-45deg);top: 61px;}
+a.right:hover:after{animation-name: right-top;}
+a.right:hover:before{animation-name: right-bottom;}
+
+
+@keyframes right-top{
+0%{transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg); -o-transform:rotate(45deg);top: 63px;}
+50%{transform:rotate(0deg);-ms-transform:rotate(0);-moz-transform:rotate(0);-webkit-transform:rotate(0); -o-transform:rotate(0);top: 62px}  
+100% {transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg); -o-transform:rotate(45deg);top: 63px;}
+}
+@keyframes right-bottom{
+0%{transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg); -o-transform:rotate(-45deg);top: 60px;}
+50%{transform:rotate(0deg);-ms-transform:rotate(0);-moz-transform:rotate(0);-webkit-transform:rotate(0); -o-transform:rotate(0);top: 62px}  
+100% {transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg); -o-transform:rotate(-45deg);top: 60px;}
+}
+
+
+@keyframes left-top{
+0%{transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg); -o-transform:rotate(45deg);top: 61px;}
+50%{transform:rotate(0deg);-ms-transform:rotate(0);-moz-transform:rotate(0);-webkit-transform:rotate(0); -o-transform:rotate(0);top: 62px;}  
+100% {transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg); -o-transform:rotate(45deg);top: 61px;}
+}
+@keyframes left-bottom{
+0%{transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg); -o-transform:rotate(-45deg);top: 63px;}
+50%{transform:rotate(0deg);-ms-transform:rotate(0);-moz-transform:rotate(0);-webkit-transform:rotate(0); -o-transform:rotate(0);top: 62px;}  
+100% {transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-webkit-transform:rotate(-45deg); -o-transform:rotate(-45deg);top: 63px;}
+}
+
+
+/* 标题 没用 C类-左右-zy04 */
+
+      .arrow_btn{ display: block; width: 130px; height: 130px; background:#000; margin:10px auto; position: relative;  }
+      .arrow_btn:before,.arrow_btn:after{ position: absolute; content: ""; width:70px; height: 8px; background: #fff; border-radius: 8px; transition: 1s;-webkit-animation-duration:1.5s;animation-duration:1.5s; left: 30px; }
+      
+      .arrow_left:before,.arrow_left:after{-webkit-transform-origin:0px 4px;transform-origin:0px 4px;}
+      .arrow_left:before{ -webkit-transform:rotate(-45deg); transform:rotate(-45deg); top: 64px;}
+      .arrow_left:after{ -webkit-transform:rotate(45deg); transform:rotate(45deg); top: 60px;}
+      .arrow_left:hover:before{ -webkit-animation-name: arrow_left_before; animation-name: arrow_left_before;}
+      .arrow_left:hover:after{ -webkit-animation-name: arrow_left_after; animation-name: arrow_left_after;}
+      @-webkit-keyframes arrow_left_before{
+        20%{ top: 55px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+        40%{ top: 55px; -webkit-transform: rotate(45deg); transform: rotate(45deg); -webkit-transform-origin:45px 4px; transform-origin:45px 4px;}
+        60%{ top: 100px; -webkit-transform: rotate(90deg); transform: rotate(90deg); -webkit-transform-origin:70px 4px; transform-origin:70px 4px;}
+        80%{ top: 55px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+      }
+      @keyframes arrow_left_before{
+        20%{ top: 55px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+        40%{ top: 55px; -webkit-transform: rotate(45deg); transform: rotate(45deg); -webkit-transform-origin:45px 4px; transform-origin:45px 4px;}
+        60%{ top: 100px; -webkit-transform: rotate(90deg); transform: rotate(90deg); -webkit-transform-origin:70px 4px; transform-origin:70px 4px;}
+        80%{ top: 55px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+      }
+      @-webkit-keyframes arrow_left_after{
+        20%{ top: 62px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+        40%{ top: 62px; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); -webkit-transform-origin:45px 4px; transform-origin:45px 4px;}
+        60%{ top: 35px; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transform-origin:70px 0px; transform-origin:70px 0px;}
+        80%{ top: 62px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+      }
+      @keyframes arrow_left_after{
+        20%{ top: 62px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+        40%{ top: 62px; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); -webkit-transform-origin:45px 4px; transform-origin:45px 4px;}
+        60%{ top: 35px; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transform-origin:70px 0px; transform-origin:70px 0px;}
+        80%{ top: 62px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+      }
+      
+      .arrow_right:before,.arrow_right:after{-webkit-transform-origin:70px 4px;transform-origin:70px 4px;}
+      .arrow_right:before{ top: 64px; -webkit-transform: rotate(45deg); transform: rotate(45deg);}
+      .arrow_right:after{ top: 60px; -webkit-transform: rotate(-45deg); transform: rotate(-45deg);}
+      .arrow_right:hover:before{ -webkit-animation-name: arrow_right_before; animation-name: arrow_right_before;}
+      .arrow_right:hover:after{ -webkit-animation-name: arrow_right_after; animation-name: arrow_right_after;}
+      @-webkit-keyframes arrow_right_before{
+        20%{ top: 55px;  -webkit-transform: rotate(0deg);  transform: rotate(0deg);}
+        40%{ top: 55px; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); -webkit-transform-origin:30px 4px; transform-origin:30px 4px;}
+        60%{ top: 100px; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transform-origin:0px 4px; transform-origin:0px 4px;}
+        80%{ top: 55px;  -webkit-transform: rotate(0deg);  transform: rotate(0deg);}
+      }
+      @keyframes arrow_right_before{
+        20%{ top: 55px;  -webkit-transform: rotate(0deg);  transform: rotate(0deg);}
+        40%{ top: 55px; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); -webkit-transform-origin:30px 4px; transform-origin:30px 4px;}
+        60%{ top: 100px; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transform-origin:0px 4px; transform-origin:0px 4px;}
+        80%{ top: 55px;  -webkit-transform: rotate(0deg);  transform: rotate(0deg);}
+      }
+      @-webkit-keyframes arrow_right_after{
+        20%{ top: 62px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+        40%{ top: 62px; -webkit-transform: rotate(45deg); transform: rotate(45deg); -webkit-transform-origin:30px 4px; transform-origin:30px 4px;}
+        60%{ top: 35px; -webkit-transform: rotate(90deg); transform: rotate(90deg); -webkit-transform-origin:0px 4px; transform-origin:0px 4px;}
+        80%{ top: 62px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+      }
+      @keyframes arrow_right_after{
+        20%{ top: 62px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+        40%{ top: 62px; -webkit-transform: rotate(45deg); transform: rotate(45deg); -webkit-transform-origin:30px 4px; transform-origin:30px 4px;}
+        60%{ top: 35px; -webkit-transform: rotate(90deg); transform: rotate(90deg); -webkit-transform-origin:0px 4px; transform-origin:0px 4px;}
+        80%{ top: 62px; -webkit-transform: rotate(0deg); transform: rotate(0deg);}
+      }
+
+
+/* 标题 没用 C类-左右-zy05 */
+      a.lrr{display: block;width: 130px;height: 130px;background: rgba(0, 0, 0,0.6); margin: 0 auto; position: relative;}
+      a.lrr:before,a.lrr:after{position: absolute; height: 8px;background: #fff;width: 60px; content: "";transition: 0.5s; -webkit-transition:0.5s;-webkit-animation-duration: 1s;animation-duration: 1s;}
+      
+      a.rightr:before,a.rightr:after{top: 60px;}
+      a.rightr:after{-webkit-transform-origin:60px 0px;transform-origin:60px 0px;transform:rotate(45deg)skew(-45deg);-ms-transform:rotate(45deg)skew(-45deg);-moz-transform:rotate(45deg)skew(-45deg);-webkit-transform:rotate(45deg)skew(-45deg); -o-transform:rotate(45deg)skew(-45deg); left:33px;}
+      a.rightr:before{-webkit-transform-origin:60px 0px;transform-origin:60px 0px;transform:rotate(-45deg)skew(45deg);-ms-transform:rotate(-45deg)skew(45deg);-moz-transform:rotate(-45deg)skew(45deg);-webkit-transform:rotate(-45deg)skew(45deg); -o-transform:rotate(-45deg)skew(45deg); left:22px;}
+      a.rightr:hover:after{ height: 3px;left: 33px;}
+      a.rightr:hover:before{ height: 3px; left: 28px; }
+      
+      a.leftr:before,a.leftr:after{ left: 30px;}
+      a.leftr:before{-webkit-transform-origin:54px 0px;transform-origin:54px 0px;transform:rotate(45deg)skew(-45deg);-ms-transform:rotate(45deg)skew(-45deg);-moz-transform:rotate(45deg)skew(-45deg);-webkit-transform:rotate(45deg)skew(-45deg); -o-transform:rotate(45deg)skew(-45deg); top: 98px; left:26px;}
+      a.leftr:after{-webkit-transform-origin:0px 0px;transform-origin:0px 0px;transform:rotate(-45deg)skew(45deg);-ms-transform:rotate(-45deg)skew(45deg);-moz-transform:rotate(-45deg)skew(45deg);-webkit-transform:rotate(-45deg)skew(45deg); -o-transform:rotate(-45deg)skew(45deg); top: 60px}
+      a.leftr:hover:after{ height: 3px; left: 30px; }
+      a.leftr:hover:before{ height: 3px; left: 18px; }
+
+
+/* 标题 没用 C类-轮播高亮点-lb01 */
+.anniu3 ul{clear: both;overflow: hidden;}
+.anniu3 ul li{float: left;width: 15px;height: 15px;background: #747474;transition: all .3s;margin-right: 15px;border-radius: 25px;}
+.anniu3 ul li.cur{background: #2439b8;width:45px; }
+
+
+
+
+/* 标题 没用 C类-轮播高亮点-lb02 */
+.anniu4 ul{clear: both;overflow: hidden;height: 65px;display: flex;align-items: flex-end }
+.anniu4 ul li{float: left;width: 15px;height: 15px;background: #747474;transition: all .3s;margin-right: 15px;}
+.anniu4 ul li.cur{background: #2439b8;height:45px; }
+
+
+
+
+
+.jxstb table { width:900px; color:#000; line-height:24px;}
+.jxstb table td{color:#000; font-weight: bold; font-size: 16px;border-bottom:3px solid #000;text-indent: 15px;}
+.rolljxs table{ width:900px; color:#000; line-height:36px;}
+.rolljxs table td{ font-size: 14px;transition:all .3s;text-indent: 15px;}
+.rolljxs table tr{cursor: pointer;}
+
+/* C类-经销商-jxs01-300 */
+.rolljxs table tr:hover td{background: #ccc;text-indent: 18px;}
+
+
+
+/* C类-经销商-jxs02-300 */
+.rolljx5 table tr:hover td{transform: scale(1,1.15);text-indent: 4px;background:#ccc;font-size:16px;font-weight: bold; }
+
+
+
+
+.form-box { width:500px;}
+.form-box dl{ width:100%;}
+.form-box dl::after{ content:"";display: block; clear: both;}
+.form-box dt , .form-box dd{ line-height:22px; padding:3px 0; height:26px;float:left; }
+.form-box dd { width:370px;}
+.form-box dt {width:37px; text-align:right; padding-right:5px;}
+.form-box dt span, .formText span{color:#a00;display: inline-block; width: 8px;}
+.form-box dt span {text-align: left;}.form-box input{vertical-align:middle;}
+.form-box .codeDd{width:290px;position:relative; padding-right:80px;}
+.form-box select {width:369px; height:22px;}
+.form-box .textInp{width:365px; padding:0;height:18px;}
+.form-box .codeInp{ width:280px;}
+.form-box dl.s {float:left;}
+.form-box dl.even {width:180px;}
+.form-box dl.odd {width:233px;}
+.form-box dl.s dd {width:138px;}
+.form-box dl.s .codeDd {width:58px;}
+.form-box dl.s dt.s { width:90px;}
+.form-box .s .textInp{ width:133px;}
+.form-box .s .codeInp{ width:48px;}
+.form-box .s select{ width:137px;}
+.form-box .codeBtn { background:#999; position: absolute;right: 0;width:80px; height:22px; text-align:center;margin-left: 3px; line-height:22px;}.form-box .codeImg { position: absolute;right: 0;width:80px; height:22px;}.formText{ padding-left: 40px;position: relative; padding-top: 0; font-size: 12px; clear:both;}
+.inpBox { padding: 20px 0 0 30px;}
+.loginText { clear:both; padding-left: 40px; padding-top:10px;}
+.loginText a, .notice, .loginText a:link, .notice:link,.loginText a:visited, .notice:visited, .loginText a:active, .notice:active {text-decoration: underline;}
+.loginText a:hover, .notice:hover{text-decoration: none;}
+.inpBox a {float:left; margin-right:10px; width:120px; height:30px; text-align:center; line-height:30px;background:#000; }
+.inpBox a:hover {background-color:#333;}.inpBox a.mdBtn {background-color:#666;}.inpBox a.mdBtn:hover {background-color:#999;}.inpBox a.qd:hover {background-color:#aaa;}.inpBox a, .inpBox a:link,.inpBox a:visited, .inpBox a:hover, .inpBox a:active { color: #fff;text-decoration: none; }
+/*form-activity-prize*/
+.icon-formDl dd {width: 445px;height:38px;margin-bottom: 10px;padding:0; border: solid 1px #000;border-left: none}
+.icon-formDl input{vertical-align:middle;}
+.icon-formDl .textInp, .icon-formDl .textDiv{margin-top: 10px;width:95%;text-indent:10px; border: none;background: none;color: #000; }
+.icon-formDl .codeDd{width:365px;}
+.icon-formDl .codeBtn{ height:37px; line-height:37px;}
+.icon-formDl .codeImg{ top:8px;}
+.icon-formDl dt{ width:37px; height:38px; clear:left;padding:0;margin-bottom: 10px;position: relative; border: solid 1px #000;background: url("https://topic.autoimg.cn/marketing/2017/5/script/icon.png") no-repeat;}
+.form-formDl dl.s {width:50%;}
+.icon-formDl dl.s dt {width:37px;}
+.icon-formDl dl.s dd {width:195px;}
+.icon-formDl dl.s .codeDd {width:115px;}
+.icon-formDl dt label, .icon-formDl dt i{display:none;}
+.icon-formDl dt span{ position: absolute;top: 10px;left: -10px;}
+.icon-formDl .s .textInp{ width:95%;}
+.icon-formDl .formText{ padding:0;}
+.icon-formDl .formText span{ position: absolute;left: -10px;}
+.icon-formDl dt.icon-name{background-position: -1px 5px;}
+.icon-formDl dt.icon-sex{background-position: -1px -25px;}
+.icon-formDl dt.icon-mobile{background-position: -1px -56px;}
+.icon-formDl dt.icon-email{background-position: -1px -86px;}
+.icon-formDl dt.icon-province{background-position: -1px -115px;}
+.icon-formDl dt.icon-city{background-position: -1px -145px;}
+.icon-formDl dt.icon-dealer{background-position: -1px -175px;}
+.icon-formDl dt.icon-buytime{background-position: -1px -205px;}
+.icon-formDl dt.icon-intentcar{background-position: -1px -235px;}
+.icon-formDl dt.icon-buybudget{background-position: -1px -265px;}
+.icon-formDl dt.icon-code{background-position: -1px -295px;}
+.icon-formDl dt.cur,.icon-formDl dd.cur{border-color:#b22024;}
+.icon-formDl dt.icon-name.cur{background-position: -41px 5px;}
+.icon-formDl dt.icon-sex.cur{background-position: -41px -25px;}
+.icon-formDl dt.icon-mobile.cur{background-position: -41px -56px;}
+.icon-formDl dt.icon-email.cur{background-position: -41px -86px;}
+.icon-formDl dt.icon-province.cur{background-position: -41px -115px;}
+.icon-formDl dt.icon-city.cur{background-position: -41px -145px;}
+.icon-formDl dt.icon-dealer.cur{background-position: -41px -175px;}
+.icon-formDl dt.icon-buytime.cur{background-position: -41px -205px;}
+.icon-formDl dt.icon-intentcar.cur{background-position: -41px -235px;}
+.icon-formDl dt.icon-buybudget.cur{background-position: -41px -265px;}
+.icon-formDl dt.icon-code.cur{background-position: -41px -295px;}
+.icon-formDl input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #000;opacity: 1;}input:-moz-placeholder, textarea:-moz-placeholder {color: #000;opacity: 1;}
+input::-moz-placeholder, textarea::-moz-placeholder {color: #000;opacity: 1;}input:-ms-input-placeholder, textarea:-ms-input-placeholder {color: #000;opacity: 1;}
+/*select*/
+.icon-formDl .selectpick_div { overflow: hidden; cursor: pointer; overflow: hidden; color: #000;line-height: 34px; width: 100%; position: relative;}
+.icon-formDl .selectpick_chara{display: inline-block; padding-right:20px;height:34px;overflow: hidden;}
+.icon-formDl .selectpick_icon { cursor: pointer; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #848484; position: absolute;top: 15px;right: 10px;}
+.icon-formDl .selectpick_options { width: 100%; overflow-y: auto; border: solid 1px #570954; border-bottom: none; position: absolute; top: 37px; left: -1px; z-index: 100; display:none;}
+.icon-formDl .selectpick_options ul { list-style: none; height: auto; margin: 0px; padding: 0px; z-index: 100; font-size: 13.5px; background: #000;}
+.icon-formDl .selectpick_options ul li { border-bottom: solid 1px #570954; padding:4px 10px; display: block;font-size: 14px; z-index: 100; background: #000; color: #fff;line-height: 20px;}
+.icon-formDl .selectpick_options li:hover{ background:#333; color:#fff;}
+.icon-formDl .selectpick_options ul li.selectpick_options_selected { background:#333; color:#fff; z-index: 10;}
+.icon-formDl .selectpick_no_select { cursor: default; color: #9a9898; background: #F5F5F5;}
+.icon-formDl .select_hide ,.icon-formDl .select_hide option{display:none; height: 0;width:95%;line-height: 0; -moz-opacity: 0; opacity: 0;-webkit-opacity: 0; filter: alpha(opacity =0); overflow: hidden;  font-size: 0;}
+.icon-formDl .selectpick_options li{cursor:pointer;}
+.icon-formDl .selectpick_options li label{cursor:pointer;}
+.icon-formDl .selectpick_div_box{*zoom:1; *display:inline;position:relative; z-index: 9;padding-left: 10px;}
+
+
+
+
+/* 左右晃动 */
+@-webkit-keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.hvr-wobble-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-wobble-horizontal:hover, .hvr-wobble-horizontal:focus, .hvr-wobble-horizontal:active {
+  -webkit-animation-name: hvr-wobble-horizontal;
+  animation-name: hvr-wobble-horizontal;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+
+.curS{-webkit-animation-name: hvr-wobble-horizontal2;animation-name: hvr-wobble-horizontal2;-webkit-animation-duration: 1s;animation-duration: 1s;-webkit-animation-timing-function: ease-in-out;animation-timing-function: ease-in-out;-webkit-animation-iteration-count: 1;animation-iteration-count: 1;}
+
+/* Wobble Horizontal */
+@-webkit-keyframes hvr-wobble-horizontal2 {
+  16.65% {
+    width:97%;
+  }
+
+  33.3% {
+    width:101.5%;
+  }
+
+  49.95% {
+    width:98%;
+  }
+
+  66.6% {
+    width:101%;
+  }
+
+  83.25% {
+    width:99%;
+  }
+
+  100% {
+     width:100%;
+  }
+}
+
+@keyframes hvr-wobble-horizontal2 {
+  16.65% {
+    width:97%;
+  }
+
+  33.3% {
+    width:101.5%;
+  }
+
+  49.95% {
+    width:98%;
+  }
+
+  66.6% {
+    width:101%;
+  }
+
+  83.25% {
+    width:99%;
+  }
+
+  100% {
+     width:100%;
+  }
+}
+/* 左右晃动结束 */
+
+
+
+/* 阴影 */
+.form-box dd:hover {
+  border-color: #aeaeae;
+  animation: star 1.5s ease infinite;
+  -webkit-animation: star 1.5s ease infinite;
+}
+
+@-webkit-keyframes star {
+  0% {
+    box-shadow: 0 0 15px rgba(204, 102, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(204, 102, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(204, 102, 0, 0.8);
+  }
+}
+
+@keyframes star {
+  0% {
+    box-shadow: 0 0 15px rgba(204, 102, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(204, 102, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(204, 102, 0, 0.8);
+  }
+}
+/* 阴影结束 */
+
+
+
+/* 先右滑动切不变色 */
+dd input,dd .selectpick_div{transition: all .2s;}
+dd:hover input,dd:hover .selectpick_div{ margin-left: 5px; }
+
+
+
+/* 先右滑动变色 */
+dd input,dd .selectpick_div{transition: all .2s;}
+dd:hover input,dd:hover .selectpick_div{ margin-left: 5px;color: #f00; }
+dd:hover input::-webkit-input-placeholder{color: #f00;opacity: 1;}
+dd:hover input::-moz-placeholder{color: #f00;opacity: 1;}
+dd:hover input::-moz-placeholder{color: #f00;opacity: 1;}
+dd:hover input::-ms-input-placeholder {color: #f00;opacity: 1;}
+dd:hover label{color: #f00;}
+
+
+
+/* 整体放大 */
+.form-box{transition:all 1s; 
+-webkit-transition:all 1s; 
+-moz-transition:all 1s; 
+-o-transition:all 1s;}
+
+.form-box:hover{transform:scale(1.1) ;
+    -webkit-transform:scale(1.1); 
+-moz-transform:scale(1.1); 
+-o-transform:scale(1.1) ;opacity: 1;
+}
+/* 整体放大结束 */
+
+
+
+
+/* 内部放大 */
+.cvbn a img{transition:all 1s; 
+-webkit-transition:all 1s; 
+-moz-transition:all 1s; 
+-o-transition:all 1s;}
+.cvbn div{overflow:hidden; }
+.cvbn div:hover img{transform:scale(1.1) ;
+    -webkit-transform:scale(1.1); 
+-moz-transform:scale(1.1); 
+-o-transform:scale(1.1) ;opacity: 1;
+}
+/* 内部放大结束 */
+
+
+
+/* 自动放大缩小 */
+.c01 { 
+  width:723px;
+    -webkit-animation: warn 3s infinite;  
+    -moz-animation: warn 3s infinite;  
+    animation: warn 3s infinite;   
+}  
+@keyframes warn {  
+    0% {  
+        transform: scale(1.1);  
+        opacity: 1;  
+    }  
+    25% {  
+        transform: scale(1);  
+        opacity: 1;  
+    }  
+    50% {  
+        transform: scale(1.1);  
+        opacity: 1;  
+    }  
+    75% {  
+        transform: scale(1);  
+        opacity: 1;  
+    }  
+    100% {  
+        transform: scale(1.1);  
+        opacity: 1;  
+    }  
+}  
+@-webkit-keyframes "warn" {  
+    0% {  
+        -webkit-transform: scale(1.1);  
+        opacity: 1;  
+    }  
+    25% {  
+        -webkit-transform: scale(1);  
+        opacity: 1;  
+    }  
+    50% {  
+        -webkit-transform: scale(1.1);  
+        opacity: 1;  
+    }  
+    75% {  
+        -webkit-transform: scale(1);  
+        opacity: 1;  
+    }  
+    100% {  
+        -webkit-transform: scale(1.1);  
+        opacity: 1;  
+    }  
+}  
+/* 自动放大缩小结束 */
+
+
+</style>
+
+<!-- 标题 没用 C类-按钮-提交-tj01-->
+<div class="all" style="margin:0px;">
+   <h3>C类-按钮-提交-tj01</h3>	
+   <ul>
+    	<li><span>300</span></li>
+    	<li><span>200</span></li>
+    	<li><span>100</span></li>
+   </ul>
+</div>
+<br/>
+<dl>
+	<dd><div class="lr"><img src="images/BUT.jpg"/></div></dd>
+</dl>
+
+
+<!-- 标题 没用 C类-按钮-提交-tj02-300-->
+<div class="all">
+   <h3>C类-按钮-提交-tj02</h3>	
+   <ul>
+    	<li><span>300</span></li>
+    	<li><span>200</span></li>
+    	<li><span>100</span></li>
+   </ul>
+</div>
+<br/>
+<dl>
+	<dd><div class="lr2"><img src="images/BUT.jpg"/></div></dd>
+</dl>
+
+<!-- 标题 没用 C类-按钮-提交-tj03-300-->
+<div class="all">
+   <h3>C类-按钮-提交-tj03</h3>	
+   <ul>
+    	<li><span>300</span></li>
+    	<li><span>200</span></li>
+    	<li><span>100</span></li>
+   </ul>
+</div>
+<br/>
+<dl>
+	<dd><div class="lr3"><img src="images/BUT.jpg"/></div></dd>
+</dl>
+
+
+<!-- 标题 没用 C类-按钮-提交-tj04-300-->
+<div class="all">
+   <h3>C类-按钮-提交-tj04</h3> 
+   <ul>
+      <li><span>300</span></li>
+      <li><span>200</span></li>
+      <li><span>100</span></li>
+   </ul>
+</div>
+<br/>
+<dl>
+  <dd><div class="w_2"><a href="//news.bitauto.com/xinchexiaoxi/20180425/1507378558.html" target="_blank">
+            </a></div></dd>
+</dl>
+
+
+
+
+<br/><br/><br/>
+<!-- 标题 没用 C类-左右滚动-zy01-->
+<div class="all">
+   <h3>C类-按钮-左右滚动-zy01</h3>	
+</div>
+<br/>
+<dl>
+	<dd>
+        <div class="anniu1">
+           <a href="javascript:void(0)" class="aBtn_lb1 lBtn_lb1" title="向前翻"></a>
+           <a href="javascript:void(0)" class="aBtn_lb1 rBtn_lb1" title="向后翻"></a>
+        </div>		
+     </dd>
+</dl>
+
+
+<!-- 标题 没用 C类-左右滚动-zy02-300-->
+<div class="all">
+   <h3>C类-按钮-左右滚动-zy02</h3>	
+</div>
+<br/>
+<dl>
+	<dd>
+        <div class="anniu2">
+           <a href="javascript:void(0)" class="aBtn_lb1 lBtn_lb1" title="向前翻"><img src="images/arr3.png" width="29" height="69" /></a>
+           <a href="javascript:void(0)" class="aBtn_lb1 rBtn_lb1" title="向后翻"><img src="images/arr4.png"/></a>
+        </div>		
+     </dd>
+</dl>
+
+<!-- 标题 没用 C类-左右滚动-zy03-300-->
+<div class="all">
+   <h3>C类-按钮-左右滚动-zy03</h3> 
+</div>
+<br/>
+<dl>
+  <dd>
+        <div class="anniu5">
+            <a href="javascript:;" class="lr5 left"></a>
+            <a href="javascript:;" class="lr5 right"></a>
+        </div>
+     </dd>
+</dl>
+
+
+<!-- 标题 没用 C类-左右滚动-zy04-300-->
+<div class="all">
+   <h3>C类-按钮-左右滚动-zy04</h3> 
+</div>
+<br/>
+<dl>
+  <dd>
+        <a href="javascript:void(0);" class="arrow_btn arrow_left"></a>
+        <a href="javascript:void(0);" class="arrow_btn arrow_right"></a>
+  </dd>
+</dl>
+
+<!-- 标题 没用 C类-左右滚动-zy05-300-->
+<div class="all">
+   <h3>C类-按钮-左右滚动-zy05</h3> 
+</div>
+<br/>
+<dl>
+  <dd>
+        <a href="javascript:;" class="lrr rightr"></a>
+        <a href="javascript:;" class="lrr leftr"></a>
+  </dd>
+</dl>
+
+
+
+
+<!-- 标题 没用 C类-轮播高亮点-lb01-->
+<div class="all">
+   <h3>C类-按钮-轮播高亮点-lb01</h3> 
+</div>
+<br/>
+<div class="anniu3">
+     <ul>
+         <li class="cur"></li>
+         <li></li>
+     </ul>
+</div>
+
+
+<!-- 标题 没用 C类-轮播高亮点-lb02-->
+<div class="all">
+   <h3>C类-按钮-轮播高亮点-lb02</h3> 
+</div>
+<br/>
+<div class="anniu4">
+     <ul>
+         <li class="cur"></li>
+         <li></li>
+     </ul>
+</div>
+
+
+
+
+
+
+
+<!-- 标题 没用 C类-经销商-jxs01-300-->
+<div class="all">
+   <h3>C类-经销商-jxs01</h3>  
+</div>
+<br/>
+
+
+<!--  C类-经销商-jxs01-300  -->
+<div class="jxstb">
+    <table  border="0" cellspacing="0" cellpadding="0">
+         <tr>
+           <td width="210">经销商</td>
+           <td width="240">电话</td>
+           <td>地址</td>
+         </tr>
+    </table>
+</div>
+<div class="rolljxs">
+     <table  border="0" cellspacing="0" cellpadding="0"> 
+         <tr>
+           <td width="210"> 深圳东风南方</td> 
+           <td width="240"> 400-882-1133</td> 
+           <td> 深圳市滨河大道2003号(上步立交旁)</td> 
+         </tr> 
+         <tr> 
+           <td>广州元都</td> 
+           <td>020-82169000</td> 
+           <td>广州市广园东快速路黄村立交（奥体中心）东侧</td> 
+         </tr> 
+           <tr> 
+           <td>广州元都</td> 
+           <td>020-82169000</td> 
+           <td>广州市广园东快速路黄村立交（奥体中心）东侧</td> 
+         </tr> 
+     </table> 
+</div> 
+
+<br/><br/><br/><br/>
+
+
+<!-- 标题 没用 C类-经销商-jxs01-300-->
+<div class="all">
+   <h3>C类-经销商-jxs02</h3>  
+</div>
+<br/>
+<!--  C类-经销商-jxs02-300  -->
+<div class="jxstb">
+    <table  border="0" cellspacing="0" cellpadding="0">
+         <tr>
+           <td width="210">经销商</td>
+           <td width="240">电话</td>
+           <td>地址</td>
+         </tr>
+    </table>
+</div>
+<div class="rolljxs rolljx5">
+     <table  border="0" cellspacing="0" cellpadding="0"> 
+         <tr>
+           <td width="210"> 深圳东风南方</td> 
+           <td width="240"> 400-882-1133</td> 
+           <td> 深圳市滨河大道2003号(上步立交旁)</td> 
+         </tr> 
+         <tr> 
+           <td>广州元都</td> 
+           <td>020-82169000</td> 
+           <td>广州市广园东快速路黄村立交（奥体中心）东侧</td> 
+         </tr> 
+           <tr> 
+           <td>广州元都</td> 
+           <td>020-82169000</td> 
+           <td>广州市广园东快速路黄村立交（奥体中心）东侧</td> 
+         </tr> 
+     </table> 
+</div> 
+
+
+
+<!-- 标题 没用 C类-表单-300-->
+<div class="all">
+   <h3>C类-表单晃动</h3>  
+</div>
+<br/>
+<form name="autoform" action="$" class="form-box icon-formDl">
+    <dl>
+        <dt class="icon-name"><span>*</span><label>姓名</label><i>：</i></dt>
+        <dd><input name="name" type="text" maxlength="10" placeholder="请填写姓名" class="textInp hvr-wobble-horizontal" valid="def"></dd>
+    </dl>
+    <dl>
+        <dt class="icon-sex"><span>*</span><label>性别</label><i>：</i></dt>
+        <dd><div class="textDiv"><input name="sex" type="radio" value="0" valid="def" id="male" checked="checked"> <label for="male">男</label> <input name="sex" type="radio" id="female" value="1"> <label for="female">女</label></div> </dd>
+    </dl>
+    <dl>
+        <dt class="icon-city"><span>*</span><label>所在城市</label><i>：</i></dt>
+        <dd><select id="city" name="city" valid="def"><option value="0">请选择城市</option></select></dd>
+    </dl>
+    <dl>
+        <dt class="icon-province"><span>*</span><label>所在省份</label><i>：</i></dt>
+        <dd><select id="province" name="province" valid="def"><option value="0">请选择省份</option></select></dd>
+    </dl>
+</form>
+
+
+<!-- 标题 没用 C类-放大效果-300-->
+<div class="all">
+   <h3>C类-放大效果</h3>  
+</div>
+<br/>
+<div class="c01">
+  <img src="https://topic.autoimg.cn/marketing/2018/6/ga6/zcvv.png" alt="" />
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(".anniu3 ul li").click(function(){           
+        $(this).addClass("cur").siblings().removeClass("cur");
+     })
+    $(".anniu4 ul li").click(function(){           
+        $(this).addClass("cur").siblings().removeClass("cur");
+     })
+</script>
+
+<!-- 表单 -->
+<script src="js/autoform3.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/selectpick2.js"></script>
+<script type="text/javascript" >
+   $(".form-box select").selectpick({});
+   $(".form-box input").focus(function () {
+       var d = $(this).parents("dd");
+       d.addClass("cur").prev().addClass("cur");
+       return false;
+   }).blur(function () {
+       var d = $(this).parents("dd");
+       d.removeClass("cur").prev().removeClass("cur");
+   });
+
+
+   $("dd").hover(function () {
+       $(this).find(".selectpick_div").addClass("curS");
+   },function(){
+       $(this).find(".selectpick_div").removeClass("curS");
+   })
+
+</script> 
+<!-- 结束 -->
+
+</body>
+</html>

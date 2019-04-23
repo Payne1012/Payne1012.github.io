@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<meta charset="UTF-8" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+		<meta name="description" content="志愿者平台是一个专业志愿者服务平台，可以在线找工作，找组织，找团体，公益积分累积查询使用。">
+		<meta name="keywords" content="志愿者，志愿者服务，志愿者平台，服务平台，公司找人才，不一样的招聘">
+		<meta name="google" value="notranslate">
+		<meta name="version" content="1.0">
+		<!--[if lte IE 9]>
+		<meta http-equiv="refresh" content="0;url=/browser">
+		<![endif]-->
+		<title>志愿项目 - 大型志愿者服务平台</title>
+		<link rel="icon" href="favicon.ico" />
+		<link rel="stylesheet" href="css/public.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="js/swiper/swiper.min.css" />
+	</head>
+
+	<body class="body_wrap">
+		<div class="page_wrap">
+			<!--	头部 start-->
+			<header class="header_wrap">
+				<div class="header_main content_container">
+					<div class="logo_wrap fl">
+						<a href="javascript:" class="logo_img">
+							<img src="images/logo.png" />
+						</a>
+					</div>
+					<div class="menu_main_wrap fl">
+						<!--	导航 start-->
+						<ul class="menu_main_ul">
+							<li>
+								<a href="index.html">首页</a>
+							</li>
+							<li>
+								<a href="project.html">志愿项目</a>
+							</li>
+							<li>
+								<a href="group.html">公益团体</a>
+							</li>
+							<li>
+								<a href="worknews.html">工作动态</a>
+							</li>
+							<li>
+								<a href="mien.html">志愿风采</a>
+							</li>
+							<li>
+								<a href="policy.html">政策导航</a>
+							</li>
+							<li>
+								<a href="train.html">培训机构</a>
+							</li>
+							<li>
+								<a href="evaluate.html">评价查询</a>
+							</li>
+							<li>
+								<a href="job.html">就业腿你</a>
+							</li>
+							<p class="clear"></p>
+						</ul>
+						<!--	导航 end-->
+					</div>
+					<div class="login fl">
+						<span>
+						<a href="login/login.html">登录</a>
+						</span>/
+						<span>
+						<a href="login/regsiter.html">注册</a>
+						</span>
+					</div>
+					<p class="clear"></p>
+				</div>
+			</header>
+			<!--	头部 end-->
+			<!--主体 start-->
+			<div class="content_wrap project">
+				<div class="content_container">
+					<div class="project_wrap">
+						<div class="title">
+							<div class="title_left fl"><b>P</b>ROJECT</div>
+							<div class="title_right fl">
+								<h3 class="title_right_top">志愿项目</h3>
+								<p class="title_right_bottom">VOLUNTARY PROJECT</p>
+							</div>
+						</div>
+						<div class="search_wrap">
+							<div class="search_list" id="project_search_wrap_js">
+								<div class="fl search_list_header">
+									地<span class="opc">地点</span>点：
+								</div>
+								<div class="fr more" onclick="onHeight();">
+									<a href="javascript:" id="more_city_js">更多</a>
+									<span class="caret" id="more_city_caret_js"></span>
+								</div>
+								<ul class="js-search-li" data-type="city">
+									<li class="active">
+										<a href="javascript:">全部</a>
+									</li>
+									<li>
+										<a href="javascript:">北京市</a>
+									</li>
+									<li>
+										<a href="javascript:">深圳市</a>
+									</li>
+									<li>
+										<a href="javascript:">上海市</a>
+									</li>
+									<li>
+										<a href="javascript:">杭州市</a>
+									</li>
+									<li>
+										<a href="javascript:">成都市</a>
+									</li>
+									<li>
+										<a href="javascript:">天津市</a>
+									</li>
+									<li>
+										<a href="javascript:">武汉市</a>
+									</li>
+									<li>
+										<a href="javascript:">广州市</a>
+									</li>
+									<li>
+										<a href="javascript:">重庆市</a>
+									</li>
+									<li>
+										<a href="javascript:">海外</a>
+									</li>
+									<li>
+										<a href="javascript:">河北省</a>
+									</li>
+									<li>
+										<a href="javascript:">山西省</a>
+									</li>
+									<li>
+										<a href="javascript:">内蒙古</a>
+									</li>
+									<li>
+										<a href="javascript:">辽宁省</a>
+									</li>
+									<li>
+										<a href="javascript:">吉林省</a>
+									</li>
+									<li>
+										<a href="javascript:">黑龙江省</a>
+									</li>
+									<li>
+										<a href="javascript:">江苏省</a>
+									</li>
+									<li>
+										<a href="javascript:">浙江省</a>
+									</li>
+									<li>
+										<a href="javascript:">安徽省</a>
+									</li>
+									<li>
+										<a href="javascript:">福建省</a>
+									</li>
+									<li>
+										<a href="javascript:">江西省</a>
+									</li>
+									<li>
+										<a href="javascript:">山东省</a>
+									</li>
+									<li>
+										<a href="javascript:">河南省</a>
+									</li>
+									<li>
+										<a href="javascript:">湖北省</a>
+									</li>
+									<li>
+										<a href="javascript:">湖南省</a>
+									</li>
+									<li>
+										<a href="javascript:">广东省</a>
+									</li>
+									<li>
+										<a href="javascript:">广西</a>
+									</li>
+									<li>
+										<a href="javascript:">海南省</a>
+									</li>
+									<li>
+										<a href="javascript:">四川省</a>
+									</li>
+									<li>
+										<a href="javascript:">贵州省</a>
+									</li>
+									<li>
+										<a href="javascript:">云南省</a>
+									</li>
+									<li>
+										<a href="javascript:">西藏</a>
+									</li>
+									<li>
+										<a href="javascript:">陕西省</a>
+									</li>
+									<li>
+										<a href="javascript:">甘肃省</a>
+									</li>
+									<li>
+										<a href="javascript:">青海省</a>
+									</li>
+									<li>
+										<a href="javascript:">宁夏</a>
+									</li>
+									<li>
+										<a href="javascript:">新疆</a>
+									</li>
+									<li>
+										<a href="javascript:">台湾省</a>
+									</li>
+									<li>
+										<a href="javascript:">香港</a>
+									</li>
+									<li>
+										<a href="javascript:">澳门</a>
+									</li>
+									<li class="project_other_js">
+										<a href="javascript:">其他</a>
+									</li>
+								</ul>
+							</div>
+							<div class="search_list">
+								<div class="fl search_list_header">
+									服务类别：
+								</div>
+								<ul class="js-search-li">
+									<li class="active">
+										<a href="javascript:">全部</a>
+									</li>
+									<li>
+										<a href="javascript:">支教</a>
+									</li>
+									<li>
+										<a href="javascript:">扶贫</a>
+									</li>
+									<li>
+										<a href="javascript:">科普</a>
+									</li>
+									<li>
+										<a href="javascript:">宣推</a>
+									</li>
+									<li class="project_other_js">
+										<a href="javascript:">其他</a>
+									</li>
+								</ul>
+							</div>
+							<div class="search_list">
+								<div class="fl search_list_header">
+									服务对象：
+								</div>
+								<ul class="js-search-li" data-type="city">
+									<li class="active">
+										<a href="javascript:">全部</a>
+									</li>
+									<li>
+										<a href="javascript:">儿童</a>
+									</li>
+									<li>
+										<a href="javascript:">青少年</a>
+									</li>
+									<li>
+										<a href="javascript:">孤寡老人</a>
+									</li>
+									<li>
+										<a href="javascript:">残障人数</a>
+									</li>
+									<li class="project_other_js">
+										<a href="javascript:">其他</a>
+									</li>
+								</ul>
+							</div>
+							<div class="search_list">
+								<div class="fl search_list_header">
+									招募范围：
+								</div>
+								<ul class="js-search-li" data-type="city">
+									<li class="active">
+										<a href="javascript:">全部</a>
+									</li>
+									<li>
+										<a href="javascript:">公开招募</a>
+									</li>
+									<li>
+										<a href="javascript:">招募进行时</a>
+									</li>
+									<li>
+										<a href="javascript:">指定志愿者招募</a>
+									</li>
+									<li>
+										<a href="javascript:">设定免审密码招募</a>
+									</li>
+									<li class="project_other_js">
+										<a href="javascript:">其他</a>
+									</li>
+								</ul>
+							</div>
+							<div class="search_list">
+								<div class="fl search_list_header">
+									招募人数：
+								</div>
+								<ul class="js-search-li" data-type="city">
+									<li class="active">
+										<a href="javascript:">全部</a>
+									</li>
+									<li>
+										<a href="javascript:">1-100人</a>
+									</li>
+									<li>
+										<a href="javascript:">101-200人</a>
+									</li>
+									<li>
+										<a href="javascript:">201-300人</a>
+									</li>
+									<li>
+										<a href="javascript:">301-400人</a>
+									</li>
+									<li class="project_other_js">
+										<a href="javascript:">其他</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<ul class="project_main">
+							<li class="project_list">
+								<div class="project_img">
+									<a href="project_detail.html">
+										<img src="images/xm.jpg" />
+									</a>
+								</div>
+								<div class="project_content_bg">
+									<div class="project_content">
+										<ul>
+											<li class="nofp">
+												招募人数：<span>1</span>-<span>100</span>人
+											</li>
+											<li class="place">
+												地<span class="opc">地点</span>点：<span>北京</span>
+											</li>
+											<li class="state">
+												招募状态：<span>招募中</span>
+											</li>
+										</ul>
+										<ul>
+											<li class="category">
+												服务类别：<span>社区服务</span>
+											</li>
+											<li class="object">
+												服务对象：<span>儿童</span>
+											</li>
+											<li class="range">
+												招募范围：<span>公开</span>
+											</li>
+										</ul>
+									</div>
+									<p class="project_title">
+										<a href="project_detail.html">保护母亲河清洁</a>
+									</p>
+								</div>
+							</li>
+							<li class="project_list">
+								<div class="project_img">
+									<a href="project_detail.html">
+										<img src="images/xm1.jpg" />
+									</a>
+								</div>
+								<div class="project_content_bg">
+									<div class="project_content">
+										<ul>
+											<li class="nofp">
+												招募人数：<span>1</span>-<span>100</span>人
+											</li>
+											<li class="place">
+												地<span class="opc">地点</span>点：<span>北京</span>
+											</li>
+											<li class="state">
+												招募状态：<span>招募中</span>
+											</li>
+										</ul>
+										<ul>
+											<li class="category">
+												服务类别：<span>社区服务</span>
+											</li>
+											<li class="object">
+												服务对象：<span>儿童</span>
+											</li>
+											<li class="range">
+												招募范围：<span>公开</span>
+											</li>
+										</ul>
+									</div>
+									<p class="project_title">
+										<a href="project_detail.html">第四届·中国茶都安溪县茶</a>
+									</p>
+								</div>
+							</li>
+							<li class="project_list">
+								<div class="project_img">
+									<a href="project_detail.html">
+										<img src="images/xm2.png" />
+									</a>
+								</div>
+								<div class="project_content_bg">
+									<div class="project_content">
+										<ul>
+											<li class="nofp">
+												招募人数：<span>1</span>-<span>100</span>人
+											</li>
+											<li class="place">
+												地<span class="opc">地点</span>点：<span>北京</span>
+											</li>
+											<li class="state">
+												招募状态：<span>招募中</span>
+											</li>
+										</ul>
+										<ul>
+											<li class="category">
+												服务类别：<span>社区服务</span>
+											</li>
+											<li class="object">
+												服务对象：<span>儿童</span>
+											</li>
+											<li class="range">
+												招募范围：<span>公开</span>
+											</li>
+										</ul>
+									</div>
+									<p class="project_title">
+										<a href="project_detail.html">协作者第十一届暑期夏令营</a>
+									</p>
+								</div>
+							</li>
+							<li class="project_list">
+								<div class="project_img">
+									<a href="project_detail.html">
+										<img src="images/xm.jpg" />
+									</a>
+								</div>
+								<div class="project_content_bg">
+									<div class="project_content">
+										<ul>
+											<li class="nofp">
+												<b class="category_bg"></b>招募人数：<span>1</span>-<span>100</span>人
+											</li>
+											<li class="place">
+												地<span class="opc">地点</span>点：<span>北京海淀温泉北部文化中心</span>
+											</li>
+											<li class="state">
+												招募状态：<span>招募中</span>
+											</li>
+										</ul>
+										<ul>
+											<li class="category">
+												服务类别：<span>社区服务</span>
+											</li>
+											<li class="object">
+												服务对象：<span>儿童</span>
+											</li>
+											<li class="range">
+												招募范围：<span>公开</span>
+											</li>
+										</ul>
+									</div>
+									<p class="project_title">
+										<a href="project_detail.html">清河护河志愿服务活动</a>
+									</p>
+								</div>
+							</li>
+						</ul>
+
+						<div class="index_line"></div>
+					</div>
+				</div>
+			</div>
+			<!--主体 end-->
+			<footer class="footer_wrap">
+				<div class="footer_bg">
+					<div class="footer_main">
+						<div class="footer_main_top">
+							<ul>
+								<p class="footer_main_title">支持企业</p>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+							</ul>
+							<ul>
+								<p class="footer_main_title">支持企业</p>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+							</ul>
+							<ul>
+								<p class="footer_main_title">支持企业</p>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:">
+										<img src="images/compy.png" />
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer_main_bottom">
+							<div class="footer_con">
+								Copyright© 2018-2019 . 北京某某集团有限公司
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!--JavaScript-->
+		<script src="js/ftn.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

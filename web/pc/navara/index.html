@@ -1,0 +1,650 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>纳瓦拉 高端SUV级皮卡</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link type="text/css" rel="stylesheet" href="css/css.css" />
+		<script src="https://x.autoimg.cn/bi/topic/ahas_head.min.js?v=20180705"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="https://topic.autohome.com.cn/new/inc/2017_header_black.htm"></script>
+
+		 <div class="top1">
+			<div class="main">
+				<div class="c1">
+					<a href="https://navara.zznissan.com.cn/"><div class="header_btn"></div></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="top2">
+			<div class="main">
+				<div class="c2">
+					<form name="autoform" action="$" class="form-box icon-formDl">
+						<dl>
+							<dt class="icon-name"><span>*</span><label>姓名</label><i>：</i></dt>
+							<dd><input name="name" maxlength="10" placeholder="请填写姓名" class="textInp" valid="def" type="text"></dd>
+						</dl>
+						<dl>
+							<dt class="icon-mobile"><span>*</span><label>手机号码</label><i>：</i></dt>
+							<dd><input name="mobile" placeholder="请填写手机号码" class="textInp" maxlength="11" valid="def" type="tel"></dd>
+						</dl>
+						<dl>
+							<dt class="icon-province"><span>*</span><label>所在省份</label><i>：</i></dt>
+							<dd>
+								<select id="province" name="province" valid="def">
+									<option value="0">请选择省份</option>
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="icon-city"><span>*</span><label>所在城市</label><i>：</i></dt>
+							<dd>
+								<select id="city" name="city" valid="def">
+									<option value="0">请选择城市</option>
+								</select>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="icon-dealer"><span>*</span><label>请选择经销商</label><i>：</i></dt>
+							<dd>
+								<select name="dealer" id="dealer" valid="def">
+									<option value="0" selected="selected">请选择经销商</option>
+								</select>
+							</dd>
+						</dl>
+						<div class="formText"><span>*</span><input id="clause" valid="noempty|请勾选我同意《个人信息保护声明》" checked="checked" type="checkbox"> <label for="clause">我同意《<a href="#information" class="notice">个人信息保护声明</a>》：<br>您的个人资料有可能会提交至<em id="supplier">郑州日产</em>厂商的授权经销商或汽车之家客服，与您进一步沟通试驾、购车等事宜。</label></div>
+						<div class="inpBox">
+							<a href="javascript:void(0)" class="subBtn" id="submitOk">确认提交</a>
+							<a href="javascript:void(0)" class="qd mdBtn" id="md_btn">获奖名单</a>
+						</div>
+						<div class="loginText">如已经提交过资料，请
+							<a href="javascript:void(0)" class="login-btn">验证资料</a>参与抽奖</div>
+							<div class="kye1"><a href="#pronouncement" class="notice"></a></div> 
+
+					</form>
+					<div class="c21">
+						<div class="rotate-box">
+							<img id="rotate-bg" src="https://topic.autoimg.cn/marketing/2018/10/navara/turn_bg.png" />
+							<img src="https://topic.autoimg.cn/marketing/2018/10/navara/turn_zj.png" class="hand" onclick="turntable.go();" />
+							<div id="remain" class="num">您还有 0 次机会</div>
+							<div id="num" class="num_box">还有<span class="num">0</span>次机会</div>
+							<!-- 登录 -->
+							<div class="mask mask-login" style="display: none;">
+								<div class="box">
+									<div class="icon-close"></div>
+									<div class="info">验证资料</div>
+									<div class="txt">如果您尚未填写资料请先填写</div>
+									<div class="form">
+										<dl>
+											<dt>姓名：</dt>
+											<dd><input type="text" maxlength="10" id="name2" placeholder="请填写您的姓名"></dd>
+											<dt>电话：</dt>
+											<dd><input type="tel" maxlength="11" id="mobile2" placeholder="请填写您的手机号码"></dd>
+										</dl>
+									</div>
+									<div class="btn-area">
+										<a href="javascript:void(0)" class="btn-reg">提交</a>
+									</div>
+								</div>
+							</div>
+							<!-- 获奖结果弹层 -->
+							<div class="mask mask-result" style="display: none;">
+								<div class="box">
+									<div class="icon-close"></div>
+									<div class="tit">恭喜您</div>
+									<div class="prize"></div>
+									<div class="info"></div>
+
+								</div>
+							</div>
+							<!-- 其他结果弹层 -->
+							<div class="mask mask-fail" style="display: none;">
+								<div class="box">
+									<a href="javascript:void(0)" class="icon-close"></a>
+									<div class="txt"></div>
+								</div>
+							</div>
+							<div class="alert-box" style="display: none;">请先提交资料</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="top3">
+			<div class="main">
+				<div class="c3">
+					<a href="javascript:void(0)" class="aBtn_lb1 lBtn_lb1" title="向前翻" id="lBtn_lb1"></a>
+					<div class="scrollBox_lb1" style="width: 1000px;">
+						<ul id="scroll_lb1">
+							<li><img src="https://topic.autoimg.cn/marketing/2018/10/navara/ld1.jpg" alt="" /></li>
+							<li><img src="https://topic.autoimg.cn/marketing/2018/10/navara/ld2.jpg" alt="" /></li>
+							<li><img src="https://topic.autoimg.cn/marketing/2018/10/navara/ld3.jpg" alt="" /></li>
+							<li><img src="https://topic.autoimg.cn/marketing/2018/10/navara/ld4.jpg" alt="" /></li>
+						</ul>
+					</div>
+					<a href="javascript:void(0)" class="aBtn_lb1 rBtn_lb1" title="向后翻" id="rBtn_lb1"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="top4">
+			<div class="main">
+				<div class="c4">
+					<div class="c7">
+						<div class="c71">
+							<a class="group1" href="https://topic.autoimg.cn/marketing/2018/10/navara/d1.jpg"><img src="https://topic.autoimg.cn/marketing/2018/10/navara/jm_07.png" /></a>
+						</div>
+						<div class="c72">
+							<a class="group1" href="https://topic.autoimg.cn/marketing/2018/10/navara/d2.jpg"><img src="https://topic.autoimg.cn/marketing/2018/10/navara/jm_01.png" /></a>
+						</div>
+						<!--<div class="c73">
+							<a class="group1" href="https://topic.autoimg.cn/marketing/2018/10/navara/jm_03.png"><img src="https://topic.autoimg.cn/marketing/2018/10/navara/jm_03.png" /></a>
+						</div>-->
+						<div class="c74">
+							<a class="group1" href="https://topic.autoimg.cn/marketing/2018/10/navara/d3.jpg"><img src="https://topic.autoimg.cn/marketing/2018/10/navara/jm_04.png" /></a>
+						</div>
+						<div class="c75">
+							<a class="group1" href="https://topic.autoimg.cn/marketing/2018/10/navara/d4.jpg"><img src="https://topic.autoimg.cn/marketing/2018/10/navara/jm_02.png" /></a>
+						</div>
+						<div class="c76">
+							<a class="group1" href="https://topic.autoimg.cn/marketing/2018/10/navara/d5.jpg"><img src="https://topic.autoimg.cn/marketing/2018/10/navara/jm_05.png" /></a>
+						</div>
+						<div class="c77">
+							<a class="group1" href="https://topic.autoimg.cn/marketing/2018/10/navara/d6.jpg"><img src="https://topic.autoimg.cn/marketing/2018/10/navara/jm_06.png" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="top5">
+			<div class="main">
+				<div class="c5">
+					<iframe src='www.html' frameborder=no allowtransparency="true" border=0 marginwidth=0 marginheight=0 align=center width=1200 scrolling=no height=470 noresize></iframe>
+				</div>
+			</div>
+		</div>
+
+		<div class="top6">
+			<div class="main">
+				<div class="c6">
+					<div class="c61111">
+						<form name="autoform" action="$" class="form-box form-box1 icon-formDl icon-formDl1">
+							<dl>
+								<dt class="icon-city"><span>*</span><label>所在城市</label><i>：</i></dt>
+								<dd>
+									<select id="city" name="city" valid="def">
+										<option value="0">请选择城市</option>
+									</select>
+								</dd>
+							</dl>
+							<dl>
+								<dt class="icon-dealer"><span>*</span><label>请选择经销商</label><i>：</i></dt>
+								<dd>
+									<select name="dealer" id="dealer" valid="def">
+										<option value="0" selected="selected">请选择经销商</option>
+									</select>
+								</dd>
+							</dl>
+
+						</form>
+						<div class="jxstb">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="45">省区</td>
+									<td width="110">地市</td>
+									<td width="280">代理商公司全称</td>
+									<td >代理商地址</td>
+									<td width="200">销售热线</td>
+								</tr>
+							</table>
+						</div>
+						<div class="jxsnr">
+							<div class="rolljxs">
+								<table cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="45">安徽</td>
+										<td width="110">合肥市</td>
+										<td width="280">安徽伟业汽车贸易有限公司</td>
+										<td >合肥市包河区繁华大道12号</td>
+										<td width="200">0551-63520889</td>
+									</tr>
+									<tr>
+										<td>北京</td>
+										<td>北京市</td>
+										<td>北京天亿通汽车贸易有限责任公司</td>
+										<td>北京市朝阳区豆各庄乡黄厂区甲399号3栋</td>
+										<td>010-84112268/84123172</td>
+									</tr>
+									<tr>
+										<td>北京</td>
+										<td>北京市</td>
+										<td>北京中汽雷日汽车有限公司</td>
+										<td>北京市丰台区南四环中路260号新发地汽车交易市场</td>
+										<td>010-87880882</td>
+									</tr>
+									<tr>
+										<td>北京</td>
+										<td>北京市</td>
+										<td>北京鑫鹏世纪汽车销售服务有限公司</td>
+										<td>北京市朝阳区高碑店乡白家楼村29号</td>
+										<td>010-65716262</td>
+									</tr>
+									<tr>
+										<td>北京</td>
+										<td>北京市</td>
+										<td>北京华盛昌裕达汽车贸易有限公司</td>
+										<td>北京市海淀区闵庄路2号（闵航路内200米路西）</td>
+										<td>010-88478080</td>
+									</tr>
+									<tr>
+										<td>河北</td>
+										<td>石家庄市</td>
+										<td>大道河北汽车贸易有限公司</td>
+										<td>河北省石家庄市鹿泉区开发区龙泉东路168号 </td>
+										<td>0311 -89919000</td>
+									</tr>
+									<tr>
+										<td>河北</td>
+										<td>保定市</td>
+										<td>保定市大地汽车贸易有限公司</td>
+										<td>河北省保定市乐凯北大街1846号</td>
+										<td>0312-3221888</td>
+									</tr>
+									<tr>
+										<td>河北</td>
+										<td>沧州市</td>
+										<td>沧州市大道汽车销售有限公司</td>
+										<td>沧州市新华区104与307国道交叉口西行200米路南</td>
+										<td>0317-2043699</td>
+									</tr>
+									<tr>
+										<td>河北</td>
+										<td>邯郸市</td>
+										<td>邯郸市创佳汽车贸易有限公司</td>
+										<td>邯郸市东环路与和平路交口处北行100米路东</td>
+										<td>0310-8028111</td>
+									</tr>
+									<tr>
+										<td>河北</td>
+										<td>秦皇岛市</td>
+										<td>秦皇岛盛驰商贸有限公司</td>
+										<td>秦皇岛海港区北环路28号</td>
+										<td>0335-3105000</td>
+									</tr>
+									<tr>
+										<td>河北</td>
+										<td>唐山市</td>
+										<td>唐山市庞大浩翔汽车销售服务有限公司</td>
+										<td>唐山市路南区唐柏璐1号</td>
+										<td>0315-2960009 </td>
+									</tr>
+									<tr>
+										<td>河北</td>
+										<td>张家口市</td>
+										<td>张家口华盛昌同益汽车销售有限公司  </td>
+										<td>河北省张家口市高新区胜利南路36号</td>
+										<td>0313-2195858</td>
+									</tr>
+									<tr>
+										<td>河北</td>
+										<td>廊坊市</td>
+										<td>廊坊市华泰昌汽车贸易有限公司</td>
+										<td>河北省廊坊市广阳区俪水嘉园127-2号A区</td>
+										<td>0316-2765050</td>
+									</tr>
+									<tr>
+										<td>河北</td>
+										<td>承德市</td>
+										<td>承德万豪汽车销售有限公司</td>
+										<td>承德市双滦区狮子园路13号</td>
+										<td>0314-4320606</td>
+									</tr>
+									<tr>
+										<td>湖北</td>
+										<td>武汉市</td>
+										<td>武汉达喀尔汽车销售服务有限公司</td>
+										<td>武汉市经济技术开发区东风大道海天汽配城</td>
+										<td>027-52369555</td>
+									</tr>
+									<tr>
+										<td>湖北</td>
+										<td>荆州市</td>
+										<td>荆州市茗鸿汽车销售服务有限公司</td>
+										<td>湖北省荆州市荆州大道竹叶山车世界B15栋</td>
+										<td>0716-8029111   0716-8029000</td>
+									</tr>
+									<tr>
+										<td>湖北</td>
+										<td>十堰市</td>
+										<td>湖北盈安汽车销售服务有限公司</td>
+										<td>湖北省十堰市浙江路万通工业园</td>
+										<td>0719-8786588</td>
+									</tr>
+									<tr>
+										<td>湖北</td>
+										<td>襄阳市</td>
+										<td>襄阳襄东郑日汽车销售服务有限公司</td>
+										<td>湖北襄阳市汉十高速襄阳北高速路口光彩国际汽车城</td>
+										<td>0710-2829819</td>
+									</tr>
+									<tr>
+										<td>湖北</td>
+										<td>宜昌市</td>
+										<td>宜昌交运集团麟觉汽车销售服务有限公司</td>
+										<td>湖北省宜昌市岗窑路5号</td>
+										<td>0717-6283088</td>
+									</tr>
+									<tr>
+										<td>湖北</td>
+										<td>随州市</td>
+										<td>随州市茗辉日产汽车服务有限公司</td>
+										<td>随州市曾都区星光一路金华汽车市场西门</td>
+										<td>0722-7111238</td>
+									</tr>
+									<tr>
+										<td>湖北</td>
+										<td>恩施土家族苗族自治州</td>
+										<td>利川一诺商贸有限公司</td>
+										<td>湖北省恩施州利川市明捷大道1号利川国际汽车城4号楼4-5栋</td>
+										<td>0718-7018222</td>
+									</tr>
+									<tr>
+										<td>湖南</td>
+										<td>长沙市</td>
+										<td>湖南湘丰车业有限公司</td>
+										<td>长沙市中南汽车世界物贸大道J-04栋</td>
+										<td>0731-85252388</td>
+									</tr>
+									<tr>
+										<td>湖南</td>
+										<td>怀化市</td>
+										<td>怀化臻亮汽车销售服务有限公司</td>
+										<td>湖南省怀化市鹤城区红星路西南汽车城12栋225号</td>
+										<td>0745-2659675</td>
+									</tr>
+									<tr>
+										<td>湖南</td>
+										<td>邵阳市</td>
+										<td>长沙腾发汽车销售有限公司邵阳分公司</td>
+										<td>邵阳市双新区东大路五里牌粮食储备库对面</td>
+										<td>0739-5284376</td>
+									</tr>
+									<tr>
+										<td>湖南</td>
+										<td>常德市</td>
+										<td>常德湘柳汽车销售服务有限公司</td>
+										<td>湖南省常德市武陵区常德大道金凤川紫3-09幢114-117房</td>
+										<td>0736-7234333</td>
+									</tr>
+									<tr>
+										<td>湖南</td>
+										<td>郴州市</td>
+										<td>郴州宏程汽车销售有限公司</td>
+										<td>湖南省长沙市经济技术开发区中南汽车世界物贸大道J04号</td>
+										<td>0731-85252388</td>
+									</tr>
+									<tr>
+										<td>湖南</td>
+										<td>岳阳市</td>
+										<td>岳阳骏通汽车贸易有限公司</td>
+										<td>岳阳市经济技术开发区巴陵东路375号414000</td>
+										<td>0730-8261333</td>
+									</tr>
+									<tr>
+										<td>湖南</td>
+										<td>娄底市</td>
+										<td>娄底市瑾轩汽车贸易有限公司</td>
+										<td>湖南省娄底市湘阳街与檀香路交叉处</td>
+										<td>0738-8333918</td>
+									</tr>
+									<tr>
+										<td>江西</td>
+										<td>赣州市</td>
+										<td>赣州市盛祥汽车销售服务有限公司</td>
+										<td>江西省赣州市客家大道国际汽车城</td>
+										<td>0797-2196269/268</td>
+									</tr>
+									<tr>
+										<td>江西</td>
+										<td>南昌市</td>
+										<td>九江明诚汽车销售服务有限公司南昌分公司</td>
+										<td>江西省南昌市红谷滩新区闽江路168号</td>
+										<td>18979206271</td>
+									</tr>
+									<tr>
+										<td>江西</td>
+										<td>九江市</td>
+										<td>九江明诚汽车销售服务有限公司</td>
+										<td>江西省九江市九瑞大道187号</td>
+										<td>0792-8922666</td>
+									</tr>
+									<tr>
+										<td>天津</td>
+										<td>天津市</td>
+										<td>天津市浩物机电汽车贸易有限公司</td>
+										<td>天津市北辰区北辰道2号浩物汽车园</td>
+										<td>022-84111523/746</td>
+									</tr>
+									<tr>
+										<td>天津</td>
+										<td>天津市</td>
+										<td>天津闽鑫机电设备有限公司</td>
+										<td>天津市西青区恩泽路与除华道交叉口东200米</td>
+										<td>022-27955581</td>
+									</tr>
+								</table>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<span id="author">专题负责人：曹雨/王媛媛/刘刚/李文</span>
+		<script type="text/javascript" src="https://topic.autohome.com.cn/new/inc/2017_footer_black.htm"></script>
+
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script src="../../../js/scroll_min.js"></script>
+		<script src="https://x.autoimg.cn/topic/js/jquery.colorbox-min.js" type="text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="https://x.autoimg.cn/topic/css/colorbox.css" />
+		<script type="text/javascript" src="https://topic.autohome.com.cn/new/inc/law.htm"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".qd").each(function() {
+					var s = $(this).html();
+					$(this).hover(function() {
+						$(this).html('敬请期待');
+					}, function() {
+						$(this).html(s);
+					});
+				});
+				$(".color1 a").colorbox({
+					rel: 'pic1'
+				});
+			});
+		</script>
+		<!--报名器 start-->
+		<script src="https://x.autoimg.cn/topic/js/autoform3.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/selectpick2.js"></script>
+		<script type="text/javascript">
+			$(".form-box select").selectpick({});
+			$(".form-box input").focus(function() {
+				var d = $(this).parents("dd");
+				d.addClass("cur").prev().addClass("cur");
+				return false;
+			}).blur(function() {
+				var d = $(this).parents("dd");
+				d.removeClass("cur").prev().removeClass("cur");
+			});
+		</script>
+		<!--报名器 end-->
+		<!--时间：2018-10-10描述：大转盘 start-->
+		<script src="https://x.autoimg.cn/topic/js/autoform3.js" type="text/javascript"></script>
+		<script src="https://x.autoimg.cn/topic/js/linkage.js" type="text/javascript"></script>
+		<script src="https://x.autoimg.cn/topic/js/jquery-rotate.2.2.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			AF.api.topicId = 102043;
+			// 大转盘动画实例
+			var $close = $('.icon-close'),
+				$login = $('.mask-login'),
+				$alert = $('.alert-box'),
+				formTop = $('form:eq(0)').offset(),
+				$tit = $('#num'),
+				$fail = $('.mask-fail'),
+				$failTxt = $fail.find('.txt'),
+				$result = $('.mask-result'),
+				$prize = $result.find('.prize'),
+				$info = $result.find('.info');
+			var turntable = {
+				rotate: null,
+				init: function() {
+					this.rotate = new Rotate('rotate-bg', 6);
+					this.loadStatus();
+				},
+				loadStatus: function() {
+					AF.api.getlotterycount(function(re) {
+						if(re.status == 0) {
+							$tit.hide();
+						} else {
+							$tit.html('还有<span class="num">' + re.count + '</span>次机会').show();
+						}
+					});
+				},
+				login: function() {
+					var name = AF.$('name2').value;
+					var mobile = AF.$('mobile2').value;
+					AF.api.login(name, mobile, function(re) {
+						if(re.status == 1) {
+							$login.hide();
+							turntable.loadStatus();
+						} else {
+							AF.alert(re.msg);
+						}
+					});
+				},
+				go: function() {
+					var rotate = this.rotate;
+					if(rotate.isReady) {
+						AF.api.lottery(function(re) {
+							// status 0失败  1成功  2未登录  // count 剩余抽奖次数   // prizeId 奖品ID，0未中奖  // msg 失败或成功消息
+							// re: { status: 1, count: 0, prizeId: 0, msg: "xxx" }
+							if(re.status == 1) { // 操作成功
+								// 更新次数
+								$tit.html('还有<span class="num">' + re.count + '</span>次机会');
+								// 跟据抽奖情况转动大盘，并等待转动结束显示结果
+								var turnTypes = {
+									"710": 1, //对应奖项元素data-index的值-1
+									"709": 3, //对应奖项元素data-index的值-1
+									"711": 5, //对应奖项元素data-index的值-1
+									"0": 2 //对应奖项元素data-index的值-1
+								};
+
+								rotate.drawNum = turnTypes[re.prizeId];
+
+								rotate.turn(rotate.drawNum, function() {
+									switch(rotate.drawNum) {
+										case 1:
+											$prize.html('<img src="https://topic.autoimg.cn/marketing/2018/10/navara/jp1.png"/>');
+											$info.html('获得 英得尔车载冰箱 一台');
+											$result.show();
+											break;
+										case 3:
+											$prize.html('<img src="https://topic.autoimg.cn/marketing/2018/10/navara/jp2.png"/>');
+											$info.html('获得 飞利浦车载空气净化器  一台');
+											$result.show();
+											break;
+										case 5:
+											$prize.html('<img src="https://topic.autoimg.cn/marketing/2018/10/navara/jp3.png"/>');
+											$info.html('获得 小米旅行箱20英寸  一个');
+											$result.show();
+											break;
+										case 0:
+											$failTxt.html('恭喜你<br\>获得再来一次的机会');
+											$fail.show();
+											break;
+										default:
+											$failTxt.html('很遗憾<br\>你这次没有中奖');
+											$fail.show();
+									}
+								});
+							} else if(re.status == 2) { // 未登录
+								$alert.show();
+								$('form :input:visible').eq(0).focus();
+								if(formTop) $("html,body").animate({
+									scrollTop: formTop.top
+								}, 500);
+								setTimeout(function() {
+									$alert.fadeOut(200);
+								}, 1000);
+							} else { // 操作失败
+								$failTxt.html('很遗憾<br\>你的抽奖次数已经用完');
+								$fail.show();
+							}
+						});
+					} // if rotate.isReady
+				} // go
+			};
+			turntable.init();
+			$close.on('click', function() {
+				$(this).parents('.mask').hide();
+			});
+			$('.login-btn').on('click', function() {
+				$login.show();
+			});
+		</script>
+		<!--时间：2018-10-10描述：大转盘 end-->
+
+		<!--时间：2018-10-10描述：车型亮点 start-->
+		<script src="../../../js/scroll_min.js"></script>
+		<script type="text/javascript">
+			$("#scroll_lb1").autoTopic_scroll({
+				leftBtn: "#lBtn_lb1",
+				rightBtn: "#rBtn_lb1",
+				control: "#control_lb1",
+				controlToc: ".toc"
+			});
+		</script>
+
+		<!--时间：2018-10-10描述：车型亮点 end-->
+
+		<!--时间：2018-10-10描述：精美车图 start-->
+		<link type="text/css" rel="stylesheet" href="https://x.autoimg.cn/topic/css/colorbox.css" />
+		<script src="https://x.autoimg.cn/topic/js/jquery.colorbox-min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".group1").colorbox({
+					rel: 'group1'
+				});
+			});
+		</script>
+		<!--时间：2018-10-10描述：精美车图 end-->
+		<script src="https://x.autoimg.cn/topic/js/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			if(jQuery.browser.version < 7) {
+				$(".rolljxs").css({
+					"overflow-y": "auto"
+				})
+			} else {
+				$(".rolljxs").mCustomScrollbar({
+					scrollInertia: 600,
+					autoDraggerLength: false,
+					advanced: {
+						updateOnContentResize: true
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>
+
+<script language="javascript" type="text/javascript" src="https://img.autohome.com.cn/count.js"></script><script language="javascript" type="text/javascript">var pvTrack = new PVTrack(); pvTrack.site = 1;pvTrack.object = 7794;pvTrack.category = 39;pvTrack.subcategory = 13475;pvTrack.series = 4307;pvTrack.pageVars = {topic_show_id:'',topic_click_id:''};pvTrack.track();(function(){function getQuery(name,defValue,encoding){var reg=new RegExp("(^|&)"+name+"=([^&]*)(&|$)","i");var r=window.location.search.substr(1).match(reg)||window.location.hash.substr(1).match(reg);if(r!=null){if(encoding){return encoding(r[2])}return unescape(r[2])}return defValue}function getCookie(name){var reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)","i");var r=document.cookie.match(reg);if(r!=null){return decodeURIComponent(r[2])}return null}var pv_id=getQuery('showid',0,decodeURIComponent);var click_id=getQuery('clickid',0,decodeURIComponent);if(pv_id==0&&click_id==0){var arr=null;var str=getCookie('ad_ctl');if(str){arr=str.split('|');if(arr.length>=2){pv_id=arr[0];click_id=arr[1]}}}if(pvTrack){pvTrack.pageVars.topic_show_id=pv_id;pvTrack.pageVars.topic_click_id=click_id}})(); </script><script src="https://x.autoimg.cn/bi/topic/ahas_body.min.js"></script>

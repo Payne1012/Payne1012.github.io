@@ -1,0 +1,26 @@
+@charset "gb2312";
+/* CSS Document */
+
+body{margin:0px;padding:0px;font-size:14px;font-family:"Î¢ÈíÑÅºÚ","SimHei","SimSun";line-height:24px; background-color:#ebebeb; color:#000;}
+div, h1, h2, h3, h4,h5, p, form, label, input, textarea, img, span,dl,dt,dd{margin:0; padding:0;}
+p,div,form,img,ul,ol,li,dl,dt,dd {margin:0;padding:0;border:0; text-align:left;}
+ul,ol,li{list-style:none;}
+body .footer{padding-top: 80px; color:#FFF;}
+a{ color:#6f0246; text-decoration:none; outline:none;}
+a:hover{text-decoration:underline; outline:none;}
+img{border:none;}
+
+
+
+
+
+
+h5{color:#000;}
+ pre {  border: #999 dashed 1px; color:#000; background: #f6f6f6;padding:10px;
+ white-space: pre-wrap; /* css-3 */
+white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+white-space: -pre-wrap; /* Opera 4-6 */
+white-space: -o-pre-wrap; /* Opera 7 */
+word-wrap: break-word; /* Internet Explorer 5.5+ */ 
+ 
+ }

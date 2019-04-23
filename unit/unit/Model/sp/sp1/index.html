@@ -1,0 +1,92 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>单视频</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+  
+</head>
+<body>
+
+
+      
+<div id="playerContainer" style=" width:600px; height:400px;"></div>
+
+
+
+
+
+<h5>HTML</h5>
+<pre>
+&lt;div id="playerContainer" style=" width:600px; height:400px;"&gt; &lt;/div&gt; 
+</pre>
+<h5>js</h5>
+    <pre>
+&lt;script type="text/javascript" src="https://p-vp.autohome.com.cn/api/player"&gt; &lt;/script&gt; 
+&lt;script type="text/javascript"&gt; 
+    window.on_ahp_init = function () {
+        function showVideo(domID, vid, url, auto) {
+            auto = false;
+            if (arguments.length >= 3) {
+                if (typeof arguments[2] != 'string' || arguments[2] == 1) {
+                    auto = arguments[2];
+                }
+            }
+            var player = AHVP.newPlayer({
+                vid: vid,
+                container: domID,
+                //指定是否自动播放，值为 1 或 true 时为自动播放，默认false 不自动播放 （此参数仅对PC端生效）
+                autostart: auto
+            });
+            if (arguments.length >= 3) {
+                if (typeof arguments[2] == 'string') {
+                    player.addEventListener(AHVP.PLAYER_EVENT.VIDEO_START, function (e) {
+                        jQuery.get(url);
+                    });
+                }
+            }
+        }
+
+        //单个视频
+        showVideo("playerContainer", "2F7313D234F3713D",true)
+  }
+&lt;/script&gt; 
+    </pre>
+
+
+<script src="https://x.autoimg.cn/topic/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://p-vp.autohome.com.cn/api/player"></script>
+<script type="text/javascript">
+    window.on_ahp_init = function () {
+        function showVideo(domID, vid, url, auto) {
+            auto = false;
+            if (arguments.length >= 3) {
+                if (typeof arguments[2] != 'string' || arguments[2] == 1) {
+                    auto = arguments[2];
+                }
+            }
+            var player = AHVP.newPlayer({
+                vid: vid,
+                container: domID,
+                //指定是否自动播放，值为 1 或 true 时为自动播放，默认false 不自动播放 （此参数仅对PC端生效）
+                autostart: auto
+            });
+            if (arguments.length >= 3) {
+                if (typeof arguments[2] == 'string') {
+                    player.addEventListener(AHVP.PLAYER_EVENT.VIDEO_START, function (e) {
+                        jQuery.get(url);
+                    });
+                }
+            }
+        }
+
+        //单个视频
+        showVideo("playerContainer", "2F7313D234F3713D",true)
+  }
+</script>
+
+</body>
+</html>

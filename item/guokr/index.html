@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html ng-app="app" style="font-size: 23.125px;" class="ng-scope" lang="en">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<style type="text/css">
+			@charset "UTF-8";
+			[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate) {
+				display: none !important;
+			}
+			
+			ng\:form {
+				display: block;
+			}
+		</style>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>guokr</title>
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" type="text/css" href="css/swiper.css">
+		<script>
+			// rem
+			document.documentElement.style.fontSize = document.documentElement.clientWidth * 20 / 320 + 'px';
+			window.onresize = function() {
+				document.documentElement.style.fontSize = document.documentElement.clientWidth * 20 / 320 + 'px';
+			};
+		</script>
+		<script src="js/angular.js"></script>
+		<script src="js/swiper.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<a href="javascript:;" class="menu">菜单</a>
+			<h1>Guokr.com</h1>
+			<a href="javascript:;" class="pc">pc</a>
+		</header>
+		<section>
+			<div class="user">
+				<a href="javascript:;" class="login">用户登录</a>
+				<a href="javascript:;" class="register">用户注册</a>
+			</div>
+			<div class="swiper-container swiper-container-horizontal">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="2" >
+						<img src="images/pic-3.png" alt="">
+						<div class="opa"></div>
+						<a href="javascript:;" class="font">果壳网美图秀秀-蒲公英</a>
+					</div>
+					<div class="swiper-slide swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="0">
+						<img src="images/pic-1.png" alt="">
+						<div class="opa"></div>
+						<a href="javascript:;" class="font">果壳网美图秀秀-紫菊花</a>
+					</div>
+					<div class="swiper-slide" data-swiper-slide-index="1"><img src="images/pic-2.png" alt="">
+						<div class="opa"></div>
+						<a href="javascript:;" class="font">果壳网美图秀秀-紫菊花</a>
+					</div>
+					<div class="swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="2">
+						<img src="images/pic-3.png" alt="">
+						<div class="opa"></div>
+						<a href="javascript:;" class="font">果壳网美图秀秀-蒲公英</a>
+					</div>
+					<div class="swiper-slide swiper-slide-duplicate swiper-slide-prev swiper-slide-duplicate-next" data-swiper-slide-index="0">
+						<img src="guokr/pic-1.png" alt="">
+						<div class="opa"></div>
+						<a href="javascript:;" class="font">果壳网美图秀秀-紫菊花</a>
+					</div>
+				</div>
+				<div class="swiper-pagination swiper-pagination-bullets">
+					<span class="swiper-pagination-bullet"></span>
+					<span class="swiper-pagination-bullet"></span>
+					<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+				</div>
+				<a href="javascript:;" class="swiper-button-prev"></a>
+				<a href="javascript:;" class="swiper-button-next"></a>
+			</div>
+			<div class="news ng-scope" ng-controller="news">
+				<ul>
+					<!-- ngRepeat: item in list -->
+					<li ng-repeat="item in list" class="ng-scope">
+						<a href="javascript:;" title="" class="ng-binding">解读科学观点时，你应该知道的20个</a>
+					</li>
+					<!-- end ngRepeat: item in list -->
+					<li ng-repeat="item in list" class="ng-scope">
+						<a href="javascript:;" title="" class="ng-binding">运动出点汗，更好来谈判</a>
+					</li>
+					<!-- end ngRepeat: item in list -->
+					<li ng-repeat="item in list" class="ng-scope">
+						<a href="javascript:;" title="" class="ng-binding">"关掉"旧习惯，本性不在难移</a>
+					</li>
+					<!-- end ngRepeat: item in list -->
+					<li ng-repeat="item in list" class="ng-scope">
+						<a href="javascript:;" title="" class="ng-binding">男女搭配，破案不累</a>
+					</li>
+					<!-- end ngRepeat: item in list -->
+					<li ng-repeat="item in list" class="ng-scope">
+						<a href="javascript:;" title="" class="ng-binding">腰窝，性感无误？</a>
+					</li>
+					<!-- end ngRepeat: item in list -->
+					<li ng-repeat="item in list" class="ng-scope">
+						<a href="javascript:;" title="" class="ng-binding">有7000多种语言，就有7000多个"平行"</a>
+					</li>
+					<!-- end ngRepeat: item in list -->
+					<li ng-repeat="item in list" class="ng-scope">
+						<a href="javascript:;" title="" class="ng-binding">久坐杀精—— ——今天，你坐多久了？</a>
+					</li>
+					<!-- end ngRepeat: item in list -->
+				</ul>
+			</div>
+		</section>
+		<section class="core">
+			<div class="hot">
+				<h2><a href="javascript:;">热门问答</a> <span></span></h2>
+				<ul>
+					<li>
+						<a href="javascript:;" title="">科技</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">生活</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">人文</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">自然</a>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<h2 class="title">如果把探测器撞倒彗星上会怎么样？</h2><img src="images/hot_1.png" alt="">
+				<p>撞上去的事情人类已经干过了。。深度撞击号（英语：Deep Impact）是美国国家</p>
+			</div>
+			<div class="end">
+				<ul>
+					<li>
+						<a href="javascript:;" title="">这个"肥皂放入牛奶"的效果是怎么产生</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">制造出大于全面幅的感光元件有意义吗</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">磁场是运动的电场吗？</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">什么函数能描述你的人生？</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="core">
+			<div class="hot">
+				<h2><a href="javascript:;">小组热帖</a> <span></span></h2>
+				<ul>
+					<li>
+						<a href="javascript:;" title="">科技</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">生活</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">人文</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">娱乐</a>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<h2 class="title">史密森尼国家自然史博物馆：古脊椎动物...</h2><img src="images/hot_2.png" alt="">
+				<p>撞上去的事情人类已经干过了。。深度撞击号（英语：Deep Impact）是美国国家</p>
+			</div>
+			<div class="end">
+				<ul>
+					<li>
+						<a href="javascript:;" title="">这个"肥皂放入牛奶"的效果是怎么产生...</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">制造出大于全面幅的感光元件有意义吗...</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">磁场是运动的电场吗？</a>
+					</li>
+					<li>
+						<a href="javascript:;" title="">什么函数能描述你的人生？</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<div class="scroll"><span></span>
+			<a href="javascript:;" title="">回到顶部</a>
+		</div>
+		<footer>
+			<a href="javascript:;" class="pcEnd"><span class="pl1"></span> PC版 </a>
+			<a href="javascript:;" class="MobileApp"><span class="pl2"></span> 移动应用</a>
+		</footer>
+		<script src="js/index.js"></script>
+	</body>
+
+</html>

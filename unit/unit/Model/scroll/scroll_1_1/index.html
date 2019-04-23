@@ -1,0 +1,100 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>按钮单张滚动</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script src="http://x.autoimg.cn/bi/topic/ahas_head.20160804.min.js"></script>
+</head>
+<body>
+
+
+      
+  
+      <a href="javascript:void(0)" class="aBtn_lb1 lBtn_lb1" title="向前翻" id="lBtn_lb1"></a>
+            <div class="scrollBox_lb1" style="  width: 960px;">
+                <ul id="scroll_lb1">
+                    <li>
+                       <div class="fld1">
+                        <img src="images/gd1.jpg" alt="" />
+                       </div>
+                    </li>
+                    <li>
+                       <div class="fld1">
+                        <img src="images/gd2.jpg" alt="" />
+                      </div>
+                    </li>
+               
+                </ul>
+           </div>
+            <a href="javascript:void(0)" class="aBtn_lb1 rBtn_lb1" title="向后翻" id="rBtn_lb1"></a>
+     
+     
+     
+     
+
+<h5>HTML</h5>
+    <pre>
+&lt;a href="javascript:void(0)" class="aBtn_lb1 lBtn_lb1" title="向前翻" id="lBtn_lb1"&gt;&lt;/a&gt;
+&lt;div class=&quot;scrollBox_lb1&quot; style=&quot;width: 960px;&quot;&gt;
+    &lt;ul id=&quot;scroll_lb1&quot;&gt;
+        &lt;li&gt;&lt;img src="images/gd1.jpg" alt=""/&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="images/gd2.jpg" alt=""/&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;a href=&quot;javascript:void(0)&quot; class=&quot;aBtn_lb1 rBtn_lb1&quot; title=&quot;向后翻&quot; id=&quot;rBtn_lb1&quot;&gt;&lt;/a&gt;
+</pre>
+
+
+   <h5>CSS</h5>
+    <pre>.scrollBox_lb1 { position:relative; width:2860px;height:400px;overflow:hidden;}
+.scrollBox_lb1 ul {position:absolute;top:0; left:0;padding: 0;height:400px; margin: 0;}
+.scrollBox_lb1 li {float:left; width:960px;position:relative; margin-right:9px;}
+.scrollBox_lb1 li a:hover {filter:alpha(opacity=95);/*IE*/opacity:0.9;/*Mozilla*/}
+.aBtn_lb1 {float:left;position: absolute; height:55px; width:34px; background:url(../images/anan1.png) 0px 0px  no-repeat;filter:alpha(opacity=80);/*IE*/opacity:0.8;/*Mozilla*/}
+.aBtn_lb1:hover{filter:alpha(opacity=100);/*IE*/opacity:1;/*Mozilla*/}
+.aBtnD_lb1{float: left; width: 34px; height: 55px;}
+.lBtn_lb1 {top:142px;left: 0px;z-index: 2;}
+.rBtn_lb1 {background-position:-34px center;top:142px;left: 927px;z-index: 99;}
+</pre>
+
+
+   <h5>JS</h5>
+    <pre>
+&lt;script src="https://x.autoimg.cn/topic/js/scroll_min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+$("#scroll_lb1").autoTopic_scroll({
+        leftBtn:"#lBtn_lb1",
+        rightBtn:"#rBtn_lb1",
+        control: "#control_lb1",
+        controlToc : ".toc" 
+ });
+&lt;/script&gt;</pre>
+
+
+
+
+<script src="https://x.autoimg.cn/topic/js/jquery-1.8.3.min.js" type="text/javascript"></script>  <!--通用-->
+<script src="https://x.autoimg.cn/topic/js/scroll_min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$("#scroll_lb1").autoTopic_scroll({
+        leftBtn:"#lBtn_lb1",
+        rightBtn:"#rBtn_lb1",
+        control: "#control_lb1",
+        controlToc : ".toc" 
+ });
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

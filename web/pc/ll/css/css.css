@@ -1,0 +1,1560 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+th,
+td,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea {
+	margin: 0;
+	padding: 0;
+}
+
+em,
+i {
+	font-style: normal;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font: 8px arial, "Microsoft YaHei", "SimHei", "SimSun", sans-serif;
+}
+
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+img,
+fieldset {
+	border: 0;
+	vertical-align: middle;
+}
+
+textarea {
+	resize: none;
+}
+
+a {
+	outline: 0;
+}
+
+a:active {
+	star: expression(this.onFocus=this.blur());
+}
+
+:focus {
+	outline: 0;
+}
+
+table {
+	table-layout: fixed;
+}
+
+.pr {
+	position: relative;
+}
+
+.clear {
+	font-size: 0;
+	line-height: 0;
+	height: 0;
+	overflow: hidden;
+	clear: both;
+	visibility: hidden;
+}
+
+ul.fl,
+ol.fl {
+	float: left;
+	display: block;
+}
+
+
+/*body*/
+
+body {
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-size: 12px;
+	text-align: left;
+	background: #d7d7d9;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+	color: #404d71;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #404d71;
+	text-decoration: underline;
+}
+
+a:hover img {
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+
+.main {
+	margin: 0 auto;
+	width: 1200px;
+}
+
+.red {
+	color: #fff;
+}
+
+.red:link,
+.red:visited,
+.red:hover,
+.red:active {
+	color: #fff;
+}
+
+.aLink {
+	display: block;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.aLink:link,
+.aLink:visited,
+.aLink:hover,
+.aLink:active {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+/*min-footer*/
+
+
+/*
+body .footer{ height: 28px; line-height: 28px; position: absolute; width:100%; bottom: 0; .section{ padding: 0; }
+}
+body .author{ position: absolute; width:100%; bottom: 28px;
+}
+*/
+
+
+/*bg*/
+
+
+/*# sourceMappingURL=css.css.map */
+
+
+/* https://topic.autohome.com.cn/new/marketing/2017/1/bmw/
+https://topic.autohome.com.cn/new/marketing/2018/2/karoq/
+https://topic.autoimg.cn/marketing/2017/1/bmw/images.jpg */
+
+.top1,
+.top1 .main {
+	height: 599px;
+	background: url(../images/bg_01.jpg) center top no-repeat;
+}
+
+.top2,
+.top2 .main {
+	height: 450px;
+	background: url(../images/bg_02.jpg) center top no-repeat;
+}
+
+.top3,
+.top3 .main {
+	height: 952px;
+	background: url(../images/bg_03.jpg) center top no-repeat;
+}
+
+.top4,
+.top4 .main {
+	height: 627px;
+	background: url(../images/bg_04.jpg) center top no-repeat;
+}
+
+.top5,
+.top5 .main {
+	height: 488px;
+	background: url(../images/bg_05.jpg) center top no-repeat;
+}
+
+.top6,
+.top6 .main {
+	height: 340px;
+	background: url(../images/bg_06.jpg) center top no-repeat;
+}
+
+.c1,
+.c2,
+.c3,
+.c4,
+.c5,
+.c6 {
+	position: relative;
+}
+
+.c21 {
+	position: absolute;
+	left: 560px;
+	top: 80px;
+	font-size: 12px;
+}
+
+.formText a {
+	color: #a91114;
+	text-decoration: underline;
+}
+
+.formText a:hover {
+	text-decoration: none;
+}
+
+.lr211 {
+	transform-origin: 100% 0;
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.lr211:hover {
+	animation-name: wobble-bottom;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+}
+
+@keyframes wobble-bottom {
+	15% {
+		-webkit-transform: skew(-18deg);
+		transform: skew(-18deg);
+	}
+	30% {
+		-webkit-transform: skew(18deg);
+		transform: skew(18deg);
+	}
+	45% {
+		-webkit-transform: skew(-9deg);
+		transform: skew(-9deg);
+	}
+	60% {
+		-webkit-transform: skew(9deg);
+		transform: skew(9deg);
+	}
+	75% {
+		-webkit-transform: skew(-2deg);
+		transform: skew(-2deg);
+	}
+	100% {
+		-webkit-transform: skew(0);
+		transform: skew(0);
+	}
+}
+
+.tt {
+	position: absolute;
+	top: 60px;
+	left: 950px;
+}
+
+.c71 a {
+	position: absolute;
+	left: 0px;
+	top: 404px;
+	width: 224px;
+	height: 68px;
+}
+
+.c72 a {
+	position: absolute;
+	left: 126px;
+	top: 256px;
+	width: 254px;
+	height: 68px;
+}
+
+.c73 a {
+	position: absolute;
+	left: 312px;
+	top: 165px;
+	width: 266px;
+	height: 55px;
+}
+
+.c74 a {
+	position: absolute;
+	left: 553px;
+	top: 69px;
+	width: 288px;
+	height: 56px;
+}
+
+.c75 a {
+	position: absolute;
+	left: 735px;
+	top: 196px;
+	width: 285px;
+	height: 66px;
+}
+
+.c76 a {
+	position: absolute;
+	left: 924px;
+	top: 389px;
+	width: 250px;
+	height: 66px;
+}
+
+.turn1 {
+	margin: 0 auto;
+	width: 470px;
+	position: absolute;
+}
+
+ul {
+	list-style: none;
+}
+
+.turn1 ul {
+	width: 470px;
+	height: 470px;
+}
+
+.turn1 ul li {
+	position: absolute;
+	top: 0px;
+	display: none;
+}
+
+.left1,
+.right1 {
+	float: left;
+	position: absolute;
+}
+
+.left1 {
+	background-position: left 0px;
+	top: 350px;
+	left: 16px;
+	z-index: 99;
+}
+
+.left1:hover {
+	background-position: 0 0px;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+
+.right1 {
+	background-position: right 0px;
+	top: 350px;
+	left: 737px;
+	z-index: 99;
+}
+
+.right1:hover {
+	background-position: -68px 0px;
+	filter: alpha(opacity=80);
+	opacity: 0.8;
+}
+
+.op {
+	position: absolute;
+	top: 430px;
+	left: 240px;
+	width: 100%;
+	text-align: center;
+	bottom: 5%;
+}
+
+.op span {
+	cursor: pointer;
+	float: left;
+	width: 15px;
+	height: 15px;
+	background: #747474;
+	transition: all .3s;
+	margin-right: 15px;
+	border-radius: 25px;
+}
+
+.op span.cur {
+	background: #2439b8;
+	width: 45px;
+}
+
+.tuc {
+	width: 584px;
+	height: 319px;
+	overflow: hidden;
+	position: absolute;
+	top: 127px;
+	left: 582px;
+}
+
+.tuc img:hover {
+	transform: scale(1.05);
+	transition: all 0.6s;
+	cursor: pointer;
+}
+
+.wzt {
+	position: absolute;
+	top: 200px;
+	left: 80px;
+}
+
+.wzt h1 {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 12px;
+	width: 470px;
+}
+
+.wzt p {
+	width: 470px;
+	font-size: 18px;
+	line-height: 26px;
+}
+
+.y {
+	width: 80px;
+	margin-left: 350px;
+	margin-top: 20px;
+}
+
+.video {
+	width: 560px;
+	height: 315px;
+	position: absolute;
+	top: 100px;
+	left: 65px;
+	color: #fff;
+}
+
+.c5 i {
+	color: #fff;
+	font-size: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	padding: 5px 5px;
+	text-align: center;
+	display: block;
+	width: 50px;
+	height: 30px;
+	background: #ccc;
+	float: left;
+	margin-left: 30px;
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+.c5 i.cur {
+	background: #9e0006;
+	color: #fff;
+}
+
+.art {
+	position: absolute;
+	top: 480px;
+	left: 510px;
+}
+
+.anniu1 {
+	width: 200px;
+	margin: 0 auto;
+	top: 65px;
+}
+
+a.lr {
+	display: block;
+	width: 52px;
+	height: 130px;
+	background: rgba(0, 0, 0, 0.6);
+	float: left;
+}
+
+a.lr:before,
+a.lr:after {
+	display: block;
+	height: 6px;
+	background: #fff;
+	position: absolute;
+	border-radius: 25px;
+	transition: .3s;
+	width: 45px;
+	content: "";
+	animation-duration: 0.8s;
+}
+
+.formText a {
+	color: #a91114;
+	text-decoration: underline;
+}
+
+.formText a:hover {
+	text-decoration: none;
+}
+
+
+/*报名器 start*/
+
+.top6 {
+	position: relative;
+}
+
+.top71 {
+	height: 0px;
+	background: url(../images/form.jpg) center top no-repeat;
+	position: fixed;
+	transition: height .5s;
+	-moz-transition: height .5s;
+	-webkit-transition: height .5s;
+	-o-transition: height .5s;
+	width: 100%;
+	bottom: 0;
+}
+
+.top71.active {
+	height: 263px;
+	background: url(../images/form.jpg) center top no-repeat;
+	position: absolute;
+	transition: height .5s;
+	-moz-transition: height .5s;
+	-webkit-transition: height .5s;
+	-o-transition: height .5s;
+	width: 100%;
+	bottom: 0;
+}
+
+.close {
+	position: absolute;
+	width: 44px;
+	height: 44px;
+	right: 70px;
+	top: -43px;
+	cursor: pointer;
+	display: none;
+}
+
+.open {
+	position: fixed;
+	left: 70px;
+	cursor: pointer;
+	bottom: 0;
+	
+}
+
+.notices {
+	display: block;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 552px;
+	top: 223px;
+}
+
+#submitOk {
+	width: 220px;
+	background-color: #c90329;
+	color: #FFFFFF;
+}
+
+#md_btn {
+	width: 220px;
+}
+
+
+/*表单 start*/
+
+.form-box {
+	position: relative;
+	top: 40px;
+	left: 85px;
+	width: 625px;
+}
+
+.form-box dl {
+	width: 100%;
+}
+
+.form-box dl::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.form-box dt,
+.form-box dd {
+	line-height: 22px;
+	padding: 3px 0;
+	height: 26px;
+	float: left;
+}
+
+.form-box dd {
+	width: 370px;
+}
+
+.form-box dt {
+	width: 120px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.form-box dt span,
+.formText span {
+	color: #a00;
+	display: inline-block;
+	width: 8px;
+}
+
+.form-box dt span {
+	text-align: left;
+}
+
+.form-box input {
+	vertical-align: middle;
+}
+
+.form-box .codeDd {
+	width: 290px;
+	position: relative;
+	padding-right: 80px;
+}
+
+.form-box select {
+	width: 130px;
+	height: 38px;
+}
+
+.form-box .textInp {
+	width: 365px;
+	padding: 0;
+	height: 18px;
+}
+
+.form-box .codeInp {
+	width: 280px;
+}
+
+.form-box dl.s {
+	float: left;
+}
+
+.form-box dl.even {
+	width: 263px;
+}
+
+.form-box dl.odd {
+	width: 233px;
+}
+
+.form-box dl.s dd {
+	width: 138px;
+}
+
+.form-box dl.s .codeDd {
+	width: 58px;
+}
+
+.form-box dl.s dt.s {
+	width: 90px;
+}
+
+.form-box .s .textInp {
+	width: 133px;
+}
+
+.form-box .s .codeInp {
+	width: 48px;
+}
+
+.form-box .s select {
+	width: 137px;
+}
+
+.form-box .codeBtn {
+	background: #999;
+	position: absolute;
+	right: 0;
+	width: 80px;
+	height: 22px;
+	text-align: center;
+	margin-left: 3px;
+	line-height: 22px;
+}
+
+.form-box .codeImg {
+	position: absolute;
+	right: 0;
+	width: 80px;
+	height: 22px;
+}
+
+.formText {
+	padding-left: 40px;
+	position: relative;
+	padding-top: 0;
+	font-size: 12px;
+	clear: both;
+}
+
+.inpBox {
+	padding: 20px 0 0 30px;
+}
+
+.loginText {
+	clear: both;
+	padding-left: 40px;
+	padding-top: 10px;
+}
+
+.loginText a,
+.notice,
+.loginText a:link,
+.notice:link,
+.loginText a:visited,
+.notice:visited,
+.loginText a:active,
+.notice:active {
+	text-decoration: underline;
+}
+
+.loginText a:hover,
+.notice:hover {
+	text-decoration: none;
+}
+
+.inpBox a {
+	float: left;
+	margin-right: 10px;
+	width: 120px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #000;
+}
+
+.inpBox a:hover {
+	background-color: #333;
+}
+
+.inpBox a.mdBtn {
+	background-color: #666;
+}
+
+.inpBox a.mdBtn:hover {
+	background-color: #999;
+}
+
+.inpBox a.qd:hover {
+	background-color: #aaa;
+}
+
+.inpBox a,
+.inpBox a:link,
+.inpBox a:visited,
+.inpBox a:hover,
+.inpBox a:active {
+	color: #fff;
+	text-decoration: none;
+}
+
+.inpBox a.mdBtn {
+	background-color: #666;
+}
+
+.inpBox a.mdBtn:hover {
+	background-color: #999;
+}
+
+.inpBox a.qd:hover {
+	background-color: #aaa;
+}
+
+.inpBox a,
+.inpBox a:link,
+.inpBox a:visited,
+.inpBox a:hover,
+.inpBox a:active {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+/*form-activity-prize*/
+
+.icon-formDl dd {
+	width: 310px;
+	height: 38px;
+	margin-bottom: 10px;
+	padding: 0;
+	background-color: #f2f1f1;
+	border: solid 1px #dcdcdc;
+	border-left: none;
+}
+
+.icon-formDl input {
+	vertical-align: middle;
+}
+
+.icon-formDl .textInp,
+.icon-formDl .textDiv {
+	margin-top: 10px;
+	width: 95%;
+	text-indent: 10px;
+	border: none;
+	background: none;
+	color: #000;
+}
+
+.icon-formDl .codeDd {
+	width: 365px;
+}
+
+.icon-formDl .codeBtn {
+	height: 37px;
+	line-height: 37px;
+}
+
+.icon-formDl .codeImg {
+	top: 8px;
+}
+
+.icon-formDl dt {
+	width: 37px;
+	height: 38px;
+	clear: left;
+	padding: 0;
+	margin-bottom: 10px;
+	position: relative;
+	border: solid 1px #ccc;
+	background: url(https://topic.autoimg.cn/marketing/2017/5/script/icon.png) no-repeat;
+	background-color: #eaeaea;
+}
+
+.form-formDl dl.s {
+	width: 50%;
+}
+
+.icon-formDl dl.s dt {
+	width: 37px;
+}
+
+.icon-formDl dl.s dd {
+	width: 195px;
+}
+
+.icon-formDl dl.s .codeDd {
+	width: 115px;
+}
+
+.icon-formDl dt label,
+.icon-formDl dt i {
+	display: none;
+}
+
+.icon-formDl dt span {
+	position: absolute;
+	top: 10px;
+	left: -10px;
+	display: none;
+}
+
+.icon-formDl .s .textInp {
+	width: 95%;
+}
+
+.icon-formDl .formText {
+	padding: 0;
+	color: #000;
+}
+
+.icon-formDl .formText span {
+	position: absolute;
+	left: -10px;
+	display: none;
+}
+
+.icon-formDl dt.icon-name {
+	background-position: -1px 5px;
+}
+
+.icon-formDl dt.icon-sex {
+	background-position: -1px -25px;
+}
+
+.icon-formDl dt.icon-mobile {
+	background-position: -1px -56px;
+}
+
+.icon-formDl dt.icon-email {
+	background-position: -1px -86px;
+}
+
+.icon-formDl dt.icon-province {
+	background-position: -1px -115px;
+}
+
+.icon-formDl dt.icon-city {
+	background-position: -1px -145px;
+}
+
+.icon-formDl dt.icon-dealer {
+	background-position: -1px -175px;
+}
+
+.icon-formDl dt.icon-buytime {
+	background-position: -1px -205px;
+}
+
+.icon-formDl dt.icon-intentcar {
+	background-position: -1px -235px;
+}
+
+.icon-formDl dt.icon-buybudget {
+	background-position: -1px -265px;
+}
+
+.icon-formDl dt.icon-code {
+	background-position: -1px -295px;
+}
+
+.icon-formDl dt.cur,
+.icon-formDl dd.cur {
+	border-color: #b22024;
+}
+
+.icon-formDl dt.icon-name.cur {
+	background-position: -41px 5px;
+}
+
+.icon-formDl dt.icon-sex.cur {
+	background-position: -41px -25px;
+}
+
+.icon-formDl dt.icon-mobile.cur {
+	background-position: -41px -56px;
+}
+
+.icon-formDl dt.icon-email.cur {
+	background-position: -41px -86px;
+}
+
+.icon-formDl dt.icon-province.cur {
+	background-position: -41px -115px;
+}
+
+.icon-formDl dt.icon-city.cur {
+	background-position: -41px -145px;
+}
+
+.icon-formDl dt.icon-dealer.cur {
+	background-position: -41px -175px;
+}
+
+.icon-formDl dt.icon-buytime.cur {
+	background-position: -41px -205px;
+}
+
+.icon-formDl dt.icon-intentcar.cur {
+	background-position: -41px -235px;
+}
+
+.icon-formDl dt.icon-buybudget.cur {
+	background-position: -41px -265px;
+}
+
+.icon-formDl dt.icon-code.cur {
+	background-position: -41px -295px;
+}
+
+.icon-formDl input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	color: #000;
+	opacity: 1;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+	color: #000;
+	opacity: 1;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+	color: #000;
+	opacity: 1;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+	color: #000;
+	opacity: 1;
+}
+
+
+/*select*/
+
+.icon-formDl .selectpick_div {
+	cursor: pointer;
+	color: #000;
+	line-height: 34px;
+	width: 100%;
+	position: relative;
+}
+
+.icon-formDl .selectpick_chara {
+	display: inline-block;
+	padding-right: 20px;
+	height: 34px;
+}
+
+.icon-formDl .selectpick_icon {
+	cursor: pointer;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 6px solid #848484;
+	position: absolute;
+	top: 15px;
+	right: 10px;
+}
+
+.icon-formDl .selectpick_options {
+	width: 100%;
+	overflow-y: auto;
+	border: solid 1px #570954;
+	border-bottom: none;
+	position: absolute;
+	top: 37px;
+	left: -1px;
+	z-index: 100;
+	display: none;
+}
+
+.icon-formDl .selectpick_options ul {
+	list-style: none;
+	height: auto;
+	margin: 0px;
+	padding: 0px;
+	z-index: 100;
+	font-size: 13.5px;
+	background: #000;
+}
+
+.icon-formDl .selectpick_options ul li {
+	border-bottom: solid 1px #570954;
+	padding: 4px 10px;
+	display: block;
+	font-size: 14px;
+	z-index: 100;
+	background: #000;
+	color: #fff;
+	line-height: 20px;
+}
+
+.icon-formDl .selectpick_options li:hover {
+	background: #333;
+	color: #fff;
+}
+
+.icon-formDl .selectpick_options ul li.selectpick_options_selected {
+	background: #333;
+	color: #fff;
+	z-index: 10;
+}
+
+.icon-formDl .selectpick_no_select {
+	cursor: default;
+	color: #9a9898;
+	background: #F5F5F5;
+}
+
+.icon-formDl .select_hide,
+.icon-formDl .select_hide option {
+	display: none;
+	height: 0;
+	width: 95%;
+	line-height: 0;
+	-moz-opacity: 0;
+	opacity: 0;
+	-webkit-opacity: 0;
+	filter: alpha(opacity=0);
+	overflow: hidden;
+	font-size: 0;
+}
+
+.icon-formDl .selectpick_options li {
+	cursor: pointer;
+}
+
+.icon-formDl .selectpick_options li label {
+	cursor: pointer;
+}
+
+.icon-formDl .selectpick_div_box {
+	*zoom: 1;
+	*display: inline;
+	position: relative;
+	z-index: 9;
+	padding-left: 10px;
+}
+
+.list1,
+.list2,
+.list3 {
+	margin-right: 70px;
+}
+
+.list3 {
+	margin-right: 0;
+}
+
+.tabs22,
+.tabs11 {
+	height: 50px;
+}
+
+a.tabs2_1,
+a.tabs1_1 {
+	padding-bottom: 5px;
+	border-bottom: 5px solid #000;
+	font-size: 32px;
+	font-weight: bold;
+	position: absolute;
+	width: 170px;
+	height: 35px;
+	top: 0px;
+	left: 0px;
+	color: #000;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a.tabs2_2,
+a.tabs1_2 {
+	padding-bottom: 5px;
+	border-bottom: 5px solid #000;
+	font-size: 32px;
+	font-weight: bold;
+	position: absolute;
+	width: 170px;
+	height: 35px;
+	top: 0px;
+	left: 185px;
+	color: #000;
+}
+
+.cur a.tabs1_2,
+.cur a.tabs1_1,
+.cur a.tabs2_2,
+.cur a.tabs2_1 {
+	border-bottom: 5px solid #1c69d5;
+}
+
+
+/*表单end*/
+
+
+/* 
+    User Style:
+    Change the following styles to modify the appearance of Colorbox.  They are
+    ordered & tabbed in a way that represents the nesting of the generated HTML.
+*/
+
+#cboxOverlay {
+	background: url(../images/cb-overlay.png) repeat 0 0;
+}
+
+#colorbox {
+	outline: 0;
+}
+
+#cboxTopLeft {
+	width: 21px;
+	height: 21px;
+	background: url(../images/cb-controls.png) no-repeat -101px 0;
+}
+
+#cboxTopRight {
+	width: 21px;
+	height: 21px;
+	background: url(../images/cb-controls.png) no-repeat -130px 0;
+}
+
+#cboxBottomLeft {
+	width: 21px;
+	height: 21px;
+	background: url(../images/cb-controls.png) no-repeat -101px -29px;
+}
+
+#cboxBottomRight {
+	width: 21px;
+	height: 21px;
+	background: url(../images/cb-controls.png) no-repeat -130px -29px;
+}
+
+#cboxMiddleLeft {
+	width: 21px;
+	background: url(../images/cb-controls.png) left top repeat-y;
+}
+
+#cboxMiddleRight {
+	width: 21px;
+	background: url(../images/cb-controls.png) right top repeat-y;
+}
+
+#cboxTopCenter {
+	height: 21px;
+	background: url(../images/cb-border.png) 0 0 repeat-x;
+}
+
+#cboxBottomCenter {
+	height: 21px;
+	background: url(../images/cb-border.png) 0 -29px repeat-x;
+}
+
+#cboxContent {
+	background: #fff;
+	overflow: hidden;
+}
+
+.cboxIframe {
+	background: #fff;
+}
+
+#cboxError {
+	padding: 50px;
+	border: 1px solid #ccc;
+}
+
+#cboxLoadedContent {
+	margin-bottom: 28px;
+}
+
+#cboxTitle {
+	position: absolute;
+	bottom: 4px;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	color: #949494;
+}
+
+#cboxCurrent {
+	position: absolute;
+	bottom: 4px;
+	left: 10px;
+	color: #949494;
+}
+
+#cboxLoadingOverlay {
+	background: url(../images/cb-loading_background.png) no-repeat center center;
+}
+
+#cboxLoadingGraphic {
+	background: url(../images/cb-loading.gif) no-repeat center center;
+}
+
+
+/* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
+
+#cboxPrevious,
+#cboxNext,
+#cboxSlideshow,
+#cboxClose {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	width: auto;
+	background: none;
+}
+
+
+/* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
+
+#cboxPrevious:active,
+#cboxNext:active,
+#cboxSlideshow:active,
+#cboxClose:active {
+	outline: 0;
+}
+
+#cboxSlideshow {
+	position: absolute;
+	bottom: 4px;
+	right: 30px;
+	color: #0092ef;
+}
+
+#cboxPrevious {
+	position: absolute;
+	bottom: 0;
+	right: 37px;
+	background: url(../images/cb-controls.png) no-repeat -75px 0;
+	width: 25px;
+	height: 25px;
+	text-indent: -9999px;
+}
+
+#cboxPrevious:hover {
+	background-position: -75px -25px;
+}
+
+#cboxNext {
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	background: url(../images/cb-controls.png) no-repeat -50px 0;
+	width: 25px;
+	height: 25px;
+	text-indent: -9999px;
+}
+
+#cboxNext:hover {
+	background-position: -50px -25px;
+}
+
+#cboxClose {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-radius: 0 0 0 15px;
+	border-left: 5px solid #fff;
+	border-bottom: 5px solid #fff;
+	background: url(../images/cb-controls.png) no-repeat -25px 0;
+	width: 30px;
+	height: 30px;
+	text-indent: -9999px;
+}
+
+#cboxClose:hover {
+	background-position: -25px -25px;
+}
+
+
+/*
+  The following fixes a problem where IE7 and IE8 replace a PNG's alpha transparency with a black fill
+  when an alpha filter (opacity change) is set on the element or ancestor element.  This style is not applied to or needed in IE9.
+  See: http://jacklmoore.com/notes/ie-transparency-problems/
+*/
+
+.cboxIE #cboxTopLeft,
+.cboxIE #cboxTopCenter,
+.cboxIE #cboxTopRight,
+.cboxIE #cboxBottomLeft,
+.cboxIE #cboxBottomCenter,
+.cboxIE #cboxBottomRight,
+.cboxIE #cboxMiddleLeft,
+.cboxIE #cboxMiddleRight {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
+}
+
+a.left1:after {
+	transform-origin: 0 3px;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	top: 61px;
+	left: 3.5px;
+}
+
+a.left1:before {
+	transform-origin: 0 3px;
+	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	top: 63px;
+	left: 3.5px;
+}
+
+a.left1:hover:after {
+	animation-name: left-top;
+}
+
+a.left1:hover:before {
+	animation-name: left-bottom;
+}
+
+a.right1:after {
+	transform-origin: 45px 3px;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	top: 63px;
+}
+
+a.right1:before {
+	transform-origin: 45px 3px;
+	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	top: 61px;
+}
+
+a.right1:hover:after {
+	animation-name: right-top;
+}
+
+a.right1:hover:before {
+	animation-name: right-bottom;
+}
+
+@keyframes right-top {
+	0% {
+		transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		top: 63px;
+	}
+	50% {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0);
+		-moz-transform: rotate(0);
+		-webkit-transform: rotate(0);
+		-o-transform: rotate(0);
+		top: 62px
+	}
+	100% {
+		transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		top: 63px;
+	}
+}
+
+@keyframes right-bottom {
+	0% {
+		transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		top: 60px;
+	}
+	50% {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0);
+		-moz-transform: rotate(0);
+		-webkit-transform: rotate(0);
+		-o-transform: rotate(0);
+		top: 62px
+	}
+	100% {
+		transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		top: 60px;
+	}
+}
+
+@keyframes left-top {
+	0% {
+		transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		top: 61px;
+	}
+	50% {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0);
+		-moz-transform: rotate(0);
+		-webkit-transform: rotate(0);
+		-o-transform: rotate(0);
+		top: 62px;
+	}
+	100% {
+		transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		top: 61px;
+	}
+}
+
+@keyframes left-bottom {
+	0% {
+		transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		top: 63px;
+	}
+	50% {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0);
+		-moz-transform: rotate(0);
+		-webkit-transform: rotate(0);
+		-o-transform: rotate(0);
+		top: 62px;
+	}
+	100% {
+		transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		top: 63px;
+	}
+}

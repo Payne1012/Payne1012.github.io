@@ -1,0 +1,591 @@
+/*20180612---------------------------------------------------------- */
+
+
+/*目录：
+1. project志愿项目样式
+	1.1 project志愿项目详情样式
+2. group公益团体样式
+3. worknews工作动态样式
+4. mien志愿风采样式
+5. policy政策导航样式
+6. train培训机构样式
+7. evaluate评价查询样式
+8. job就业腿你样式
+/*---------------------------------------------------------- */
+
+
+/*1. project志愿项目样式-------------------------------------------- */
+
+.caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	vertical-align: middle;
+	border-top: 4px dashed;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+
+.caret.active {
+	border-bottom: 4px dashed;
+	border-top: 0;
+}
+
+
+/*1.1 project志愿项目详情样式--------------------------------------- */
+
+.project_detail_main {
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+.project_detail_title {
+	margin-bottom: 20px;
+}
+
+.project_detail_main_left {
+	width: 635px;
+	border-right: 1px solid #999;
+	padding-right: 50px;
+}
+
+.project_detail_main_right {
+	width: 460px;
+	padding-left: 45px;
+}
+
+.project_detail_img img {
+	width: 635px;
+	height: 440px;
+}
+
+.tabTit {
+    border-bottom: 1px solid #999;
+}
+
+.tabCon{
+	margin-top:10px;
+}
+
+.project_detail_portrait_left img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+.project_detail_wexin_wrap,.project_detail_portrait_wrap{
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	overflow: hidden;
+	padding: 15px; 
+}
+.project_detail_portrait_right{
+	margin-left: 20px;
+}
+.project_detail_vgrt_list li p span,.project_detail_portrait_right p span{
+	color:#FC0B19;
+}
+.project_detail_portrait_right p:nth-child(2){
+	margin-top: 55px;
+}
+.project_detail_wexin_wrap,.project_detail_vgrt_list{
+	margin-top: 30px;
+}
+.project_detail_weixin_left img{
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+}
+.project_detail_vgrt_title{
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	border-left: 5px solid #FC0B19;
+	padding: 20px 20px;
+}
+.project_detail_vgrt_list li{
+	overflow: hidden;
+	border-bottom: 1px solid #999999;
+	padding: 20px;
+}
+.project_detail_vgrt_list li p{
+	float: left;
+}
+.project_detail_vgrt_list li p img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.project_detail_vgrt_list li p:nth-child(2){
+	width: 150px;
+	height: 25px;
+	margin-top: 15px;
+	margin-left: 55px;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.project_detail_vgrt_list li p:nth-child(3){
+	width: 110px;
+	height: 25px;
+	margin-top: 15px;
+	margin-left: 55px;
+	-o-text-overflow: ellipsis;
+	/*! text-overflow: ellipsis; */
+	/*! overflow: hidden; */
+	/*! white-space: nowrap; */
+}
+
+/*2. group公益团体样式-------------------------------------------- */
+
+.group_list_li_wrap {
+	position: relative;
+	overflow: hidden;
+	padding: 20px 0;
+	margin: 0 10px;
+}
+ 
+.group_list_li_ul li {
+	width: 300px;
+	height: 20px;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	background-size: auto auto;
+	background-size: 18px;
+	padding-left: 25px;
+	margin-top: 15px;
+	color: #999;
+}
+
+.group_list_li_left
+{
+	padding-left: 5px;
+}
+.group_list_li_left img
+{
+-webkit-box-shadow: 0px 2px 7px #bab9b9;
+-moz-box-shadow: 0px 2px 7px #bab9b9;
+box-shadow: 0px 2px 7px #bab9b9;
+border-radius: 5px;
+overflow: hidden;
+} 
+
+.group_list_li_right {
+	padding-left: 20px;
+}
+
+.group_list_li_title {
+	font-size: 20px;
+	margin-bottom: 15px;
+	word-spacing: 8px;
+	letter-spacing: 1px;
+	width: 700px;
+	height: 25px;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.group_list_li_btn {
+	right: 0;
+	bottom: 20px;
+	position: absolute;
+	height: 38px;
+}
+
+.group_list_li {
+	border-bottom: 1px solid #999999;
+}
+
+.group_list_li_ul {
+	position: relative;
+}
+
+.group_list_btn_wrap {
+	overflow: hidden;
+}
+
+.group_list_btn_wrap li {
+	float: left;
+	cursor: pointer;
+}
+
+/*3. worknews工作动态样式-------------------------------------------- */
+
+.worknews .swiper-container,.worknews .swiper-container img,.mien .swiper-container img{
+	width: 900px;
+	height: 400px;
+}
+.warp_top_swiper{
+	overflow:hidden;
+	margin-top:20px;
+}
+.warp_top_right,.warp_top_right_header{
+	width: 300px;
+
+}
+.warp_top_right_header{
+	background-color:#FC0B19;
+	color: #FFFFFF;
+	padding: 10px 0;
+	height: 24px;
+}
+.warp_top_right_header p{
+	padding: 0 20px;
+}
+.warp_top_right li span{
+	padding: 0 10px;
+}
+.wrap_top_right_ul li{
+	padding: 17px 10px;
+	border-bottom: 1px solid #f1f1f1;
+	
+}
+.letast_ul,.wrap_top_right_ul li{
+	background-color: #F9F9F9;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.warp_top_right li a{
+	color: #666;
+}
+.warp_top_right li a:hover{
+	color: #999;
+}
+.latest_header{
+	background-color: #F9F9F9;
+	padding: 10px 20px;
+	font-size: 20px;
+}
+.letast_ul{
+	padding: 0 10px;
+}
+.letast_ul li{
+	width: 62px;
+	height: 24px;
+	float: left;
+	background: #f1f1f1;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	border-radius: 5px;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-align: center;
+}
+.letast_ul li:hover{
+	background-color: #f5f5f5;
+}
+.worknews_main li{
+	position: relative;
+	padding-top: 20px;
+	
+}
+.wrap_top_left{
+	width:900px;
+}
+.worknews_list_content p a,.worknews_main li a p{
+	margin-top: 10px;
+	color: #999999;
+}
+.worknews_main li a p{
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.worknews_list_text{
+	height: 50px;
+	overflow: hidden;
+}
+.worknews_main .time{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin:20px;
+}
+.worknews_list li{
+	overflow: hidden;
+}
+.worknews_list_img img{
+	width: 230px;
+	height: 190px;
+	padding-right: 20px;
+}
+.worknews_list_content{
+	width: 650px;
+}
+.worknews_box{
+	width: 250px;
+	overflow: hidden;
+}
+.worknews_list_content p{
+	margin-top: 20px;
+}
+.praise{
+	background:url(../images/icon/praise.png) no-repeat;
+}
+.comment{
+	background:url(../images/icon/comment.png) no-repeat;
+}
+.comment,.praise{
+	padding-left: 23px;
+	background-size: 20px;
+}
+.worknews_list li{
+	margin-top: 20px;
+	
+}
+.worknews_list li:first-child{
+	margin: 0;
+}
+.latest_top_main{
+	overflow: hidden;
+}
+.latest_top_main li{
+	float: left;
+	margin: 20px 20px 0 0;
+}
+.latest_top_main li img{
+	width: 430px;
+	height: 200px;
+}
+/*4. mien志愿风采样式-------------------------------------------- */
+.mien_list{
+	overflow: hidden;
+	width: 100%;
+	margin: 20px 0;
+}
+.mien_list img{
+	width:300px;
+	height: 200px;
+}
+.mien_list li{
+	margin-top: 20px;
+	overflow: hidden;
+	background-color:#F9F9F9;
+}
+.mien_list .worknews_list_content{
+	width: 850px;
+	padding: 10px 20px 0 0;
+}
+.mien_detail_content{
+	text-align: center;
+}
+.mien_detail_content p{
+	text-align: left;
+}
+.mien_detail_content h1{
+	font-size: 22px;
+	padding: 20px;
+}
+.mien_detail_content img{
+	width: 900px;
+	height: 300px;
+}
+/*5. policy政策导航样式-------------------------------------------- */
+.policy_content{
+	margin-top: 20px;
+}
+.policy_nav{
+	border: 1px solid #999999;
+}
+.policy_nav td{
+	text-align: center;
+	font-size: 12px;
+}
+.nav_line{
+	  margin: 10px 0 0 10px;
+}
+.policy_main_header{
+	background-color: #FC0B19;
+	color: #FFFFFF;
+	padding: 5px 20px;
+	margin-top: 20px;
+}
+.policy_main_ul{
+	margin-bottom: 50px;
+}
+.policy_main_ul li{
+	padding: 15px 5px;
+	border-bottom: 1px dashed #999999;
+	background-color: #F9F9F9;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	
+}
+/*6. train培训机构样式-------------------------------------------- */
+.train_wrap{
+	padding:40px 0;
+}
+.train_main{
+	overflow: hidden; 
+	/*! margin: 20px 0; */
+	/*! padding: 20px 0; */
+	margin-top: 10px;
+}
+.train_main_left{ 
+	width: 705px;
+	/*! overflow: hidden; */
+	margin-top: 10px;
+} 
+.train_main_right{
+	width: 470px;
+	padding-left: 25px;
+}
+.train_main_left li{
+	float: left;
+	margin: 20px 0 0 20px;
+}
+.train_main_left li img,.train_main_left li{
+	width: 220px;
+}
+.hot_img_ul li p,.train_main_left h4,.train_main_left p{
+	 -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.train_main_left li img{
+	height: 180px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.train_main_left p{
+	color: #999;
+}
+.train_main_left li:nth-child(1){
+	margin-left: 0;
+	margin-top: 0;
+}
+.train_main_left li:nth-child(2){
+	margin-top: 0;
+}
+.train_main_left li:nth-child(3){
+	margin-top: 0;
+}
+.train_main_left li:nth-child(4){
+	margin-left: 0;
+}
+.train_main_left li:nth-child(7){
+	margin-left: 0;
+}
+.train_main_left li:nth-child(10){
+	margin-left: 0;
+}
+.train_main_left li:nth-child(13){
+	margin-left: 0;
+}
+
+.hot_news_header,.hot_img_header{
+	border-bottom: 1px solid #999999;
+	padding-bottom: 10px;
+}
+.hot_news_header_title,.hot_img_header_title{
+	font-size: 20px;
+	font-weight: bold;
+}
+.hot_img_ul{
+ padding-top: 10px;
+}
+.hot_news_ul li{
+	position: relative;
+    padding: 15px 0;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.hot_news_ul .news_right_bottom_title{
+	width: 200px;
+}
+.hot_news_ul li span.fr {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    padding-left: 18px;
+    background: #fff;
+}
+.hot_img{
+	margin-top: 20px;
+}
+.hot_img_ul{
+	overflow: hidden;
+}
+.hot_img_ul li{
+	width: 140px;
+	float: left;
+	padding-left: 25px;
+	padding-top: 10px;
+}
+.hot_img_ul li:nth-child(1){
+	padding-left: 0;
+}
+.hot_img_ul li:nth-child(4){
+	padding-left: 0;
+}
+.hot_img_ul li:nth-child(7){
+	padding-left: 0;
+}
+.hot_img_ul li:nth-child(10){
+	padding-left: 0;
+}
+.hot_img_ul li:nth-child(13){
+	padding-left: 0;
+}
+.hot_img_ul li:nth-child(16){
+	padding-left: 0;
+}
+.hot_img_ul li img{
+	width: 140px;
+	height: 100px;
+}
+.hot_img_ul li p{
+	text-align: center;
+}
+/*  标题 没用 C类-按钮-提交-tj02 规则*/
+.train_list_btn{transform-origin: 100% 0;transform: translateZ(0);box-shadow: 0 0 1px rgba(0, 0, 0, 0);}
+.train_list_btn:hover{animation-name: wobble-bottom;animation-duration: 1s;animation-timing-function: ease-in-out;animation-iteration-count: 1;}
+@keyframes wobble-bottom{
+  15% {-webkit-transform: skew(-18deg);transform: skew(-18deg);}
+  30% {-webkit-transform: skew(18deg);transform: skew(18deg);}
+  45% {-webkit-transform: skew(-9deg);transform: skew(-9deg);}
+  60% {-webkit-transform: skew(9deg);transform: skew(9deg);}
+  75% {-webkit-transform: skew(-2deg);transform: skew(-2deg);}
+  100% {-webkit-transform: skew(0);transform: skew(0);}
+}
+
+/*  标题 没用 C类-按钮-提交-tj03规则*/
+.train_main_left img{position: relative;transition-duration: 0.3s;transition-property: transform;transform: translateZ(0);box-shadow: 0 0 1px rgba(0, 0, 0, 0);background: #fff;}
+.train_main_left img:hover{transform: translateY(-6px);animation-name: hover;animation-duration: 1.5s;animation-delay: 0.3s;animation-timing-function: linear;animation-iteration-count: infinite;animation-direction: alternate;}
+.train_main_left img:before {pointer-events: none;position: absolute;z-index: -1;content: '';top: 100%;left: 5%;height: 10px;width: 90%;opacity: 0;background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);transition-duration: 0.3s;transition-property: transform, opacity;}
+.train_main_left img:hover:before{opacity: 1;transform: translateY(5px);}
+@keyframes hover {
+  50% {transform: translateY(-3px);}
+  100% {transform: translateY(-6px);}}
+/*7. evaluate评价查询样式-------------------------------------------- */
+.evaluate .query_wrap{
+	margin-top: 20px;
+}
+.evaluate .group_list_wrap{
+	padding: 20px 0;
+}
+/*8. job就业腿你样式-------------------------------------------- */
+.job .query_wrap{
+	margin-top: 20px;
+}
+.job_wrap{
+	padding-bottom: 20px;
+}

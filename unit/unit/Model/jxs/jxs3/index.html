@@ -1,0 +1,205 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>行色无下拉</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+  
+</head>
+<body>
+
+
+      <div id="tabs1" class="tabs_boxx">
+              <a class="tabs1_a cur" href="javascript:void(0)" >三列</a>
+              <a class="tabs1_a" href="javascript:void(0)" >四列</a>
+      </div>
+      
+<div class="tabs1_context">
+      <div class="jxstb">
+        <table  border="0" cellspacing="0" cellpadding="0">
+             <tr>
+               <td width="210">经销商</td>
+               <td width="240">电话</td>
+               <td>地址</td>
+             </tr>
+ 
+                       
+          </table>
+      </div>
+      <div class="jxsnr">
+            <table  border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                         <td width="210">深圳东风南方</td>
+                          <td width="240">400-882-1133</td>
+                          <td>深圳市滨河大道2003号(上步立交旁)</td>
+                        </tr>
+                        <tr>
+                          <td>广州元都</td>
+                          <td>020-82169000</td>
+                          <td>广州市广园东快速路黄村立交（奥体中心）东侧</td>
+                        </tr>
+                         <tr>
+                         <td>广州元都</td>
+                          <td>020-82169000</td>
+                          <td>广州市广园东快速路黄村立交（奥体中心）东侧</td>
+                        </tr>
+          
+                  
+         </table>
+</div> 
+<br />    
+<h5>HTML</h5>
+    <pre>
+ &lt;div class="jxstb"&gt;
+        &lt;table  border="0" cellspacing="0" cellpadding="0"&gt;
+             &lt;tr>
+              &lt;td width="210">经销商&lt;/td&gt;
+               &lt;td width="240">电话&lt;/td&gt;
+               &lt;td>地址&lt;/td&gt;
+             &lt;/tr&gt;
+          &lt;/table&gt;
+      &lt;/div&gt;
+      &lt;div class="jxsnr"&gt;
+            &lt;table  border="0" cellspacing="0" cellpadding="0"&gt; 
+                        &lt;tr>
+                         &lt;td width="210"&gt; 深圳东风南方&lt;/td&gt; 
+                          &lt;td width="240"&gt; 400-882-1133&lt;/td&gt; 
+                          &lt;td&gt; 深圳市滨河大道2003号(上步立交旁)&lt;/td&gt; 
+                        &lt;/tr&gt; 
+                        &lt;tr&gt; 
+                          &lt;td>广州元都&lt;/td&gt; 
+                          &lt;td>020-82169000&lt;/td&gt; 
+                          &lt;td>广州市广园东快速路黄村立交（奥体中心）东侧&lt;/td&gt; 
+                        &lt;/tr&gt; 
+                          &lt;tr&gt; 
+                          &lt;td>广州元都&lt;/td&gt; 
+                          &lt;td>020-82169000&lt;/td&gt; 
+                          &lt;td>广州市广园东快速路黄村立交（奥体中心）东侧&lt;/td&gt; 
+                        &lt;/tr&gt; 
+         &lt;/table&gt; 
+&lt;/div&gt; 
+</pre>
+<h5>CSS</h5>
+    <pre>.jxstb table { width:900px; color:#000; line-height:24px;}
+.jxstb table td{color:#000; font-weight: bold; font-size: 16px;border-bottom:3px solid #000;}
+.jxsnr table{ width:900px; color:#000; line-height:36px;}
+.jxsnr table td{font-size: 14px;}
+.jxsnr table tr:nth-child(odd){background:#d2d2d2;}
+.jxsnr table tr:nth-child(even){background:#ebebeb;}</pre>
+</div>
+
+<div class="tabs1_context" style="display:none;">
+  <div class="jxstb">
+        <table  border="0" cellspacing="0" cellpadding="0">
+             <tr>
+               <td width="90">城市</td>
+               <td width="160">经销商</td>
+               <td width="210">电话</td>
+               <td>地址</td>
+             </tr>
+ 
+                       
+          </table>
+      </div>
+      <div class="jxsnr">
+            <table  border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="90">城市</td>
+                          <td width="160">深圳东风南方</td>
+                          <td width="210">400-882-1133</td>
+                          <td>深圳市滨河大道2003号(上步立交旁)</td>
+                        </tr>
+                        <tr>
+                          <td>城市</td>
+                          <td>广州元都</td>
+                          <td>020-82169000</td>
+                          <td>广州市广园东快速路黄村立交（奥体中心）东侧</td>
+                        </tr>
+                         <tr>
+                          <td>城市</td>
+                          <td>广州元都</td>
+                          <td>020-82169000</td>
+                          <td>广州市广园东快速路黄村立交（奥体中心）东侧</td>
+                        </tr>
+          
+                  
+         </table>
+</div> 
+<br />    
+<h5>HTML</h5>
+    <pre>
+ &lt;div class="jxstb"&gt;
+        &lt;table  border="0" cellspacing="0" cellpadding="0"&gt;
+             &lt;tr>
+               &lt;td width="90"&gt;城市&lt;/td&gt;
+               &lt;td width="160">经销商&lt;/td&gt;
+               &lt;td width="210">电话&lt;/td&gt;
+               &lt;td>地址&lt;/td&gt;
+             &lt;/tr&gt;
+          &lt;/table&gt;
+      &lt;/div&gt;
+      &lt;div class="jxsnr"&gt;
+            &lt;table  border="0" cellspacing="0" cellpadding="0"&gt; 
+                        &lt;tr>
+                          &lt;td width="90"&gt; 城市&lt;/td&gt; 
+                          &lt;td width="160"&gt; 深圳东风南方&lt;/td&gt; 
+                          &lt;td width="210"&gt; 400-882-1133&lt;/td&gt; 
+                          &lt;td&gt; 深圳市滨河大道2003号(上步立交旁)&lt;/td&gt; 
+                        &lt;/tr&gt; 
+                        &lt;tr&gt; 
+                          &lt;td>城市&lt;/td&gt; 
+                          &lt;td>广州元都&lt;/td&gt; 
+                          &lt;td>020-82169000&lt;/td&gt; 
+                          &lt;td>广州市广园东快速路黄村立交（奥体中心）东侧&lt;/td&gt; 
+                        &lt;/tr&gt; 
+                          &lt;tr&gt; 
+                          &lt;td>城市&lt;/td&gt; 
+                          &lt;td>广州元都&lt;/td&gt; 
+                          &lt;td>020-82169000&lt;/td&gt; 
+                          &lt;td>广州市广园东快速路黄村立交（奥体中心）东侧&lt;/td&gt; 
+                        &lt;/tr&gt; 
+         &lt;/table&gt; 
+&lt;/div&gt; 
+</pre>
+<h5>CSS</h5>
+    <pre>.jxstb table { width:900px; color:#000; line-height:24px;}
+.jxstb table td{color:#000; font-weight: bold; font-size: 16px;border-bottom:3px solid #000;}
+.jxsnr table{ width:900px; color:#000; line-height:36px;}
+.jxsnr table td{font-size: 14px;}
+.jxsnr table tr:nth-child(odd){background:#d2d2d2;}
+.jxsnr table tr:nth-child(even){background:#ebebeb;}</pre>
+</div>
+</div>
+
+
+
+
+
+<script src="https://x.autoimg.cn/topic/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+function tabsdiv(_tabs_context){
+        return function(){
+            $(this).siblings().removeClass('cur');
+            $(this).addClass('cur');
+            var num = $(this).index();
+            $(_tabs_context).hide().eq(num).show();
+        }
+    }
+$('#tabs1 a').click(tabsdiv('.tabs1_context'));
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

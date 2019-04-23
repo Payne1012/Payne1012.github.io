@@ -1,0 +1,33 @@
+@charset "gb2312";
+/* CSS Document */
+
+body{margin:0px;padding:0px;font-size:14px;font-family:"Î¢ÈíÑÅºÚ","SimHei","SimSun";line-height:24px; background-color:#fff; color:#000;}
+div, h1, h2, h3, h4,h5, p, form, label, input, textarea, img, span,dl,dt,dd{margin:0; padding:0;}
+p,div,form,img,ul,ol,li,dl,dt,dd {margin:0;padding:0;border:0; text-align:left;}
+ul,ol,li{list-style:none;}
+body .footer{ color:#000;}
+a{ color:#000; text-decoration:none; outline:none;}
+a:hover{text-decoration:underline; outline:none;}
+img{border:none;}
+
+input[type=button]:hover{filter:alpha(opacity=60);/*IE*/opacity:0.6;/*Mozilla*/}
+
+
+
+
+.top5,.top5 .main{background:url(../images/bg_05.jpg)  no-repeat top center;  height:540px;}
+.main {margin:0 auto; width:990px;}
+
+
+
+
+
+ 
+  pre {  border: #999 dashed 1px; background: #f6f6f6;padding:10px;
+ white-space: pre-wrap; /* css-3 */
+white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+white-space: -pre-wrap; /* Opera 4-6 */
+white-space: -o-pre-wrap; /* Opera 7 */
+word-wrap: break-word; /* Internet Explorer 5.5+ */ 
+ 
+ }

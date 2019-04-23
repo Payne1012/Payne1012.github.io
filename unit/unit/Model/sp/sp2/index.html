@@ -1,0 +1,114 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>弹出视频</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+  
+</head>
+<body>
+
+
+     
+<a href="javascript:void(0)"  id="pt_btn2">视频弹出视频弹出视频弹出</a>
+
+<div style="display: none;">
+    <div class="pronounce2" id="pronouncement2">
+    <div id="playerContainer" style=" width:700px; height:500px;"></div>
+    </div>
+</div>
+
+<h5>HTML</h5>
+<pre>
+&lt;a href="javascript:void(0)"  id="pt_btn2"&gt;视频弹出视频弹出视频弹出&lt;/a&gt;
+&lt;div style="display: none;"&gt;
+    &lt;div class="pronounce2" id="pronouncement2"&gt;
+     &lt;div id="playerContainer" style="width: 700px; height: 500px;"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div>
+</pre>
+<h5>js</h5>
+    <pre>
+&lt;link type="text/css" rel="stylesheet" href="https://x.autoimg.cn/topic/css/colorbox.css" /&gt;
+&lt;script src="https://x.autoimg.cn/topic/js/jquery.colorbox-min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://p-vp.autohome.com.cn/api/player"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    window.on_ahp_init = function () {
+        function showVideo(domID, vid, url, auto) {
+            auto = false;
+            if (arguments.length >= 3) {
+                if (typeof arguments[2] != 'string' || arguments[2] == 1) {
+                    auto = arguments[2];
+                }
+            }
+            var player = AHVP.newPlayer({
+                vid: vid,
+                container: domID,
+                //指定是否自动播放，值为 1 或 true 时为自动播放，默认false 不自动播放 （此参数仅对PC端生效）
+                autostart: auto
+            });
+            if (arguments.length >= 3) {
+                if (typeof arguments[2] == 'string') {
+                    player.addEventListener(AHVP.PLAYER_EVENT.VIDEO_START, function (e) {
+                        jQuery.get(url);
+                    });
+                }
+            }
+        }
+
+        //单个视频
+        showVideo("playerContainer", "2F7313D234F3713D",true)
+  }
+&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    $(function () {
+    $("#pt_btn2").colorbox({ inline: true, href:"#pronouncement2" });
+    });
+&lt;/script&gt;
+
+    </pre>
+
+
+<link type="text/css" rel="stylesheet" href="https://x.autoimg.cn/topic/css/colorbox.css" />
+<script src="https://x.autoimg.cn/topic/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="https://x.autoimg.cn/topic/js/jquery.colorbox-min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://p-vp.autohome.com.cn/api/player"></script>
+<script type="text/javascript">
+    window.on_ahp_init = function () {
+        function showVideo(domID, vid, url, auto) {
+            auto = false;
+            if (arguments.length >= 3) {
+                if (typeof arguments[2] != 'string' || arguments[2] == 1) {
+                    auto = arguments[2];
+                }
+            }
+            var player = AHVP.newPlayer({
+                vid: vid,
+                container: domID,
+                //指定是否自动播放，值为 1 或 true 时为自动播放，默认false 不自动播放 （此参数仅对PC端生效）
+                autostart: auto
+            });
+            if (arguments.length >= 3) {
+                if (typeof arguments[2] == 'string') {
+                    player.addEventListener(AHVP.PLAYER_EVENT.VIDEO_START, function (e) {
+                        jQuery.get(url);
+                    });
+                }
+            }
+        }
+
+        //单个视频
+        showVideo("playerContainer", "2F7313D234F3713D",true)
+  }
+</script>
+<script type="text/javascript">
+    $(function () {
+    $("#pt_btn2").colorbox({ inline: true, href:"#pronouncement2" });
+    });
+</script>
+
+</body>
+</html>

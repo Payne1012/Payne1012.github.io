@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<meta charset="utf-8">
+		<title>测试页面</title>
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.alert {
+				display: none;
+				width: 300px;
+				height: 100px;
+				background-color: #fb7a7a;
+				margin: 0 auto;
+				position: absolute;
+				top: 50%； margin-top:-50px;
+				text-align: center;
+				line-height: 100px;
+				color: #ffffff;
+				border-radius: 5px;
+			}
+			/*懒加载图片样式*/
+			
+			img {
+				display: block;
+				margin: 0 auto 50px;
+				width: 960px;
+				height: 540px;
+			}
+		</style>
+	</header>
+
+	<body>
+		<div class="continer">
+			<form>
+				<div><input id="name" type="text" class="name" placeholder="用户名" /></div>
+				<div><input id="password" type="password" class="password" placeholder="密码" /></div>
+				<div><button id="submit" style="submit">提交</button></div>
+				<div class="alert" id="alert">
+
+				</div>
+			</form>
+			<!--js懒加载-->
+			<img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/005ODVHQgy1fuzutb8xegj31hc0u0k77.jpg" alt="">
+			<img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/005ODVHQgy1fuzutz6y29j31hc0u0ak4.jpg" alt="">
+			<img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/005ODVHQgy1fuzuu8igyyj31hc0u0qgv.jpg" alt="">
+			<img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/005ODVHQgy1fuzuug47wrj31hc0u0k2q.jpg" alt="">
+			<img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/005ODVHQgy1fuzuuowb0hj31hc0u0akx.jpg" alt="">
+			<img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/005ODVHQgy1fuzuuyjapsj31hc0u0ths.jpg" alt="">
+		</div>
+		<script>
+			var sub = document.getElementById("submit");
+			var nam = document.getElementById("name");
+			var psd = document.getElementById("password");
+			var alt = document.getElementById("alert");
+			sub.onclick = function() {
+				if(nam.value == "") { 
+					x = "请输入用户名";
+					alt1(x); 
+					return false; 
+				} else if(psd.value == "") { 
+					x = "请输入密码"; 
+					alt1(x); 
+					return false; 
+				} else {
+					x = "验证通过"; 
+					alt1(x); 
+					alt.style.background = "#43cb43"; 
+					return false;
+				}
+
+			}
+
+			function alt1() 
+			{
+				alt.innerHTML = x;
+				alt.style.display = "block"; 
+				alt.style.background = "#fb7a7a";
+				setInterval(alt2, 3000);
+			}
+
+			function alt2() {
+				alt.style.display = "none";
+			}
+
+			//js懒加载
+			var num = document.getElementsByTagName('img').length;
+			var img = document.getElementsByTagName("img");
+			// 存储图片加载到的位置，避免每次都从第一张图片开始遍历
+			var n = 0;
+			// 页面载入完毕加载可视区域内的图片
+			lazyload();
+			window.onscroll = lazyload;
+			// 监听页面滚动事件
+			function lazyload() {
+				// 可见区域高度
+				var seeHeight = document.documentElement.clientHeight;
+				// 滚动条距离顶部高度
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				for(var i = n; i < num; i++) {
+					if(img[i].offsetTop < seeHeight + scrollTop) {
+						if(img[i].getAttribute("src") == "default.jpg") {
+							img[i].src = img[i].getAttribute("data-src");
+						}
+						n = i + 1;
+					}
+				}
+			}
+
+			// 最简单数组去重法
+			/*
+			 * 新建一新数组，遍历传入数组，值不在新数组就push进该新数组中
+			 * IE8以下不支持数组的indexOf方法
+			 * */
+			function uniq(array) {
+				var temp = []; //一个新的临时数组
+				for(var i = 0; i < array.length; i++) {
+					if(temp.indexOf(array[i]) == -1) {
+						temp.push(array[i]);
+					}
+				}
+				return temp;
+			}
+
+			var aa = [1, 2, 2, 4, 9, 6, 7, 5, 2, 3, 5, 6, 5];
+			console.log(uniq(aa));
+		</script>
+	</body>
+
+</html>
+

@@ -1,0 +1,161 @@
+.train_wrap{
+	padding:40px 0;
+}
+.train_main{
+	overflow: hidden; 
+	/*! margin: 20px 0; */
+	/*! padding: 20px 0; */  
+	margin-top: 10px;
+}
+.train_main_left{  
+	width: 700px;
+	/*! overflow: hidden; */ 
+	margin-top: 10px;
+	padding-left: 5px;
+} 
+.train_main_right{
+	width: 472px;
+	padding-left: 20px;
+}
+.train_main_left li{
+	float: left;
+	margin: 20px 0 0 20px;
+}
+.train_main_left li img,.train_main_left li{
+	width: 220px;
+}
+.hot_img_ul li p,.train_main_left h4,.train_main_left p{
+	 -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.train_main_left li img{
+	height: 180px;
+	/*! border: 1px solid #ccc; */
+	border-radius: 5px;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 2px 7px #bab9b9;
+	-moz-box-shadow: 0px 2px 7px #bab9b9;
+	box-shadow: 0px 2px 7px #bab9b9;
+}
+
+.train_main_left p{
+	color: #999;
+}
+.train_main_left li:nth-child(1){
+	margin-left: 0;
+	margin-top: 0;
+}
+.train_main_left li:nth-child(2){
+	margin-top: 0;
+}
+.train_main_left li:nth-child(3){
+	margin-top: 0;
+}
+.train_main_left li:nth-child(4){
+	margin-left: 0;
+}
+.train_main_left li:nth-child(7){
+	margin-left: 0;
+}
+.train_main_left li:nth-child(10){
+	margin-left: 0;
+}
+.train_main_left li:nth-child(13){
+	margin-left: 0;
+}
+
+.hot_news_header,.hot_img_header{
+	border-bottom: 1px solid #999999;
+	padding-bottom: 10px;
+}
+.hot_news_header_title,.hot_img_header_title{
+	font-size: 20px;
+	font-weight: bold;
+}
+.hot_img_ul{
+ padding-top: 10px;
+}
+.hot_news_ul li{
+	position: relative;
+    padding: 15px 0;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.hot_news_ul .news_right_bottom_title{
+	width: 200px;
+}
+.hot_news_ul li span.fr {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    padding-left: 18px;
+    background: #fff;
+}
+.hot_img{
+	margin-top: 20px;
+}
+.hot_img_ul{
+	/*! overflow: hidden; */
+}
+.hot_img_ul li{
+	width: 140px;
+	float: left;
+	padding-left: 25px;
+	padding-top: 10px;
+}
+.hot_img_ul li:nth-child(1){
+	padding-left: 0;
+}
+.hot_img_ul li:nth-child(4){
+	padding-left: 0;
+}
+.hot_img_ul li:nth-child(7){
+	padding-left: 0;
+}
+.hot_img_ul li:nth-child(10){
+	padding-left: 0;
+}
+.hot_img_ul li:nth-child(13){
+	padding-left: 0;
+}
+.hot_img_ul li:nth-child(16){
+	padding-left: 0;
+}
+.hot_img_ul li img{
+	width: 140px;
+	height: 100px; 
+	-webkit-box-shadow: 0 2px 3px #bab9b9;
+	-moz-box-shadow: 0 2px 3px #bab9b9;
+	box-shadow: 0px 2px 3px #bab9b9;
+}
+.hot_img_ul li p{
+	text-align: center;
+}
+/*  标题 没用 C类-按钮-提交-tj02 规则*/
+.train_list_btn{transform-origin: 100% 0;transform: translateZ(0);box-shadow: 0 0 1px rgba(0, 0, 0, 0);}
+.train_list_btn:hover{animation-name: wobble-bottom;animation-duration: 1s;animation-timing-function: ease-in-out;animation-iteration-count: 1;}
+@keyframes wobble-bottom{
+  15% {-webkit-transform: skew(-18deg);transform: skew(-18deg);}
+  30% {-webkit-transform: skew(18deg);transform: skew(18deg);}
+  45% {-webkit-transform: skew(-9deg);transform: skew(-9deg);}
+  60% {-webkit-transform: skew(9deg);transform: skew(9deg);}
+  75% {-webkit-transform: skew(-2deg);transform: skew(-2deg);}
+  100% {-webkit-transform: skew(0);transform: skew(0);}
+}
+
+/*  标题 没用 C类-按钮-提交-tj03规则*/
+.train_main_left img{position: relative;transition-duration: 0.3s;transition-property: transform;transform: translateZ(0);box-shadow: 0 0 1px rgba(0, 0, 0, 0);background: #fff;}
+.train_main_left img:hover{transform: translateY(-6px);animation-name: hover;animation-duration: 1.5s;animation-delay: 0.3s;animation-timing-function: linear;animation-iteration-count: infinite;animation-direction: alternate;}
+.train_main_left img:before {pointer-events: none;position: absolute;z-index: -1;content: '';top: 100%;left: 5%;height: 10px;width: 90%;opacity: 0;background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);transition-duration: 0.3s;transition-property: transform, opacity;}
+.train_main_left img:hover:before{opacity: 1;transform: translateY(5px);}
+@keyframes hover {
+  50% {transform: translateY(-3px);}
+  100% {transform: translateY(-6px);}}
+  
+.hot_img_ul a{
+	display: block;
+}

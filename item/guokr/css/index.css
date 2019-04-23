@@ -1,0 +1,465 @@
+@charset "UTF-8";
+header a,
+header h1 {
+	color: #fff
+}
+
+.core .end li,
+.core .hot h2,
+footer a .pl1,
+footer a .pl2 {
+	box-sizing: border-box
+}
+
+a,abbr,acronym,address,applet,b,
+big,
+blockquote,
+body,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+font,
+form,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+object,
+ol,
+pre,
+q,
+s,
+samp,
+small,
+span,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr,
+tt,
+u,
+ul,
+var {
+	background: 0 0;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline
+}
+
+ol,
+ul {
+	list-style: none
+}
+
+blockquote {
+	quotes: none
+}
+
+blockquote:after,
+blockquote:before {
+	content: '';
+	content: none
+}
+
+del {
+	text-decoration: line-through
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+a img {
+	border: none;
+	outline: 0
+}
+
+header,
+section .news {
+	border-bottom: .1rem solid #4bccae
+}
+
+a,
+a:link,
+a:visited {
+	text-decoration: none
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-family: "微软雅黑";
+	font-size: .35rem;
+	font-weight: 400;
+	color: #333;
+	margin: auto
+}
+
+.floatL {
+	float: left
+}
+
+.floatR {
+	float: right
+}
+
+.clearfix:after {
+	display: block;
+	content: '';
+	clear: both
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.clear {
+	clear: both
+}
+
+header {
+	width: 16rem;
+	height: 2.3rem;
+	background: #262626;
+	display: flex;
+	justify-content: space-between;
+	align-items: center
+}
+
+header .menu,
+header .pc {
+	width: 1.5rem;
+	height: 1.2rem;
+	text-indent: -249.975rem
+}
+
+header .menu {
+	background: url(../img/menu-bg.png) no-repeat;
+	background-size: 1.5rem 1.2rem;
+	margin-left: .4rem
+}
+
+header h1 {
+	font-size: 1rem
+}
+
+header .pc {
+	background: url(../img/pc-bg.png) no-repeat;
+	background-size: 1.5rem 1.2rem;
+	margin-right: .4rem
+}
+
+section .user {
+	width: 16rem;
+	height: 2.125rem;
+	background: #fafafa;
+	display: flex;
+	align-items: center;
+	justify-content: space-around
+}
+
+section .user .login {
+	background: url(../img/login_1.png) no-repeat;
+	background-size: 1.45rem 1.5rem;
+	padding-left: 2rem;
+	border-right: 2px solid #e0e0e0
+}
+
+section .user .register {
+	background: url(../img/login_2.png) no-repeat;
+	background-size: 1.45rem 1.5rem;
+	padding-left: 2rem
+}
+
+section .user a {
+	color: #909090;
+	font-size: .65rem;
+	line-height: 1.45rem;
+	width: 8rem;
+	display: block;
+	margin-left: 1.4rem
+}
+
+section .swiper-pagination {
+	text-align: right;
+	bottom: 0
+}
+
+section .swiper-pagination .swiper-pagination-bullet {
+	background: #ff0;
+	z-index: 333
+}
+
+section .swiper-pagination .swiper-pagination-bullet-active {
+	background: #fafafa
+}
+
+section .swiper-wrapper {
+	width: 100%;
+	height: 7.825rem
+}
+
+section .swiper-wrapper .swiper-slide {
+	width: 100%;
+	height: 7.825rem;
+	position: relative;
+	top: 0
+}
+
+section .swiper-wrapper .swiper-slide img {
+	width: 100%;
+	height: 7.825rem
+}
+
+section .swiper-wrapper .swiper-slide .opa {
+	width: 100%;
+	height: 1.85rem;
+	position: absolute;
+	bottom: 0;
+	background: #000;
+	opacity: .2
+}
+
+section .swiper-wrapper .swiper-slide .font {
+	width: 100%;
+	display: block;
+	font-size: .75rem;
+	text-align: center;
+	line-height: 1.85rem;
+	z-index: 22;
+	color: #fff;
+	position: absolute;
+	bottom: 0
+}
+
+section .news {
+	width: 16rem;
+	display: flex;
+	justify-content: center
+}
+
+section .news ul {
+	width: 15.25rem
+}
+
+section .news li {
+	padding-left: 10px;
+	height: 2rem;
+	line-height: 2rem;
+	border-bottom: 1px solid #eaeaea
+}
+
+section .news li a {
+	color: #333;
+	font-size: .75rem
+}
+
+section .news li:last-child {
+	border-bottom: none
+}
+
+.core .hot {
+	width: 16rem
+}
+
+.core .hot ul {
+	width: 100%;
+	height: 2.05rem;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	border-bottom: 1px solid #eaeaea
+}
+
+.core .hot ul li {
+	height: 2.05rem;
+	width: 3.125rem;
+	font-size: .75rem;
+	text-align: center
+}
+
+.core .hot ul li a {
+	color: #363636;
+	line-height: 2rem
+}
+
+.core .hot ul li:hover {
+	border-bottom: 4px solid #dc3d5b;
+	box-sizing: border-box
+}
+
+.core .end,
+.core .hot h2 {
+	border-bottom: 1px solid #eaeaea
+}
+
+.core .hot h2 {
+	height: 2rem;
+	width: 16rem;
+	background-color: #fafafa;
+	padding-left: .75rem;
+	font-size: .75rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center
+}
+
+.core .hot h2 span {
+	width: 1.4rem;
+	height: 1.4rem;
+	display: inline-block;
+	background: url(../img/hot.png) right center no-repeat;
+	background-size: 1.4rem 1.4rem;
+	margin-right: .75rem
+}
+
+.core .end,
+.scroll,
+footer {
+	display: flex
+}
+
+.core .hot h2 a {
+	color: #000;
+	line-height: 2rem
+}
+
+.core .content {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	margin-left: .75rem;
+	height: 6.55rem
+}
+
+.core .content .title {
+	font-size: .75rem;
+	color: #2a2a2a;
+	width: 16rem;
+	line-height: 2rem
+}
+
+.core .content img {
+	width: 5.2rem;
+	height: 3.7rem
+}
+
+.core .content p {
+	width: 8.35rem;
+	height: 3.7rem;
+	font-size: .65rem;
+	color: #8b8e97;
+	line-height: 1.25rem
+}
+
+.core .end {
+	width: 16rem;
+	justify-content: center
+}
+
+.core .end li,
+.core .end ul {
+	width: 15.25rem
+}
+
+.core .end li {
+	height: 2rem;
+	line-height: 2rem;
+	border-top: 1px solid #eaeaea;
+	padding-left: .3rem
+}
+
+.core .end li a {
+	color: #333;
+	font-size: .75rem
+}
+
+.core .end li:last-child {
+	border-bottom: none
+}
+
+.scroll {
+	width: 16rem;
+	height: 3rem;
+	background: #fafafa;
+	justify-content: center;
+	align-items: center;
+	border-bottom: .1rem solid #4bccae
+}
+
+.scroll span {
+	width: 1.4rem;
+	height: 1.4rem;
+	background: url(../img/scroll.png) no-repeat;
+	background-size: 1.4rem 1.4rem
+}
+
+.scroll a {
+	font-size: .75rem;
+	color: #84888b;
+	padding-left: .5rem
+}
+
+footer {
+	height: 3.7rem;
+	background: #262626;
+	width: 16rem;
+	align-items: center
+}
+
+footer .pcEnd {
+	width: 1.45rem;
+	height: 1.15rem;
+	background: url(../img/footer_1.png) 2rem center no-repeat;
+	background-size: 1.45rem 1.15rem
+}
+
+footer .MobileApp {
+	width: .65rem;
+	height: 1.15rem;
+	background: url(../img/footer_2.png) 1.75rem center no-repeat;
+	background-size: .65rem 1.15rem;
+	border-left: 2px solid #686868
+}
+
+footer a {
+	flex: 1;
+	color: #909090;
+	font-size: .75rem
+}
+
+footer a .pl1 {
+	padding-left: 4.1rem
+}
+
+footer a .pl2 {
+	padding-left: 3.05rem
+}

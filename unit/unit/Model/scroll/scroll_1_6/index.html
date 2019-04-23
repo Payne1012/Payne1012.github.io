@@ -1,0 +1,203 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>图片切换按钮滚动</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script src="http://x.autoimg.cn/bi/topic/ahas_head.20160804.min.js"></script>
+</head>
+<body>
+
+
+      	<div id="tabs1" class="tabs11">
+           <div class="cur"><a class="tabs1_1" href="javascript:void(0)"  target="_self"></a></div>
+           <div><a class="tabs1_2" href="javascript:void(0)"  target="_self"></a></div>
+        </div>
+  		<div class="tabs1_context">
+        <a href="javascript:void(0)" class="aBtn_lb4 lBtn_lb4" title="向前翻" id="lBtn_lb4"></a>
+            <div class="scrollBox_lb4" style="width: 960px;">
+                <ul id="scroll_lb4">
+                    <li>
+                       <div >
+                        <img src="images/gd1.jpg" alt="" />
+                       
+                      
+                       </div>
+                    </li>
+                    <li>
+                       <div>
+                        <img src="images/gd2.jpg" alt="" />
+                      
+                      </div>
+                    </li>
+                 </ul>
+           </div>
+    <a href="javascript:void(0)" class="aBtn_lb4 rBtn_lb4" title="向后翻" id="rBtn_lb4"></a>
+     </div>
+     	<div class="tabs1_context" style="display:none;">
+        <a href="javascript:void(0)" class="aBtn_lb4 lBtn_lb4" title="向前翻" id="lBtn_lb3"></a>
+            <div class="scrollBox_lb3" style="width: 960px;">
+                <ul id="scroll_lb3">
+                    <li>
+                       <div >
+                        <img src="images/gd1.jpg" alt="" />
+                    
+                       </div>
+                    </li>
+                    <li>
+                       <div>
+                        <img src="images/gd2.jpg" alt="" />
+                     
+                      </div>
+                    </li>
+                 </ul>
+           </div>
+    <a href="javascript:void(0)" class="aBtn_lb4 rBtn_lb4" title="向后翻" id="rBtn_lb3"></a>
+   </div>
+     
+     
+     
+
+<h5>HTML</h5>
+    <pre>
+ &lt;div id="tabs1" class="tabs11"&gt;
+    &lt;div class="cur"&gt;&lt;a class="tabs1_1" href="javascript:void(0)"  target="_self"&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;a class="tabs1_2" href="javascript:void(0)"  target="_self">&lt;/a&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="tabs1_context"&gt;    
+ &lt;a href="javascript:void(0)" class="aBtn_lb4 lBtn_lb4" title="向前翻" id="lBtn_lb4"&gt;&lt;/a&gt;
+            &lt;div class="scrollBox_lb4" style="width:960px;"&gt;
+                &lt;ul id="scroll_lb4"&gt;
+                    &lt;li&gt;
+                       &lt;div &gt;
+                        &lt;img src="images/gd1.jpg" alt="" /&gt;
+                       &lt;/div&gt; 
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                       &lt;div&gt;
+                        &lt;img src="images/gd2.jpg" alt="" /&gt;
+                      &lt;/div&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+           &lt;/div&gt;
+    &lt;a href="javascript:void(0)" class="aBtn_lb4 rBtn_lb4" title="向后翻" id="rBtn_lb4"&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="tabs1_context" style="display:none;"&gt;
+        &lt;a href="javascript:void(0)" class="aBtn_lb4 lBtn_lb4" title="向前翻" id="lBtn_lb3"&gt;&lt;/a&gt;
+            &lt;div class="scrollBox_lb3" style="width: 960px;"&gt;
+                &lt;ul id="scroll_lb3"&gt;
+                    &lt;li&gt;
+                       &lt;div &gt;
+                        &lt;img src="images/gd1.jpg" alt="" /&gt;
+                       &lt;/div&gt; 
+                     &lt;/li&gt;
+                    &lt;li&gt;
+                       &lt;div&gt;
+                        &lt;img src="images/gd2.jpg" alt="" /&gt;
+                       &lt;/div&gt;
+                    &lt;/li&gt;
+                 &lt;/ul&gt;
+           &lt;/div&gt;
+    &lt;a href="javascript:void(0)" class="aBtn_lb4 rBtn_lb4" title="向后翻" id="rBtn_lb3"&gt;&lt;/a&gt;
+    &lt;/div&gt;
+</pre>
+
+
+   <h5>CSS</h5>
+    <pre>
+.tabs11{ height:50px;}
+a.tabs1_1{position: absolute;width: 207px;height: 38px; top:0px;left: 0px;background:url(../images/hh1.png) -0px -39px no-repeat;}
+a.tabs1_1:hover{background-position: -0px -0px;}
+.cur a.tabs1_1{background-position: -0px -0px;}
+a.tabs1_2{position: absolute;width: 207px;height: 38px; top:0px;left: 207px;background:url(../images/hh1.png) -204px -39px no-repeat;}
+a.tabs1_2:hover{background-position: -204px -0px;}
+.cur a.tabs1_2{background-position: -204px -0px;}
+.scrollBox_lb4 { position:relative; width:2860px;height:400px;overflow:hidden;}
+.scrollBox_lb4 ul {position:absolute;top:0; left:0;padding: 0;height:400px; margin: 0;}
+.scrollBox_lb4 li {float:left; width:960px;position:relative; margin-right:9px;}
+.scrollBox_lb4 li a:hover {filter:alpha(opacity=95);/*IE*/opacity:0.9;/*Mozilla*/}
+.aBtn_lb4 {float:left;position: absolute; height:80px; width:34px; background:url(../images/aa1.jpg) 0px 0px  no-repeat;filter:alpha(opacity=80);/*IE*/opacity:0.8;/*Mozilla*/}
+.aBtn_lb4:hover{filter:alpha(opacity=100);/*IE*/opacity:1;/*Mozilla*/}
+.aBtnD_lb4{float: left; width: 34px; height: 80px;}
+.lBtn_lb4 {top:192px;left: 0px;z-index: 2;}
+.rBtn_lb4 {background-position:-34px center;top:192px;left: 926px;z-index: 99;}
+.scrollBox_lb3 { position:relative; width:2860px;height:400px;overflow:hidden;}
+.scrollBox_lb3 ul {position:absolute;top:0; left:0;padding: 0;height:400px; margin: 0;}
+.scrollBox_lb3 li {float:left; width:960px;position:relative; margin-right:9px;}
+</pre>
+
+
+   <h5>JS</h5>
+    <pre>
+&lt;script src="https://x.autoimg.cn/topic/js/scroll_min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+function tabsdiv(_tabs_context){
+        return function(){
+            $(this).siblings().removeClass('cur');
+            $(this).addClass('cur');
+            var num = $(this).index();
+            $(_tabs_context).hide().eq(num).show();
+        }
+    }
+$('#tabs1 div').click(tabsdiv('.tabs1_context'));
+&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+$("#scroll_lb4").autoTopic_scroll({
+       leftBtn:"#lBtn_lb4",
+        rightBtn:"#rBtn_lb4",
+        control: "#control_lb4",
+        controlToc : ".toc" 
+ });
+ $("#scroll_lb3").autoTopic_scroll({
+        leftBtn:"#lBtn_lb3",
+        rightBtn:"#rBtn_lb3",
+        control: "#control_lb3",
+        controlToc : ".toc" 
+});
+&lt;/script&gt;
+</pre>
+
+
+
+
+<script src="https://x.autoimg.cn/topic/js/jquery-1.8.3.min.js" type="text/javascript"></script>  <!--通用-->
+<script src="https://x.autoimg.cn/topic/js/scroll_min.js" type="text/javascript"></script>
+<script type="text/javascript">
+function tabsdiv(_tabs_context){
+        return function(){
+            $(this).siblings().removeClass('cur');
+            $(this).addClass('cur');
+            var num = $(this).index();
+            $(_tabs_context).hide().eq(num).show();
+        }
+    }
+$('#tabs1 div').click(tabsdiv('.tabs1_context'));
+</script>
+<script type="text/javascript">
+$("#scroll_lb4").autoTopic_scroll({
+        leftBtn:"#lBtn_lb4",
+        rightBtn:"#rBtn_lb4",
+        control: "#control_lb4",
+        controlToc : ".toc" 
+});
+$("#scroll_lb3").autoTopic_scroll({
+        leftBtn:"#lBtn_lb3",
+        rightBtn:"#rBtn_lb3",
+        control: "#control_lb3",
+        controlToc : ".toc" 
+});
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

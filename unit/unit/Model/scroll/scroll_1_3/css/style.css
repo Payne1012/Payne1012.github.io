@@ -1,0 +1,41 @@
+@charset "gb2312";
+/* CSS Document */
+
+body{margin:0px;padding:0px;font-size:14px;font-family:"Î¢ÈíÑÅºÚ","SimHei","SimSun";line-height:24px; background-color:#fff; color:#000;}
+div, h1, h2, h3, h4,h5, p, form, label, input, textarea, img, span,dl,dt,dd{margin:0; padding:0;}
+p,div,form,img,ul,ol,li,dl,dt,dd {margin:0;padding:0;border:0; text-align:left;}
+ul,ol,li{list-style:none;}
+body .footer{ color:#000;}
+a{ color:#000; text-decoration:none; outline:none;}
+a:hover{text-decoration:underline; outline:none;}
+img{border:none;}
+
+input[type=button]:hover{filter:alpha(opacity=60);/*IE*/opacity:0.6;/*Mozilla*/}
+
+
+
+.scrollBox_lb4 { position:relative; width:2860px;height:400px;overflow:hidden;}
+.scrollBox_lb4 ul {position:absolute;top:0; left:0;padding: 0;height:400px; margin: 0;}
+.scrollBox_lb4 li {float:left; width:960px;position:relative; margin-right:9px;}
+.scrollBox_lb4 li a:hover {filter:alpha(opacity=95);/*IE*/opacity:0.9;/*Mozilla*/}
+.aBtn_lb4 {float:left;position: absolute; height:80px; width:34px; background:url(../images/aa1.jpg) 0px 0px  no-repeat;filter:alpha(opacity=80);/*IE*/opacity:0.8;/*Mozilla*/}
+.aBtn_lb4:hover{filter:alpha(opacity=100);/*IE*/opacity:1;/*Mozilla*/}
+.aBtnD_lb4{float: left; width: 34px; height: 80px;}
+.lBtn_lb4 {top:112px;left: 0px;z-index: 2;}
+.rBtn_lb4 {background-position:-34px center;top:112px;left: 926px;z-index: 99;}
+.xfbg{ position:absolute; left:0px; top:310px; background:#f00; width:960px; height:90px;filter:alpha(opacity=80);/*IE*/opacity:0.8;/*Mozilla*/}
+.zzz{ position:absolute;}
+.zzz p{ position:absolute; left:26px; top:-81px; font-size:16px; color:#FFF; width:900px;}
+.zzz p1{ position:absolute; left:26px; top:-57px; font-size:14px; color:#FFF; width:900px; line-height:20px;}
+
+
+
+ 
+  pre {  border: #999 dashed 1px; background: #f6f6f6;padding:10px;
+ white-space: pre-wrap; /* css-3 */
+white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+white-space: -pre-wrap; /* Opera 4-6 */
+white-space: -o-pre-wrap; /* Opera 7 */
+word-wrap: break-word; /* Internet Explorer 5.5+ */ 
+ 
+ }
