@@ -18,7 +18,7 @@ angular.module('app')
 
 			// config
 			$scope.app = {
-				host: "http://127.0.0.1:8848", //服务器地址
+				host: "http://127.0.0.1:8020/angular/", //服务器地址
 				name: '后台管理登录',
 				version: '1.0.0',
 				// for chart colors

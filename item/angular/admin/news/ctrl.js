@@ -4,13 +4,14 @@
 app.controller('ListController', function($scope, $resource,$stateParams,$modal,$state) {
     //查询
     $scope.query = function(page,filter){
-        var $com = $resource($scope.app.host + "/news/?page=:page&search=:filter",{page:'@page',filter:'@filter'});
+        var $com = $resource($scope.app.host + "data/cart.json");
         if(!page){
             page=1;
         }else{
             page=parseInt(page);
         }
         $com.get({page:page,filter:filter},function(data){
+//      	
             //扩展分页数据，显示页签，最终效果为  < 1 2 3 4 5 >
             data.page_index = page;
             data.pages = [];    //页签表
@@ -21,7 +22,8 @@ app.controller('ListController', function($scope, $resource,$stateParams,$modal,
             var e = Math.min(data.page_count,s+N-1)
             for(var i=s;i<=e;i++)
                 data.pages.push(i)
-            $scope.data = data;
+            $scope.data = data.result.list;
+            console.log($scope.data)
             $scope.search_context = filter;
         });
     }
