@@ -14,7 +14,7 @@ new Vue({
 	methods:{
 		trainLeftView: function(){
 		this.$http.get("data/trainData.json").then(res=>{
-			console.log(res)
+			// console.log(res)
 			this.trainLeftlist = res.body.result.list;
 			this.trainToprightlist = res.body.result.list1;
 			this.trainRightlist = res.body.result.list2;
