@@ -17,9 +17,34 @@
 		<link rel="icon" href="favicon.ico" />
 		<link rel="stylesheet" href="css/public.css" />
 		<link rel="stylesheet" href="css/style.css" />
-	</head>
-
+		<link rel="stylesheet" href="css/loading.css" />
+	</head>	
 	<body class="body_wrap">
+		<!--loading-->
+		<div id="load-bg">
+			<div class="out" id="loading">
+				<div class="fade-in">
+					<div class="container">
+						<div class="one common"></div>
+						<div class="two common"></div>
+						<div class="three common"></div>
+						<div class="four common"></div>
+						<div class="five common"></div>
+						<div class="six common"></div>
+						<div class="seven common"></div>
+						<div class="eight common"></div>
+					</div>
+					<div class="bar">
+						<div class="progress"></div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<script type="text/javascript">
+			var height = document.documentElement.clientHeight;
+			var load = document.getElementById("load-bg");
+			load.style.height = height+'px';
+		</script>
 		<div class="page_wrap">
 			<!--	头部 start-->
 			<header class="header_wrap">
@@ -487,31 +512,11 @@
 			</footer>
 		</div>
 		<!--JavaScript-->
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 		<script type="text/javascript">
-			//js懒加载
-			var num = document.getElementsByTagName('img').length;
-			var img = document.getElementsByTagName("img");
-			// 存储图片加载到的位置，避免每次都从第一张图片开始遍历
-			var n = 0;
-			// 页面载入完毕加载可视区域内的图片
-			lazyload();
-			window.onscroll = lazyload;
-			// 监听页面滚动事件
-			function lazyload() {
-				// 可见区域高度
-				var seeHeight = document.documentElement.clientHeight;
-				// 滚动条距离顶部高度
-				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-				for(var i = n; i < num; i++) {
-					if(img[i].offsetTop < seeHeight + scrollTop) {
-						if(img[i].getAttribute("src") == "default.jpg") {
-							img[i].src = img[i].getAttribute("data-src");
-						}
-						n = i + 1;
-					}
-				}
-			}
-
+			$(document).ready(function() { 
+			$("#load-bg").hide(); 
+			}); 
 		</script>
 	</body>
 </html>
