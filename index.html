@@ -78,10 +78,10 @@
 								<p class="title_right_bottom">ROJECT DISPLAY</p>
 							</div>
 						</div>
-						<div class="train_main" >
-							<ul class="train_main_left fl" id="train-left">
+						<div class="train_main"  id="train-main">
+							<ul class="train_main_left fl">
 								<!--star-->
-								<li v-for="item in trainlist">
+								<li v-for="item in trainLeftlist">
 									<a :href="item.listHref"  target="_blank">
 										<img :src="item.listImage" />
 									</a>
@@ -107,75 +107,11 @@
 									</div>
 									<ul class="hot_news_ul">
 										<!--star-->
-										<li>
-											<a href="unit/unit/index.html" target="_blank" class="news_right_bottom_tag">汇总</a>
+										<li v-for="item in trainToprightlist">
+											<a :href="item.listHref" target="_blank" class="news_right_bottom_tag">{{item.listTag}}</a>
 											<span class="spacer">|</span>
-											<a href="unit/unit/index.html" target="_blank" class="news_right_bottom_title">组件汇总</a>
-											<span class="fr">2016</span>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="unit/buttonStyle/index.html" target="_blank" class="news_right_bottom_tag">CSS3</a>
-											<span class="spacer">|</span>
-											<a href="unit/buttonStyle/index.html" target="_blank" class="news_right_bottom_title">CSS3按钮样式</a>
-											<span class="fr">2016</span>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="item/admin/index.html" target="_blank" class="news_right_bottom_tag">后台</a>
-											<span class="spacer">|</span>
-											<a href="item/admin/index.html" target="_blank" class="news_right_bottom_title">后台管理</a>
-											<span class="fr">2016</span>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="item/login/login1/index.html" target="_blank" class="news_right_bottom_tag">CSS3</a>
-											<span class="spacer">|</span>
-											<a href="item/login/login1/index.html" target="_blank" class="news_right_bottom_title">CSS3的登录</a>
-											<span class="fr">2016</span>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="unit/canvaseye/index.html" target="_blank" class="news_right_bottom_tag">canvas</a>
-											<span class="spacer">|</span>
-											<a href="unit/canvaseye/index.html" target="_blank" class="news_right_bottom_title">canvas眼睛示例</a>
-											<span class="fr">2016</span>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="unit/clickup/index.html" target="_blank" class="news_right_bottom_tag">弹出</a>
-											<span class="spacer">|</span>
-											<a href="unit/clickup/index.html" target="_blank" class="news_right_bottom_title">点击弹出</a>
-											<span class="fr">2016</span>
-										</li>
-										<!--end-->
-										<!--star-->
-											<li>
-											<a href="unit/mouse/index.html" target="_blank" class="news_right_bottom_tag">轮播</a>
-											<span class="spacer">|</span>
-											<a href="unit/mouse/index.html" target="_blank" class="news_right_bottom_title">分层轮播</a>
-											<span class="fr">2016</span>
-										</li>
-										<!--end-->
-										<!--star-->
-											<li>
-											<a href="unit/tab/index.html" target="_blank" class="news_right_bottom_tag">tab</a>
-											<span class="spacer">|</span>
-											<a href="unit/tab/index.html" target="_blank" class="news_right_bottom_title">tab切换复用</a>
-											<span class="fr">2016</span>
-										</li>
-										<!--end-->
-										<!--star-->
-											<li>
-											<a href="unit/canvasSnow/index.html" target="_blank" class="news_right_bottom_tag">canvas</a>
-											<span class="spacer">|</span>
-											<a href="unit/canvasSnow/index.html" target="_blank" class="news_right_bottom_title">逼真雪花飘落</a>
-											<span class="fr">2016</span>
+											<a :href="item.listHref" target="_blank" class="news_right_bottom_title">{{item.listName}}</a>
+											<span class="fr">{{item.listTime}}</span>
 										</li>
 										<!--end-->
 									</ul>
@@ -185,85 +121,12 @@
 										<div class="hot_img_header_title">营销页面</div>
 									</div>
 									<ul class="hot_img_ul">
-										<li>
-											<a href="web/m/tange/index.html" target="_blank"><img src=" images/tange.jpg" /></a>
+										<li v-for="item in trainRightlist">
+											<a :href="item.listHref" target="_blank"><img :src="item.listImage" /></a>
 											<p>
-												<a href="web/m/tange/index.html" target="_blank">探歌m端</a>
+												<a :href="item.listHref" target="_blank">{{item.listName}}</a>
 											</p>
 										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="web/m/yiqi/index.html" target="_blank"><img src=" images/yiqi.jpg" /></a>
-											<p>
-												<a href="web/m/yiqi/index.html" target="_blank">一汽m端</a>
-											</p>
-										</li>
-										<!--end-->
-										
-										<!--star-->
-										<li>
-											<a href="web/pc/dffshn/index.html" target="_blank"><img src=" images/dffshn.jpg" /></a>
-											<p>
-												<a href="web/pc/dffshn/index.html" target="_blank">东风风神</a>
-											</p>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="web/pc/ll/index.html" target="_blank"><img src=" images/ll.jpg" /></a>
-											<p>
-												<a href="web/pc/ll/index.html" target="_blank">楼兰</a>
-											</p>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="web/pc/navara/index.html" target="_blank"><img src=" images/navara.jpg" /></a>
-											<p>
-												<a href="web/pc/navara/index.html" target="_blank">纳瓦拉</a>
-											</p>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="web/pc/senya/index.html" target="_blank"><img src=" images/senya.jpg" /></a>
-											<p>
-												<a href="web/pc/senya/index.html" target="_blank">森雅</a>
-											</p>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="web/pc/sqdz/index.html" target="_blank"><img src=" images/sqdz.jpg" /></a>
-											<p>
-												<a href="web/pc/sqdz/index.html" target="_blank">途观</a>
-											</p>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="web/pc/t600/index.html" target="_blank"><img src=" images/t600.jpg" /></a>
-											<p>
-												<a href="web/pc/t600/index.html" target="_blank">T600</a>
-											</p>
-										</li>
-										<!--end-->
-										<!--star-->
-										<li>
-											<a href="web/pc/xc60/index.html" target="_blank"><img src=" images/xc60.jpg" /></a>
-											<p>
-												<a href="web/pc/xc60/index.html" target="_blank">XC60</a>
-											</p>
-										</li>
-										<!--end-->
-										<!--star-->
-										<!--<li>
-											<a href="62/fmrs/index.html" target="_blank"><img src="images/fmrs.jpg" /></a>
-											<p>
-												<a href="62/fmrs/index.html" target="_blank">粉墨人生</a>
-											</p>
-										</li>-->
 										<!--end-->
 									</ul>
 								</div>
