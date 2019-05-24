@@ -4,11 +4,9 @@
   "result": {
       "totalHoney":59,
       "list":[
-      {
-      "name": "面具1",
-      "price": 19,
-      "count": 1,
-      "amount": 19,
+       {
+      "name": "磁浮试验样车下线",
+      "time": 20181019,
       "imgPic": "static/img/test.jpg",
       "gifts": [
         {
@@ -22,10 +20,8 @@
       ]
       },
       {
-      "name": "面具2",
-      "price": 20,
-      "count": 1,
-      "amount": 20,
+      "name": "跳失控挂车拉手刹新",
+      "time": 20181019,
       "imgPic": "static/img/test1.jpg",
         "gifts": [
           {
@@ -39,11 +35,8 @@
         ]
       },
         {
-          "name": "面具3",
-
-          "price": 20,
-          "count": 1,
-          "amount": 20,
+          "name": "英停售华为5G手机",
+         "time": 20181019,
           "imgPic": "static/img/test1.jpg",
           "gifts": [
             {
