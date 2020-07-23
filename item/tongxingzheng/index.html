@@ -37,7 +37,12 @@
 			.nav-top-right {
 				display: flex;
 			}
-
+			.nav-top-top{
+				position: fixed;
+				width: 100%;
+				height: 1.1rem;
+				line-height: 1.1rem;
+			}
 			.nav-top {
 				justify-content: space-between;
 				-webkit-box-shadow: 0 2px 3px #e9e9e9;
@@ -48,6 +53,7 @@
 				position: fixed;
 				width: 100%;
 				background-color: #fff;
+				top: 1.1rem;
 			}
 
 			#jiantou {
@@ -56,12 +62,27 @@
 				background-color: #0a91d1;
 				padding: 0 0.3rem;
 				align-items: center;
+				display: flex; 
+					justify-content: space-between;
+			}
+			
+			.jiantou-left{
 				display: flex;
+				align-items: center;
+			}
+			
+			#jiantou .jiantou-left p{
+				font-size: 0.25rem;
+				padding-left: 0.2rem;
+			}
+			#jiantou p{
+				color: #FFFEFA;
+				font-size: 0.2rem;
 			}
 
 			#jiantou img {
-				width: 0.4rem;
-				height: 0.4rem;
+				width: 0.3rem;
+				height: 0.3rem;
 			}
 
 			#tongguo {
@@ -96,11 +117,13 @@
 				width: 0.8rem;
 				align-items: center;
 				display: flex;
+				text-align: center;
 			}
 
 			.content {
-				padding-top: 1.3rem;
+				padding-top: 2.3rem;
 				margin: 0 auto;
+				text-align: center;
 			}
 
 			.name-title {
@@ -189,6 +212,9 @@
 					-moz-box-shadow: 0px 2px 7px #1c2548;
 					box-shadow: 0px 2px 7px #1c2548;
 				}
+				.banner{
+					margin: 0 auto;
+				}
 		</style>
 	</head>
 	<body>
@@ -209,11 +235,17 @@
 				<p class="tijiao" @click="tijiao">生成</p>
 			</div>
 			<div v-else class="isfalse">
-				<div class="nav-top">
-					<div class="nav-top-left">
-						<div id="jiantou">
+				<div class="nav-top-top">
+					<div id="jiantou">
+						<div class="jiantou-left"> 
 							<img src="img/jiantou.png">
+							<p>学生校园通行码领取：申请人领取</p>
 						</div>
+						<p class="jiantou-right">流水号：2340599</p>
+					</div>
+				</div>
+				<div class="nav-top">
+					<div class="nav-top-left"> 
 						<div id="tongguo">
 							通过
 						</div>
@@ -228,6 +260,7 @@
 					</div>
 				</div>
 				<div class="content">
+					<img class="banner" src="img/banner.png" >
 					<div class="name-title">
 						<div class="name">
 							{{name}}
@@ -279,18 +312,20 @@
 				name: "徐书瑜",
 				generation: '2020-07-08 00:00:00',
 				expire: '2020-07-09 23:59:59',
-				istrue: true
+				istrue: false
 			},
 			methods: {
 				tijiao(){ 
-					if(this.cdCard===""){
-						alert("请输入身份证号")
-						return false
-					}
+					
 					if(this.name===""){
 						alert("请输入姓名")
 						return false
 					}
+					if(this.cdCard===""){
+						alert("请输入身份证号")
+						return false
+					}
+					
 					if(this.generation===""){
 						alert("请输入生成时间")
 						return false
