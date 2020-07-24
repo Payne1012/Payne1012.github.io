@@ -261,6 +261,25 @@
 				align-items: center;
 				display: flex;
 			}
+			
+			.radio{
+				margin-top: 1rem;
+				display: flex;
+				height: 0.5rem;
+				line-height: 0.5rem;
+				align-items: center;
+			}
+			.radio i{
+			  width: 0.3rem;
+			  height: 0.3rem;
+			  display: block;
+			  border: 1px solid #3ad1bb;
+			  margin: 0.3rem;
+			  border-radius: 1rem;
+			 }
+			 .radio.checked i{
+				 background: #0A91D1;
+			 }
 		</style>
 	</head>
 	<body>
@@ -283,6 +302,12 @@
 				 placeholder="选择日期时间">
 				</el-date-picker>
 				<br />
+				<div v-if="isChecked" class="radio" @click="onPitch()">
+					<i></i><p>选择是否记住姓名和身份证号码</p>
+				</div>
+				<div v-else class="radio checked" @click="onPitch()">
+					<i></i><p>选择是否记住姓名和身份证号码</p>
+				</div>
 				<p class="tijiao" @click="tijiao">生成</p>
 			</div>
 			<div v-else class="isfalse">
@@ -365,7 +390,8 @@
 				name: "",
 				generation: '',
 				expire: '',
-				istrue: true
+				istrue: true,
+				isChecked:true
 			},
 			created() {//实例已经创建完成之后被调用。
 				//当前设定的日期时间
@@ -386,16 +412,25 @@
 				let year1, month1, day1;
 				[year1, month1, day1] = [d.getFullYear(), d.getMonth(), d.getDate()]
 				let date1 = new Date(year1, month1, day1, 7)
-				this.expire = formatDate(date1)
-				//前一天设定的日期时间
+				this.generation = formatDate(date1)
+				//明天设定的日期时间
 				let year2, month2, day2
-				d.setTime(d.getTime() - 24 * 60 * 60 * 1000);
+				d.setTime(d.getTime() + 24 * 60 * 60 * 1000);
 				[year2, month2, day2] = [d.getFullYear(), d.getMonth(), d.getDate()]
 				let date2 = new Date(year2, month2, day2, 7)
-				this.generation = formatDate(date2)
+				this.expire = formatDate(date2)
 				
 			},
 			mounted() { 
+				var getName = localStorage.getItem("name");
+				var getCdCard = localStorage.getItem("cdCard");
+				if (getName) {
+					this.cdCard = getCdCard;
+					this.name = getName;
+					
+				} else{
+					
+				}
 			}, 
 			methods: {
 				tijiao() {
@@ -420,11 +455,21 @@
 					if (this.expire === "") {
 						alert("请输入到期时间")
 						return false
-					}
-
+					} 
+					if (this.isChecked===false) { 
+						localStorage.setItem("cdCard", this.cdCard);
+						localStorage.setItem("name", this.name);
+					} 
+					
 					this.istrue = false
 
-				}
+				},
+				onPitch() { 
+					this.isChecked = !this.isChecked 
+					if (this.isChecked===false) { 
+						alert('保存姓名，身份证号下次自动输入')
+					}
+				},
 			}
 		})
 	</script>
