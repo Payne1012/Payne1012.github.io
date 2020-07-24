@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>申请人领取-学生校园通行码领取</title>
 		<script>
@@ -33,9 +33,7 @@
 				font-family: 'Microsoft YaHei', Arial, sans-serif;
 			}
 
-			.nav-top,
-			.nav-top-left,
-			.nav-top-right {
+			.nav-top,.nav-top-left,.nav-top-right {
 				display: flex;
 			}
 
@@ -196,12 +194,12 @@
 			.istrue input {
 				height: 1rem;
 				line-height: 1rem;
-				width: 6rem; 
+				width: 6rem;
 				border: 1px solid #DCDFE6;
 				background: #fff;
 				border-radius: 0.2rem;
 				text-align: center;
-				
+
 				-webkit-appearance: none;
 				-webkit-box-sizing: border-box;
 				box-sizing: border-box;
@@ -209,6 +207,7 @@
 				display: inline-block;
 				font-size: inherit;
 				outline: 0;
+				outline: none;
 			}
 
 			.title {
@@ -235,19 +234,30 @@
 				margin: 0 auto;
 				width: 6.3rem;
 			}
-			.el-date-editor.el-input, .el-date-editor.el-input__inner {
-			    width: 6rem;
+
+			.xytxm,
+			.card-code,
+			.name {
+				font-size: 0.4rem;
 			}
-			.el-picker-panel.el-date-picker.el-popper.has-time{
+
+			.el-date-editor.el-input,
+			.el-date-editor.el-input__inner {
+				width: 6rem;
+			}
+
+			.el-picker-panel.el-date-picker.el-popper.has-time {
 				position: absolute;
 				top: 1.5rem !important;
 				left: 0.5rem !important;
 				z-index: 2001;
 			}
-			.el-input--prefix .el-input__inner{
+
+			.el-input--prefix .el-input__inner {
 				position: relative;
 			}
-			.el-input__icon{
+
+			.el-input__icon {
 				align-items: center;
 				display: flex;
 			}
@@ -255,7 +265,6 @@
 	</head>
 	<body>
 		<div id="vue-app">
-
 			<div class="istrue" v-if="istrue">
 				<div class="title">
 					小徐专用校园通行码生成器
@@ -264,23 +273,15 @@
 				<input type="" name="" id="" value="" v-model="name" /><br />
 				身份证号：<br />
 				<input type="" name="" id="" value="" v-model="cdCard" /><br />
-				生成时间：<br /> 
-				<el-date-picker
-				v-model="generation" 
-				type="datetime" 
-				format="yyyy-MM-dd HH:mm:ss" 
-				value-format="yyyy-MM-dd HH:mm:ss"
+				生成时间：<br />
+				<el-date-picker v-model="generation" type="datetime" format="yyyy-MM-dd HH:mm:ss" value-format="yyyy-MM-dd HH:mm:ss"
 				 placeholder="选择日期时间">
-				</el-date-picker> 
+				</el-date-picker>
 				<br />
 				到期时间：<br />
-				<el-date-picker
-				v-model="expire" 
-				type="datetime" 
-				format="yyyy-MM-dd HH:mm:ss" 
-				value-format="yyyy-MM-dd HH:mm:ss"
+				<el-date-picker v-model="expire" type="datetime" format="yyyy-MM-dd HH:mm:ss" value-format="yyyy-MM-dd HH:mm:ss"
 				 placeholder="选择日期时间">
-				</el-date-picker> 
+				</el-date-picker>
 				<br />
 				<p class="tijiao" @click="tijiao">生成</p>
 			</div>
@@ -362,14 +363,40 @@
 			data: {
 				cdCard: '',
 				name: "",
-				generation: '2020-00-00 00:00:00',
-				expire: '2020-00-00 23:59:59',
+				generation: '',
+				expire: '',
 				istrue: true
 			},
-			mounted(){
-				
+			created() {//实例已经创建完成之后被调用。
+				//当前设定的日期时间
+				function formatDate(datetime) {
+					// 获取年月日时分秒值  slice(-2)过滤掉大于10日期前面的0
+					var year = datetime.getFullYear(),
+						month = ("0" + (datetime.getMonth() + 1)).slice(-2),
+						date = ("0" + datetime.getDate()).slice(-2),
+						hour = ("0" + datetime.getHours()).slice(-2),
+						minute = ("0" + datetime.getMinutes()).slice(-2),
+						second = ("0" + datetime.getSeconds()).slice(-2);
+					// 拼接
+					var result = year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+					// 返回
+					return result;
+				} 
+				let d = new Date
+				let year1, month1, day1;
+				[year1, month1, day1] = [d.getFullYear(), d.getMonth(), d.getDate()]
+				let date1 = new Date(year1, month1, day1, 7)
+				this.expire = formatDate(date1)
+				//前一天设定的日期时间
+				let year2, month2, day2
+				d.setTime(d.getTime() - 24 * 60 * 60 * 1000);
+				[year2, month2, day2] = [d.getFullYear(), d.getMonth(), d.getDate()]
+				let date2 = new Date(year2, month2, day2, 7)
+				this.generation = formatDate(date2)
 				
 			},
+			mounted() { 
+			}, 
 			methods: {
 				tijiao() {
 
