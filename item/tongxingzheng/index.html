@@ -29,7 +29,7 @@
 				padding: 0;
 				margin: 0;
 				color: #333;
-				font-size: 0.4rem;
+				font-size: 0.3rem;
 				font-family: 'Microsoft YaHei', Arial, sans-serif;
 			}
 
@@ -196,8 +196,11 @@
 			.istrue input {
 				height: 1rem;
 				line-height: 1rem;
-				width: 6rem;
-				margin-top: 0.2rem;
+				width: 6rem; 
+				border: 1px solid #DCDFE6;
+				background: #fff;
+				border-radius: 0.2rem;
+				text-align: center;
 			}
 
 			.title {
@@ -232,6 +235,13 @@
 				top: 1.5rem !important;
 				left: 0.5rem !important;
 				z-index: 2001;
+			}
+			.el-input--prefix .el-input__inner{
+				position: relative;
+			}
+			.el-input__icon{
+				align-items: center;
+				display: flex;
 			}
 		</style>
 	</head>
@@ -349,7 +359,7 @@
 				istrue: true
 			},
 			mounted(){
-				input.setAttribute("readOnly", true) //设置readOnly属性
+				
 				
 			},
 			methods: {
