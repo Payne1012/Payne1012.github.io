@@ -23,6 +23,7 @@
           doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
   </script>
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 		<style type="text/css">
 			* {
 				padding: 0;
@@ -37,12 +38,14 @@
 			.nav-top-right {
 				display: flex;
 			}
-			.nav-top-top{
+
+			.nav-top-top {
 				position: fixed;
 				width: 100%;
 				height: 0.8rem;
 				line-height: 0.8rem;
 			}
+
 			.nav-top {
 				justify-content: space-between;
 				-webkit-box-shadow: 0 2px 3px #e9e9e9;
@@ -62,20 +65,21 @@
 				background-color: #0a91d1;
 				padding: 0 0.3rem;
 				align-items: center;
-				display: flex; 
-					justify-content: space-between;
+				display: flex;
+				justify-content: space-between;
 			}
-			
-			.jiantou-left{
+
+			.jiantou-left {
 				display: flex;
 				align-items: center;
 			}
-			
-			#jiantou .jiantou-left p{
+
+			#jiantou .jiantou-left p {
 				font-size: 0.25rem;
 				padding-left: 0.2rem;
 			}
-			#jiantou p{
+
+			#jiantou p {
 				color: #FFFEFA;
 				font-size: 0.2rem;
 			}
@@ -166,7 +170,7 @@
 
 			.generation p.time,
 			.expire p.time {
-				color: #000; 
+				color: #000;
 			}
 
 			.ewm {
@@ -183,61 +187,89 @@
 				font-size: 0.35rem;
 				padding: 0 0.2rem;
 			}
-			.istrue{
+
+			.istrue {
 				width: 100%;
-				text-align: center; 
+				text-align: center;
 			}
-			.istrue input{
+
+			.istrue input {
 				height: 1rem;
 				line-height: 1rem;
 				width: 6rem;
 				margin-top: 0.2rem;
 			}
-			.title{ 
+
+			.title {
 				text-align: center;
 				height: 2rem;
 				line-height: 2rem;
-				}
-				.tijiao{
-					margin: 0 auto; 
-					width: 3rem;
-					height: 1rem;
-					line-height: 1rem;
-					background-color: #0A91D1;
-					color: #FFFFFF;
-					margin-top: 1rem;
-					border-radius: 0.2rem;
-					-webkit-box-shadow: 0px 2px 7px #1c2548;
-					-moz-box-shadow: 0px 2px 7px #1c2548;
-					box-shadow: 0px 2px 7px #1c2548;
-				}
-				.banner{
-					margin: 0 auto;
-					width: 6.3rem;
-				}
+			}
+
+			.tijiao {
+				margin: 0 auto;
+				width: 3rem;
+				height: 1rem;
+				line-height: 1rem;
+				background-color: #0A91D1;
+				color: #FFFFFF;
+				margin-top: 1rem;
+				border-radius: 0.2rem;
+				-webkit-box-shadow: 0px 2px 7px #1c2548;
+				-moz-box-shadow: 0px 2px 7px #1c2548;
+				box-shadow: 0px 2px 7px #1c2548;
+			}
+
+			.banner {
+				margin: 0 auto;
+				width: 6.3rem;
+			}
+			.el-date-editor.el-input, .el-date-editor.el-input__inner {
+			    width: 6rem;
+			}
+			.el-picker-panel.el-date-picker.el-popper.has-time{
+				position: absolute;
+				top: 1.5rem !important;
+				left: 0.5rem !important;
+				z-index: 2001;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="vue-app">
-			
+
 			<div class="istrue" v-if="istrue">
 				<div class="title">
-				小徐专用校园通行码生成器
-			</div>
+					小徐专用校园通行码生成器
+				</div>
 				姓名：<br />
 				<input type="" name="" id="" value="" v-model="name" /><br />
 				身份证号：<br />
 				<input type="" name="" id="" value="" v-model="cdCard" /><br />
-				生成时间：<br />
-				<input type="" name="" id="" value="" v-model="generation" /><br />
+				生成时间：<br /> 
+				<el-date-picker
+				v-model="generation" 
+				type="datetime" 
+				format="yyyy-MM-dd HH:mm:ss" 
+				value-format="yyyy-MM-dd HH:mm:ss"
+				 placeholder="选择日期时间">
+				</el-date-picker> 
+				<br />
 				到期时间：<br />
-				<input type="" name="" id="" value="" v-model="expire" />
+				<el-date-picker
+				v-model="expire" 
+				type="datetime" 
+				format="yyyy-MM-dd HH:mm:ss" 
+				value-format="yyyy-MM-dd HH:mm:ss"
+				 placeholder="选择日期时间">
+				</el-date-picker> 
+				<br />
 				<p class="tijiao" @click="tijiao">生成</p>
 			</div>
 			<div v-else class="isfalse">
 				<div class="nav-top-top">
 					<div id="jiantou">
-						<div class="jiantou-left"> 
+						<div class="jiantou-left">
 							<img src="img/jiantou.png">
 							<p>学生校园通行码领取：申请人领取</p>
 						</div>
@@ -245,7 +277,7 @@
 					</div>
 				</div>
 				<div class="nav-top">
-					<div class="nav-top-left"> 
+					<div class="nav-top-left">
 						<div id="tongguo">
 							通过
 						</div>
@@ -260,8 +292,8 @@
 					</div>
 				</div>
 				<div class="content">
-					<img class="banner" src="img/banner.png" >
-					<img class="banner" src="img/abc.png" >
+					<img class="banner" src="img/banner.png">
+					<img class="banner" src="img/abc.png">
 					<div class="name-title">
 						<div class="name">
 							{{name}}
@@ -305,43 +337,44 @@
 		</div>
 	</body>
 	<script src="./js/vue_min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 	<script type="text/javascript">
 		var vueObj = new Vue({
 			el: '#vue-app',
 			data: {
-				cdCard:'' ,
+				cdCard: '',
 				name: "",
 				generation: '2020-00-00 00:00:00',
 				expire: '2020-00-00 23:59:59',
 				istrue: true
 			},
 			methods: {
-				tijiao(){ 
-					
-					if(this.name===""){
+				tijiao() {
+
+					if (this.name === "") {
 						alert("请输入姓名")
 						return false
 					}
-					if(this.cdCard===""){
+					if (this.cdCard === "") {
 						alert("请输入身份证号")
 						return false
 					}
-					if(this.cdCard.length!=18){
+					if (this.cdCard.length != 18) {
 						alert("请输入正确的身份证号")
 						return false
 					}
-					
-					if(this.generation===""){
+
+					if (this.generation === "") {
 						alert("请输入生成时间")
 						return false
 					}
-					if(this.expire===""){
+					if (this.expire === "") {
 						alert("请输入到期时间")
 						return false
 					}
-					
-						this.istrue=false 
-					
+
+					this.istrue = false
+
 				}
 			}
 		})
