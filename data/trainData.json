@@ -144,6 +144,23 @@
 						"partsName":"微信"
 					}
 				]
+			},
+			{
+				"listName":"期刊教育类网站 ",
+				"listTime":"2020",
+				"listImage":"images/teacher.jpg",
+				"listHref":"item/teacher/index.html",
+				"parts":[
+					{
+						"partsName":"期刊"
+					},
+					{
+						"partsName":"教育"
+					},
+					{
+						"partsName":"bootstrap"
+					}
+				]
 			}
 			
 		],
