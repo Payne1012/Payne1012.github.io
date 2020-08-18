@@ -23,7 +23,7 @@
           doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
   </script>
-		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<link rel="stylesheet" href="css/index.css">
 		<style type="text/css">
 			* {
 				padding: 0;
@@ -380,8 +380,8 @@
 			</div>
 		</div>
 	</body>
-	<script src="./js/vue_min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script src="js/vue_min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js"></script>
 	<script type="text/javascript">
 		var vueObj = new Vue({
 			el: '#vue-app',
@@ -459,7 +459,7 @@
 					if (this.isChecked===false) { 
 						localStorage.setItem("cdCard", this.cdCard);
 						localStorage.setItem("name", this.name);
-					}
+					} 
 					
 					this.istrue = false
 

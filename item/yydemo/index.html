@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>媛媛助手</title>
+		<script>
+			(function(doc, win) {
+          var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function() {
+            var clientWidth = docEl.clientWidth;
+            if(!clientWidth) return;
+            if(clientWidth >= 750) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+          };
+          if(!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+  </script>
+		<link rel="stylesheet" href="css/index.css">
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				color: #333;
+				font-size: 0.3rem;
+				font-family: 'Microsoft YaHei', Arial, sans-serif;
+			}
+
+			#vue-app {
+				margin-top: 1rem;
+			}
+
+			.nav-top,
+			.nav-top-left,
+			.nav-top-right {
+				display: flex;
+			}
+
+			.nav-top-top {
+				position: fixed;
+				width: 100%;
+				height: 0.8rem;
+				line-height: 0.8rem;
+			}
+
+			.nav-top {
+				justify-content: space-between;
+				-webkit-box-shadow: 0 2px 3px #e9e9e9;
+				-moz-box-shadow: 0 2px 3px #e9e9e9;
+				box-shadow: 0px 2px 3px #e9e9e9;
+				height: 1.1rem;
+				line-height: 1.1rem;
+				position: fixed;
+				width: 100%;
+				background-color: #fff;
+				top: 0.8rem;
+			}
+
+			#jiantou {
+				line-height: 1rem;
+				height: 0.8rem;
+				background-color: #0a91d1;
+				padding: 0 0.3rem;
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.jiantou-left {
+				display: flex;
+				align-items: center;
+			}
+
+			#jiantou .jiantou-left p {
+				font-size: 0.25rem;
+				padding-left: 0.2rem;
+			}
+
+			#jiantou p {
+				color: #FFFEFA;
+				font-size: 0.2rem;
+			}
+
+			#jiantou img {
+				width: 0.3rem;
+				height: 0.3rem;
+			}
+
+			#tongguo {
+				width: 2rem;
+				height: 0.8rem;
+				font-size: 0.3rem;
+				text-align: center;
+				line-height: 0.8rem;
+				color: #52b74f;
+				-webkit-box-shadow: 0px 2px 3px #a6a6a6;
+				-moz-box-shadow: 0px 2px 3px #a6a6a6;
+				box-shadow: 0px 2px 3px #a6a6a6;
+				margin-top: 0.15rem;
+				margin-left: 0.1rem;
+				border-radius: 0.06rem;
+				font-weight: bold;
+			}
+
+			.nav-top-right img {
+				width: 0.4rem;
+				height: auto;
+				opacity: 0.8;
+				margin: 0 auto;
+			}
+
+			#more img {
+				width: 0.1rem;
+			}
+
+			#more,
+			#top {
+				width: 0.8rem;
+				align-items: center;
+				display: flex;
+				text-align: center;
+			}
+
+			.content {
+				padding-top: 2.4rem;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			.name-title {
+				display: flex;
+				font-size: 0.3rem;
+				padding: 0 0.5rem;
+				height: 1rem;
+				line-height: 1rem;
+				color: #333;
+			}
+
+			.xytxm,
+			.xytxme {
+				color: #666;
+			}
+
+			.xytxme {
+				font-size: 0.3rem;
+			}
+
+			.hjxy,
+			.card-code {
+				text-align: center;
+				height: 1rem;
+				line-height: 1rem;
+			}
+
+			.generation p,
+			.expire p {
+				text-align: center;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				font-size: 0.35rem;
+				color: #A6A6A6;
+			}
+
+			.hjxy {
+				font-size: 0.5rem;
+			}
+
+			.generation p.time,
+			.expire p.time {
+				color: #000;
+			}
+
+			.ewm {
+				text-align: center;
+				padding: 0.3rem 0 0.5rem 0;
+			}
+
+			.ewm img {
+				width: 3.7rem;
+				height: 3.7rem;
+			}
+
+			.beizhu {
+				font-size: 0.35rem;
+				padding: 0 0.2rem;
+			}
+
+			.istrue {
+				width: 100%;
+				text-align: center;
+			}
+
+			.istrue input {
+				height: 1rem;
+				line-height: 1rem;
+				width: 12rem;
+				border: 1px solid #DCDFE6;
+				background: #fff;
+				border-radius: 0.2rem;
+				text-align: center;
+
+				-webkit-appearance: none;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+				color: #606266;
+				display: inline-block;
+				font-size: inherit;
+				outline: 0;
+				outline: none;
+			}
+
+			.title {
+				text-align: center;
+				height: 2rem;
+				line-height: 2rem;
+			}
+
+			.tijiao,.hqbtn {
+				margin: 0 auto;
+				width: 3rem;
+				height: 1rem;
+				line-height: 1rem;
+				background-color: #0A91D1;
+				color: #FFFFFF;
+				margin-top: 1rem;
+				border-radius: 0.2rem;
+				-webkit-box-shadow: 0px 2px 7px #1c2548;
+				-moz-box-shadow: 0px 2px 7px #1c2548;
+				box-shadow: 0px 2px 7px #1c2548;
+			}
+			.hqbtn {
+				
+				margin-top: 0.2rem; 
+			}
+
+			.banner {
+				margin: 0 auto;
+				width: 6.3rem;
+			}
+
+			.xytxm,
+			.card-code,
+			.name {
+				font-size: 0.4rem;
+			}
+
+			.el-date-editor.el-input,
+			.el-date-editor.el-input__inner {
+				width: 6rem;
+			}
+
+			.el-picker-panel.el-date-picker.el-popper.has-time {
+				position: absolute;
+				top: 1.5rem !important;
+				left: 0.5rem !important;
+				z-index: 2001;
+			}
+
+			.el-input--prefix .el-input__inner {
+				position: relative;
+			}
+
+			.el-input__icon {
+				align-items: center;
+				display: flex;
+			}
+
+			.radio {
+				margin-top: 1rem;
+				display: flex;
+				height: 0.5rem;
+				line-height: 0.5rem;
+				align-items: center;
+			}
+
+			.radio i {
+				width: 0.3rem;
+				height: 0.3rem;
+				display: block;
+				border: 1px solid #3ad1bb;
+				margin: 0.3rem;
+				border-radius: 1rem;
+			}
+
+			.radio.checked i {
+				background: #0A91D1;
+			}
+			
+			.hqbtn{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="vue-app">
+			<div class="istrue" v-if="istrue"> 
+				<div>
+					order链接：<br />
+					<input type="" name="" id="" value="" v-model="orderurl" />
+					<p class="hqbtn" @click="huoqu">获取id生成</p>
+				</div>
+				<div>
+					order无需点击访问链接：<br />
+					<input type="" name="" id="" value="" v-model="orderurlw" /> 
+				</div>
+				<div>
+					链接：<br />
+					<input type="" name="" id="" value="" v-model="url" />
+				</div>
+				<div>
+					id：<br />
+					<input type="" name="" id="" value="" v-model="id" />
+				</div>
+				
+				<p class="tijiao" @click="tijiao" @keyup.enter="tijiao">生成</p>
+			</div>
+			<div v-else class="isfalse">
+				<div class="content">
+					<div class="url-title">
+						<div class="url">
+							{{url+id}}
+						</div>
+					</div>
+
+				</div>
+			</div>
+	</body>
+	<script src="js/vue_min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var vueObj = new Vue({
+			el: '#vue-app',
+			data: {
+				id: '',
+				url: 'https://log.zlgx.com/admin/api//waybill/order/driver/info/sync?orderId=',
+				istrue: true,
+				orderurl: '',
+				orderurlw:''
+			},
+			created() { //实例已经创建完成之后被调用。 
+
+			},
+			mounted() {
+
+			},
+			watch: {
+				orderurlw(){
+					if (this.orderurlw === "") { 
+						return false
+					}
+					var url1=this.orderurlw.split("=") 
+					var url2 = url1[1].split("&") 
+					location.href = this.url + url2[0]
+				}
+			},
+			methods: {
+				huoqu() { 
+					if (this.orderurl === "") {
+						alert("请输入order链接")
+						return false
+					}
+					var url1=this.orderurl.split("=") 
+					var url2 = url1[1].split("&") 
+					location.href = this.url + url2[0]
+				},
+				tijiao() {
+					if (this.url === "") {
+						alert("请输入链接")
+						return false
+					}
+					if (this.id === "") {
+						alert("请输入id")
+						return false
+					}
+					location.href = this.url + this.id
+				}
+			}
+		})
+	</script>
+</html>

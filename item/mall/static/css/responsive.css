@@ -1,0 +1,272 @@
+@media only screen and (min-width: 1171px) and (max-width: 1300px) {
+     .container{
+         width:1130px 
+    }
+     .mainmenu li ul li ul {
+         width: 180px;
+    }
+     .quote-sologan-video-area h2 {
+         font-size: 38px;
+    }
+     .coupon-left input {
+         margin-bottom: 20px;
+    }
+}
+ @media only screen and (min-width: 992px) and (max-width: 1170px) {
+     .container{
+         width:940px 
+    }
+     .coupon-left input {
+         margin-bottom: 20px;
+    }
+}
+
+ @media only screen and (min-width: 768px) and (max-width: 991px) {
+     .mainmenu, .header-search-bar {
+         display: none 
+    }
+     .responsive-menu-wrap {
+         display: block;
+         margin-top: -16px;
+         position: absolute;
+         right: 130px;
+         top: 50%;
+         z-index: 1;
+    }
+     .responsive-menu-wrap .slicknav_menu {
+         margin: 0;
+         padding: 0;
+    }
+     .slicknav_btn {
+         margin: 0;
+    }
+     .slicknav_nav {
+         background: #333 none repeat scroll 0 0;
+         border-radius: 2px;
+         width: 250px;
+    }
+     .single-folio {
+         width: 50%;
+    }
+     .single-counter {
+         margin: 20px 0;
+    }
+     .wdg-follow-us li {
+         margin: 0 5px 5px;
+    }
+     .single-member.member-2 {
+         width: 30%;
+    }
+     .coupon-left {
+         margin-bottom: 20px;
+    }
+     .cart-table .table-bordered td, .cart-table .table-bordered th {
+         font-size: 10px;
+    }
+     .cart-img img {
+         width: 70px;
+         height: 70px;
+    }
+     .cart-price span {
+         font-size: 14px;
+    }
+}
+
+ @media only screen and (max-width: 767px) {
+     .sec-p-100 {
+         padding: 50px 0;
+    }
+     .sm-mt-30 {
+         margin-top: 30px;
+    }
+     .services-area .spacer-30 {
+         height: 0;
+    }
+     .shop-area .spacer-30, .blog-area .spacer-25 {
+         height: 0;
+    }
+     .mainmenu, .header-search-bar {
+         display: none 
+    }
+     .responsive-menu-wrap {
+         display: block;
+         margin-top: -16px;
+         position: absolute;
+         right: 15px;
+         top: 50%;
+         z-index: 1;
+    }
+     .responsive-menu-wrap .slicknav_menu {
+         margin: 0;
+         padding: 0;
+    }
+     .slicknav_btn {
+         margin: 0;
+    }
+     .slicknav_nav {
+         background: #333 none repeat scroll 0 0;
+         border-radius: 2px;
+         width: 250px;
+    }
+     .mayabi-single-slider h1 {
+         font-size: 40px;
+         line-height: 48px;
+    }
+     .about-content {
+         padding: 50px;
+         margin-left: 0;
+         text-align: center;
+    }
+     .about-single-img {
+         width: 100%;
+    }
+     .single-folio {
+         width: 100%;
+    }
+     .single-services {
+         margin: 20px 0;
+    }
+     .single-counter {
+         margin: 20px 0;
+    }
+     .post-tag-share-area {
+         border: none;
+         padding: 0;
+    }
+     .post-tag-share-area ul {
+         display: block;
+    }
+     .blog-share-icon {
+         display: block;
+         float: left;
+         margin: 20px 0;
+    }
+     .mayabi-pagination-2 {
+         display: block;
+         margin-top: 30px;
+    }
+     .post-comments-form .btn {
+         margin-bottom: 20px;
+    }
+     .mayabi-pagination {
+         margin-bottom: 30px;
+    }
+     .cart-table .table-bordered td, .cart-table .table-bordered th {
+         font-size: 10px;
+         padding: 7px;
+    }
+     .cart-img img {
+         width: 50px;
+         height: 50px;
+    }
+     .cart-price span {
+         font-size: 14px;
+    }
+     .coupon-left {
+         margin-bottom: 20px;
+    }
+     .cart-total-price .btn {
+         margin-bottom: 20px;
+    }
+	.mayabi-login-area .btn {
+    margin-bottom: 20px;
+	}
+}
+
+ @media only screen and (min-width: 480px) and (max-width: 767px) {
+     .sec-p-100 {
+         padding: 50px 0;
+    }
+     .sm-mt-30 {
+         margin-top: 30px;
+    }
+     .services-area .spacer-30 {
+         height: 0;
+    }
+     .shop-area .spacer-30, .blog-area .spacer-25 {
+         height: 0;
+    }
+     .mainmenu, .header-search-bar {
+         display: none 
+    }
+     .responsive-menu-wrap {
+         display: block;
+         margin-top: -16px;
+         position: absolute;
+         right: 15px;
+         top: 50%;
+         z-index: 1;
+    }
+     .responsive-menu-wrap .slicknav_menu {
+         margin: 0;
+         padding: 0;
+    }
+     .slicknav_btn {
+         margin: 0;
+    }
+     .slicknav_nav {
+         background: #333 none repeat scroll 0 0;
+         border-radius: 2px;
+         width: 250px;
+    }
+     .mayabi-single-slider h1 {
+         font-size: 40px;
+         line-height: 48px;
+    }
+     .about-content {
+         padding: 50px;
+         margin-left: 0;
+         text-align: center;
+    }
+     .single-folio {
+         width: 50%;
+    }
+     .single-services {
+         margin: 20px 0;
+    }
+     .single-counter {
+         margin: 20px 0;
+    }
+     .post-tag-share-area {
+         border: none;
+         padding: 0;
+    }
+     .post-tag-share-area ul {
+         display: block;
+    }
+     .blog-share-icon {
+         display: block;
+         float: left;
+         margin: 20px 0;
+    }
+     .mayabi-pagination-2 {
+         display: block;
+         margin-top: 30px;
+    }
+     .post-comments-form .btn {
+         margin-bottom: 20px;
+    }
+     .mayabi-pagination {
+         margin-bottom: 30px;
+    }
+     .cart-table .table-bordered td, .cart-table .table-bordered th {
+         font-size: 10px;
+         padding: 7px;
+    }
+     .cart-img img {
+         width: 50px;
+         height: 50px;
+    }
+     .cart-price span {
+         font-size: 14px;
+    }
+     .coupon-left {
+         margin-bottom: 20px;
+    }
+     .cart-total-price .btn {
+         margin-bottom: 20px;
+    }
+	.mayabi-login-area .btn {
+    margin-bottom: 20px;
+	}
+}
