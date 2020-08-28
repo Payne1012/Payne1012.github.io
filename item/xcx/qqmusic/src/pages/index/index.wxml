@@ -1,0 +1,45 @@
+<view class="index-warp" style="background: url({{indexBg}});">
+	<view class="index-content">
+		<view class="gs-warp">
+			<image class="gs-pic" src="{{headerPic}}"></image>
+			<text class="gs-name">{{gsName}}</text>
+			<text class="gs-content">{{gsContent}}</text> 
+		</view>
+		<view class="gg-list">
+			<view wx:for="{{list}}" wx:key="xiaoxi" class="gg-content">
+				<view class="gg-list-top">
+					<view class="gg-content-left">
+						<text class="gg-list-title">{{item.title}}</text>
+					</view>
+					<block wx-if="{{item.type==0}}">
+							 <text class="gg-list-tag">文章</text>
+					</block>
+					<block wx-if="{{item.type==1}}">
+							 <text class="gg-list-tag">图片</text>
+					</block>
+					<block wx-if="{{item.type==2}}">
+							 <text class="gg-list-tag">视频</text>
+					</block>
+				</view>
+				<block wx-if="{{item.type==0}}">
+						 <text class="gg-list-content">
+						 	{{item.content}}
+						 </text>
+				</block>
+				<block wx-if="{{item.type==1}}"> 
+					<image class="myImage" src="{{item.content}}"></image> 
+				</block>
+				<block wx-if="{{item.type==2}}"> 
+					 <video id="myVideo" src="{{item.content}}"></video> 
+				</block>
+				
+				<view class="gg-list-bottom">
+					<text class="gg-list-time">
+						{{item.time}}
+					</text>
+				</view>
+			</view>
+
+		</view>
+	</view>
+</view>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>鼠标拖动小方块</title>
+		<style type="text/css">
+			.lineDiv {
+				position: relative;
+				height: 0.1rem;
+				background: #666666;
+			} 
+			.lineDiv .minDiv {
+				position: absolute;
+				top: -0.1rem;
+				left: 0;
+				cursor: pointer width:0.27rem;
+				height: 0.27rem;
+				background: rgba(104, 48, 249, 1);
+				box-shadow: 0rem 0rem 0.13rem 0rem rgba(126, 78, 249, 0.5);
+				border: 0.04rem solid rgba(255, 255, 255, 1);
+				width: 0.27rem;
+				border-radius: 50%;
+			} 
+			.lineDiv .minDiv .vals {
+				position: absolute;
+				font-size: 20px;
+				top: -45px;
+				left: -2.5px;
+				width: 35px;
+				height: 35px;
+				line-height: 35px;
+				text-align: center;
+				background: blue;
+			}
+
+			* {
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+			.chocked {
+				width: 0;
+				height: 0.1rem;
+				background-color: rgba(104, 48, 249, 1);
+				position: relative;
+				top: -0.1rem;
+			}
+			
+			.sliding-warp{
+				margin: 0 1rem;
+			}
+		</style>
+		<script>
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if (!clientWidth) return;
+						if (clientWidth >= 750) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+						}
+					};
+				if (!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</head>
+	<body>
+		<div class="sliding-warp">
+			<div id="lineDiv" class="lineDiv">
+				<div id="minDiv" class="minDiv">
+				</div>
+			<div id="vals" class="vals">0</div>
+			</div>
+			<div class="chocked" id="chocked" style=""></div>
+		</div>
+		<script>
+			//避免默认事件 2018.7.10 更新 优化uc浏览器左右滑动时候页面被拖动
+			document.addEventListener('touchmove', function(e) {
+				e.preventDefault();
+			}, {
+				passive: false
+			});
+
+			function dragSlide(id, chocked,vals) {
+
+				this.minDiv = document.getElementById(id); //小方块 
+				this.chocked = document.getElementById(chocked); //已拖拽背景
+				this.vals = document.getElementById(vals); //显示百分比
+				this.width = parseInt(window.getComputedStyle(this.minDiv, null).width); //小方块的宽度
+				this.lineDiv = this.minDiv.parentNode; //长线条
+				//滑动的数值呈现
+				this.vals = minDiv.parentNode.children[1];
+				var that = this;
+				var lastX = null; //判断鼠标移动方向，解决向左侧滑动时候的bug
+				var move = function(e) {
+					var x = e.touches[0].pageX,
+						direction = '';
+					if (lastX == null) {
+						lastX = x;
+						return;
+					}
+					if (x > lastX) {
+						direction = 'right';
+					} else if (x < lastX) {
+						direction = 'left';
+					} else {
+						direction = '';
+					}
+					var lineDiv_left = that.getPosition(that.lineDiv).left; //长线条的横坐标
+					var minDiv_left = x - lineDiv_left; //小方块相对于父元素（长线条）的left值
+					if (minDiv_left >= that.lineDiv.offsetWidth - that.width) {
+						minDiv_left = that.lineDiv.offsetWidth - that.width;
+					}
+					if (minDiv_left < 0) {
+						minDiv_left = 0;
+					}
+					//设置拖动后小方块的left值
+					that.minDiv.style.left = minDiv_left + "px";
+					that.chocked.style.width = minDiv_left + "px";
+
+					//percent百分比改为如下所示,解决开始和最后滑动的体验不好问题
+					var percent = (minDiv_left / (that.lineDiv.offsetWidth - that.width)) * 10;
+					if (percent < 0.5 && direction == 'right') {
+						percent = Math.ceil(percent);
+					} else if (percent > 0.5 && direction == 'right') {
+						percent = Math.floor(percent);
+					} else {
+						percent = Math.ceil(percent);
+					}
+					that.vals.innerText = percent;
+				}
+				//获取元素的绝对位置,工具函数
+				this.getPosition = function(node) {
+					var left = node.offsetLeft; //获取元素相对于其父元素的left值var left
+					var top = node.offsetTop;
+					current = node.offsetParent; // 取得元素的offsetParent
+					// 一直循环直到根元素
+
+					while (current != null) {
+						left += current.offsetLeft;
+						top += current.offsetTop;
+						current = current.offsetParent;
+					}
+					return {
+						"left": left,
+						"top": top
+					};
+				}
+				this.minDiv.addEventListener("touchmove", move);
+			}
+			var drag0 = new dragSlide("minDiv", "chocked","vals");
+			//取消移动端手势长按弹出提示框的操作
+			document.addEventListener('contextmenu', function(e) {
+				e.preventDefault();
+			});
+		</script>
+	</body>
+</html>

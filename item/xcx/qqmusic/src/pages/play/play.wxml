@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<view class="container">
+	<view wx:if="{{showList}}" class="list">
+		<view  bindtap='listClick' class="close">关闭</view>
+		<view wx:for="{{audioList}}" wx:key="audioList" class='item {{audioIndex==index?"active":""}}' bindtap='listClick'
+		 data-pos='{{index}}'>
+			<view>{{item.name}}</view>
+			<text>{{item.author}}</text>
+		</view>
+	</view>
+	 
+	<view class='background'>
+		<view class='info'>
+			<view class="name">{{audioList[audioIndex].name||""}}</view>
+			<view class="author">{{audioList[audioIndex].author||""}}</view>
+		</view>
+		<image class='cd_can {{playStatus?"cantate":"cantate-paused"}}' src='/resources/images/cd_g.png'></image>
+		<view class='poster {{playStatus?"rotate":"rotate-paused"}}'> 
+			<image mode="scaleToFill" src='{{audioList[audioIndex].poster}}'></image>
+		</view>
+		<view class='lyrics'> 
+			<text>{{audioList[audioIndex].lyrics||""}}</text> 
+		</view>
+		<view class='progress'>
+			<text>{{progressText}}</text>
+			<slider class='bar'  bindchange="sliderChange" bindchanging="sliderChanging" value="{{progress}}" step="1" min='0'
+			 max='{{duration}}' activeColor="#fff" block-size="12" block-color="#fff" />
+			<text>{{durationText}}</text>
+		</view>
+		<view class='buttons'>
+			<block wx-if="{{playType==0}}">
+				<image class='btn chage-btn shuffle' src='/resources/images/play_icn_shuffle.png' data-type="{{playType}}" bindtap="changePlayType"></image>
+			</block>
+			<block wx-if="{{playType==1}}">
+				<image class='btn chage-btn one' src='/resources/images/play_icn_one.png' data-type="{{playType}}" bindtap="changePlayType"></image>
+			</block>
+			<block wx-if="{{playType==2}}">
+				<image class='btn chage-btn loop' src='/resources/images/play_icn_loop.png' data-type="{{playType}}" bindtap="changePlayType"></image>
+			</block>
+			<view class="buttons-list">
+				<image class='btn lastMusic' bindtap='lastMusic' src='/resources/images/play_btn_prev.png'></image>
+				<image class='btn playOrpause' bindtap='playOrpause' src='{{playStatus?"/resources/images/play_btn_pause.png":"/resources/images/play_btn_play.png"}}'></image>
+				<image class='btn nextMusic' bindtap='nextMusic' src='/resources/images/play_btn_next.png'></image>
+			</view> 
+			<block wx-if="{{loveType==true}}">
+				<image class='btn list-btn' data-type="{{loveType}}" bindtap='loveBtn' src='/resources/images/love.png'></image>
+			</block>
+			<block wx-if="{{loveType==false}}">
+				<image class='btn list-btn' data-type="{{loveType}}" bindtap='loveBtn' src='/resources/images/love_press.png'></image>
+			</block>
+		</view>
+	</view>
+</view>
+
+<view class="bg blur" style="background-image:url('{{coverImgUrl}}');"></view> 
+

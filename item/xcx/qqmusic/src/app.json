@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/original/original",
+    "pages/buy/buy",
+    "pages/index/index",
+    "pages/taoge/taoge",
+    "pages/play/play",
+    "pages/cover/cover",
+    "pages/toplist/toplist",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#31c27c",
+    "navigationBarTitleText": "音乐播放器",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f7f7f7"
+  },
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "resources/images/icon_consult_press.png",
+        "iconPath": "resources/images/icon_consult.png",
+        "pagePath": "pages/original/original",
+        "text": "原唱"
+      },
+      {
+        "selectedIconPath": "resources/images/icon_invest_press.png",
+        "iconPath": "resources/images/icon_invest.png",
+        "pagePath": "pages/cover/cover",
+        "text": "翻唱"
+      },
+      {
+        "selectedIconPath": "resources/images/icon_buy_press.png",
+        "iconPath": "resources/images/icon_buy.png",
+        "pagePath": "pages/buy/buy",
+        "text": "购物车"
+      },
+      {
+        "selectedIconPath": "resources/images/icon_index_press.png",
+        "iconPath": "resources/images/icon_index.png",
+        "pagePath": "pages/index/index",
+        "text": "主页"
+      }
+    ]
+  }
+}

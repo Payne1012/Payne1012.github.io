@@ -1,0 +1,49 @@
+<view class="song-list-warp">
+<view class="buy-warp">
+	<view class="header-warp">
+		<image class="touxiang" src="https://wx1.sbimg.cn/2020/08/23/3I4xK.jpg"></image> 
+		<text>用户名</text>
+	</view>
+</view>
+<view class="tab-btn">
+	<view class="active" bindtap="swichNav" data-view="1" wx:if="{{mainView==1}}">最近播放</view>
+	<view class="" data-view="1" bindtap="swichNav" wx:if="{{mainView!=1}}">最近播放</view>
+	<view class="active" bindtap="swichNav" data-view="2" wx:if="{{mainView==2}}">购物车</view>
+	<view class="" data-view="2" bindtap="swichNav" wx:if="{{mainView!=2}}">购物车</view> 
+</view>
+<view class="play-btn">
+	<view class="play-btn-play" bindtap="playAll">
+		<image class="play-btn-img" src="https://wx1.sbimg.cn/2020/08/20/3xJRe.png"></image>
+		<text class="play-btn-text">全部播放</text> 
+	</view>
+	<view class="play-btn-style">
+		<view wx-if="{{playType==0}}" data-type="{{playType}}" bindtap="changePlayType">
+			<image class='btn chage-btn shuffle' src='/resources/images/play_icn_shuffle.png'></image>
+			<text class="play-btn-text">随机播放</text> 
+		</view>
+		<view wx-if="{{playType==2}}" data-type="{{playType}}" bindtap="changePlayType">
+			<image class='btn chage-btn loop' src='/resources/images/play_icn_loop.png'></image>
+			<text class="play-btn-text">列表循环</text> 
+		</view>  
+	</view>
+</view>
+<view class="song-list" style="background:{{listBgColor}}">
+    <view class="song-item touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" wx:for="{{songList}}" wx:key="unique" bindtouchstart="touchstart" bindtouchmove="touchmove"  data-data="{{item.data}}" data-index="{{index}}">
+        <view class="song-warp-top">
+			<text class="song-index">{{index+1}}</text> 
+		</view>
+		<view class="song-main">
+			<view class="song-item-title"  bindtap="musicItemTap">{{item.name}}</view>
+			<view class="song-item-text">
+			    <block wx:for="{{item.singer}}"  wx:key="unique">
+			        <block wx:if="{{index!=0}}">|</block>
+			        {{item.name}}
+			    </block>
+			    ·{{item.album.name}}
+			</view>
+		</view>
+		<view class="del" catchtap="del" data-index="{{index}}">删除</view>
+    </view>
+</view>  
+ <image class="touxiang-bg" style="height: {{listHeight}}px;" src="{{listbg}}"></image>
+ </view>

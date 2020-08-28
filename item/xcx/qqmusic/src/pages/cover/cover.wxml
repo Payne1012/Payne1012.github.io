@@ -1,0 +1,70 @@
+
+<!--index.wxml-->
+<!--搜索-->
+<view>
+  <view class="search-bar">
+    <view class="search-input-warp">
+      <form bindsubmit="searchSubmit">
+        <label class="search-input-icon"></label>
+        <input type="text" class="search-input"
+         bindfocus="bindFocus" 
+         bindkeyup="searchBoxKeyUp"
+         name="search" 
+         value="{{searchKey}}" 
+         bindinput="bindKeyInput" 
+         bindkeydown="searchBoxKeyUp"
+          placeholder="搜索歌曲、歌单、专辑" 
+          placeholder-class="search-input-placeholder"/>
+        <view class="search-cancel" bindtap="searchOk" >确定</view>
+        <!--<view class="search-cancel" bindtap="searchCancel" wx:if="{{isShowCancel && !isShowOk}}">取消</view>-->
+      </form>
+    </view>
+  </view>
+ </view>
+<!--歌单推荐-->
+  <view class="channel">
+    <text class="channel-title">歌单推荐</text>
+    <view class="radio-list" >
+      <block wx:for="{{radioList}}"  wx:key="unique">
+        <view class="radio-item" data-id="{{item.radioid}}" data-ftitle="{{item.Ftitle}}" bindtap="radioTap">
+          <image class="radio-img" mode="scaleToFill" src="{{item.picUrl}}"/>
+          <text class="radio-text">{{item.Ftitle}}</text>
+        </view>
+      </block>
+	  <block wx:for="{{radioList}}"  wx:key="unique">
+	    <view class="radio-item" data-id="{{item.radioid}}" data-ftitle="{{item.Ftitle}}" bindtap="radioTap">
+	      <image class="radio-img" mode="scaleToFill" src="{{item.picUrl}}"/>
+	      <text class="radio-text">{{item.Ftitle}}</text>
+	    </view>
+	  </block>
+	  <block wx:for="{{radioList}}"  wx:key="unique">
+	    <view class="radio-item" data-id="{{item.radioid}}" data-ftitle="{{item.Ftitle}}" bindtap="radioTap">
+	      <image class="radio-img" mode="scaleToFill" src="{{item.picUrl}}"/>
+	      <text class="radio-text">{{item.Ftitle}}</text>
+	    </view>
+	  </block>
+    </view>
+  </view>
+  <view class="channel">
+    <text class="channel-title">为你精选</text>
+    <view class="radio-list">
+      <view class="radio-item" wx:for="{{songList}}"  wx:key="unique" data-id="{{item.id}}" data-imgsrc="{{item.picUrl}}" bindtap="hotMusicTap">
+        <image class="radio-img" mode="scaleToFill" src="{{item.picUrl}}"/>
+        <text class="radio-text">{{item.songListDesc}}</text>
+      </view>
+    </view>
+  </view> 
+  
+  <!-- 排行榜 -->
+  <view class="top-view">
+    <view class="top-item" wx:for="{{topList}}" wx:key="unique" data-id="{{item.id}}" bindtap="topListTap">
+      <image class="top-item-img" mode="scaleToFill" src="{{item.picUrl}}"/>
+      <view class="top-item-info">
+        <view class="top-item-info-inner">
+          <text class="top-item-title">{{item.topTitle}}</text>
+          <text class="top-item-text" wx:for="{{item.songList}}"  wx:key="unique">{{index+1}}.{{item.songname}}-{{item.singername}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+

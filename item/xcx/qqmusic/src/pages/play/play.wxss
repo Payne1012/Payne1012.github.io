@@ -1,0 +1,237 @@
+/**index.wxss**/
+
+.item {
+  border: 1rpx solid #eee;
+  padding: 10rpx;
+  font-size: 11pt;
+  /* width: 100%; */
+}
+
+.active {
+  background: #ff8170;
+  color: #fff;
+}
+
+.background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background: rgba(0,0,0,.2);
+  z-index: 3;
+  padding-bottom: 20rpx;
+}
+
+.background .info{
+  position: fixed;
+  top: 80rpx;
+  left: 0;
+  right: 0;
+  font-size: 12pt;
+  color: #fff;
+}
+
+
+
+.background .poster image{
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;  
+}
+
+.background .poster{
+	width: 450rpx;
+	height: 450rpx;
+	position: relative;
+	display: flex;
+	z-index: 4; 
+	background: url(https://wx1.sbimg.cn/2020/08/19/3ZOVo.md.png) no-repeat;
+	background-size: cover; 
+	margin: 0 auto;
+	box-sizing: border-box;
+	justify-content: center;
+  align-items: center;
+  top: 300rpx;
+}
+
+
+.cd_can {
+    position: absolute;
+    left: 30%;
+	top: 230rpx;
+    display: block;
+    width: 150px;
+    height: 100px;
+    background: url(https://wx1.sbimg.cn/2020/08/19/3ZrWw.png) no-repeat;
+    background-size: cover;
+    z-index: 10;
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+}
+
+.cd_can.cantate-paused{
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+    transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+}
+
+.rotate,.rotate image {
+  animation: rotate 10s linear infinite;
+}
+
+.rotate-paused,.rotate-paused image {
+  animation: rotate 10s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.progress {
+  position: fixed;
+  bottom: 200rpx;
+  left: 50rpx;
+  right: 50rpx;
+  display: flex;
+  align-items: center;
+  font-size: 10pt;
+  color: rgb(87, 49, 49);
+  text-align: center;
+}
+
+.progress text{
+  color: #fff;
+}
+
+.progress .bar {
+  flex: 1;
+}
+
+.progress text {
+  flex-basis: 90rpx;
+}
+
+.buttons {
+  position: fixed;
+  bottom: 90rpx;
+  left: 50rpx;
+  right: 50rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttons .btn {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.blur {
+  -webkit-filter: blur(40px);
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: bottom center;
+  z-index: 0;
+}
+
+.list{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  background-color: rgba(255,255,255, .9);
+  height: 50%;
+  overflow: scroll; 
+}
+
+.btn.playOrpause{
+	width: 100rpx;
+	height: 100rpx;
+	padding: 0 60rpx;
+}
+
+.btn.list-btn,.btn.chage-btn{
+	width: 60rpx;
+	height: 60rpx;
+}
+
+.buttons-list{
+	display: flex;
+	align-items: center;
+}
+
+.name{ 
+	width: 100%;
+	color: #fff;
+	font-size: 36rpx;
+	line-height: 60rpx;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.author{ 
+	width: 100%;
+	font-size: 28rpx;
+	line-height: 40rpx;
+	color: rgba(255,255,255, .6);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.lyrics{
+	position: relative;
+	top: 350rpx;
+	color: #fff; 
+	padding: 0 100rpx;
+	height: 380rpx;
+	overflow: scroll;
+}
+
+.lyrics text{
+	display: block;
+	font-size: 30rpx;
+	line-height: 60rpx; 
+}
+
+.close{
+height: 60rpx;
+line-height: 60rpx;
+text-align: right;
+font-size: 30rpx;
+padding: 0 20rpx;
+}
