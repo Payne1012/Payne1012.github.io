@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>外出申请</title>
+		<script>
+			(function(doc, win) {
+          var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function() {
+            var clientWidth = docEl.clientWidth;
+            if(!clientWidth) return;
+            if(clientWidth >= 750) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+          };
+          if(!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+  </script>
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+	<body>
+		<div id="vue-app">
+			<div class="istrue" v-if="istrue">
+				<div class="title">
+					校园通行码生成器
+				</div>
+				姓名：<br />
+				<input type="" name="" id="" value="" v-model="name" /><br />
+				学号：<br />
+				<input type="" name="" id="" value="" v-model="cdCard" /><br />
+				时间：<br />
+				<el-date-picker v-model="generation" type="datetime" format="MM:dd:ss" value-format="MM:dd:ss" placeholder="选择日期时间">
+				</el-date-picker>
+				<br />
+				<div v-if="isChecked" class="radio" @click="onPitch()">
+					<i></i>
+					<p>选择是否记住姓名和学号</p>
+				</div>
+				<div v-else class="radio checked" @click="onPitch()">
+					<i></i>
+					<p>选择是否记住姓名和学号</p>
+				</div>
+				<p class="tijiao" @click="tijiao">生成</p>
+			</div>
+			<div v-else class="isfalse">
+				<div class="nav-top">
+					<div :class="[{'active':active==1},'nav-top-left']" @click="setActive(1)">
+						外出申请
+					</div>
+					<div :class="[{'active':active==2},'nav-top-right']" @click="setActive(2)">
+						外出记录
+					</div>
+				</div>
+				<div class="nav-top-top">
+					<img src="img/user.png" />
+					<div class="main-con">
+						<div class="main-top">
+							{{name}}&nbsp;{{cdCard}}
+						</div>
+						<div class="main-bottom">
+							环境学院/2018环境工程（环境）
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="title">
+						临时出校二维码
+					</div>
+					<div class="icon">
+						<img src="img/icon.png" > 距离返回时间还剩：0天 {{generation}}
+					</div>
+					<div class="ewm">
+						<img src="img/ewm.png">
+					</div>
+					<div class="bottom">
+						请向校方检查人员出示二维码。扫码进出学校~
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/vue_min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
+		var vueObj = new Vue({
+			el: '#vue-app',
+			data: {
+				cdCard: '',
+				name: "",
+				generation: '', 
+				istrue: true,
+				isChecked: true,
+				active: 1
+			},
+			created() { //实例已经创建完成之后被调用。
+				//当前设定的日期时间
+				function formatDate(datetime) {
+					// 获取年月日时分秒值  slice(-2)过滤掉大于10日期前面的0
+					var year = datetime.getFullYear(),
+						month = ("0" + (datetime.getMonth() + 1)).slice(-2),
+						date = ("0" + datetime.getDate()).slice(-2);
+						second = ("0" + datetime.getSeconds()).slice(-2);
+					// 拼接
+					var result =  month + ":" + date + ":" + second;
+					// 返回
+					return result;
+				}
+				let d = new Date;
+				let year1, month1, day1,scond1;
+				[year1, month1, day1,scond1] = [d.getFullYear(), d.getMonth(), d.getDate(),d.getSeconds()]
+				let date1 = new Date(month1, day1,scond1, 7)
+				this.generation = formatDate(date1)
+				//明天设定的日期时间
+				let year2, month2, day2,scond2;
+				d.setTime(d.getTime() + 24 * 60 * 60 * 1000);
+				[year2, month2, day2 ,scond2] = [d.getFullYear(), d.getMonth(), d.getDate(),d.getSeconds()]
+				let date2 = new Date(month2, day2,scond2, 7)
+				this.expire = formatDate(date2)
+
+			},
+			mounted() {
+				var getName = localStorage.getItem("name");
+				var getCdCard = localStorage.getItem("cdCard");
+				if (getName) {
+					this.cdCard = getCdCard;
+					this.name = getName;
+
+				} else {
+
+				}
+			},
+			methods: {
+				tijiao() {
+
+					if (this.name === "") {
+						alert("请输入姓名")
+						return false
+					}
+					if (this.cdCard === "") {
+						alert("请输入学号")
+						return false
+					}
+					if (this.cdCard.length != 10) {
+						alert("请输入正确的学号")
+						return false
+					}
+
+					if (this.generation === "") {
+						alert("请输入时间")
+						return false
+					}
+					if (this.expire === "") {
+						alert("请输入时间")
+						return false
+					}
+					if (this.isChecked === false) {
+						localStorage.setItem("cdCard", this.cdCard);
+						localStorage.setItem("name", this.name);
+					}
+
+					this.istrue = false
+
+				},
+				onPitch() {
+					this.isChecked = !this.isChecked
+					if (this.isChecked === false) {
+						alert('保存姓名，学号下次自动输入')
+					}
+				},
+				setActive(data) {
+					if (data == 1) {
+						this.active = 1
+					}
+					if (data == 2) {
+						this.active = 2
+					}
+				}
+			}
+		})
+	</script>
+</html>
