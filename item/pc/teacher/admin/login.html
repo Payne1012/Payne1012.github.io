@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>管理后台</title>
+		<meta name="description" content="管理后台">
+		<meta name="keywords" content="index">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="icon" type="image/png" href="assets/i/favicon.png">
+		<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<link rel="stylesheet" href="assets/css/amazeui.min.css" />
+		<link rel="stylesheet" href="assets/css/admin.css">
+		<link rel="stylesheet" href="assets/css/app.css">
+	</head>
+
+	<body data-type="login">
+
+		<div class="am-g myapp-login">
+			<div class="myapp-login-logo-block  tpl-login-max">
+				<div class="myapp-login-logo-text">
+					<div class="myapp-login-logo-text">
+						Admin <i class="am-icon-skyatlas"></i>
+					</div>
+				</div>
+
+				<div class="login-font">
+					<span></span>
+				</div>
+				<div class="am-u-sm-10 login-am-center">
+					<div class="am-form">
+						<fieldset>
+							<div class="am-form-group">
+								<input type="text" class="" id="adminUser" placeholder="请输入账号">
+							</div>
+							<div class="am-form-group">
+								<input type="password" class="" id="adminPassword" placeholder="请输入密码">
+							</div>
+							<p><button type="submit" id="login" class="am-btn am-btn-default">登录</button></p>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/amazeui.min.js"></script>
+		<script src="assets/js/app.js"></script>
+		<script type="text/javascript">
+			var progress = $.AMUI.progress;
+			$("#login").click(function() {
+				var $btn = $(this)
+				$btn.button('loading');
+				setTimeout(function() {
+					$btn.button('reset');
+				}, 5000);
+				progress.start();
+				let userName = $("#adminUser").val(); // 用户名
+				let userPassword = $("#adminPassword").val(); // 密码
+				if (!userName) {
+					alert("请输入用户名");
+					$("#userName").focus();
+				} else if (!userPassword) {
+					alert("请输入密码");
+					$("#userPassword").focus();
+				} else if (userName.length > 10) {
+					alert("请输入少于 10 位的用户名");
+					$("#userName").focus();
+				} else if (userPassword.length > 20) {
+					alert("请输入少于 20 位的密码");
+					$("#userPassword").focus();
+				} else {
+					$.ajax({
+						url: "http://localhost:8888/adminLogin",
+						type: 'post',
+						dataType: 'json',
+						data: {
+							username: userName,
+							password: userPassword
+						},
+						success: function(res) {
+							progress.done();
+							if (res.code == "200") {
+								sessionStorage.setItem("adminId", res.data.id);
+								sessionStorage.setItem("adminUser", res.data.userName);
+								window.location.href = "index.html";
+							} else if (res.code == "300") {
+								alert(res.message);
+							}
+						},
+						error: function(err) {
+							progress.done();
+							if (err.responseText) {
+								alert(err.responseText);
+							} else {
+								alert("未知错误！");
+							}
+						}
+					})
+
+				}
+
+			})
+		</script>
+	</body>
+
+</html>
