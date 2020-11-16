@@ -296,39 +296,31 @@
 							<div class="tpl-form-body tpl-form-line">
 								<form class="am-form tpl-form-line-form">
 									<div class="am-form-group">
-										<label for="user-name" class="am-u-sm-3 am-form-label">标题 <span class="tpl-form-line-small-title">Title</span></label>
+										<label for="title" class="am-u-sm-3 am-form-label">标题 <span class="tpl-form-line-small-title">Title</span></label>
 										<div class="am-u-sm-9">
-											<input type="text" class="tpl-form-input" id="user-name" placeholder="请输入标题文字">
+											<input type="text" class="tpl-form-input" id="title" placeholder="请输入标题文字">
 											<small>请填写标题文字10-20字左右。</small>
 										</div>
 									</div>
-
 									<div class="am-form-group">
 										<label for="user-email" class="am-u-sm-3 am-form-label">发布时间 <span class="tpl-form-line-small-title">Time</span></label>
 										<div class="am-u-sm-9">
-											<input type="text" class="am-form-field tpl-form-no-bg" placeholder="发布时间" data-am-datepicker="" readonly />
+											<input type="text" id="createtime" class="am-form-field tpl-form-no-bg" placeholder="发布时间" data-am-datepicker="" readonly />
 											<small>发布时间为必填</small>
 										</div>
 									</div>
-
 									<div class="am-form-group">
-										<label for="user-phone" class="am-u-sm-3 am-form-label">作者 <span class="tpl-form-line-small-title">Author</span></label>
+										<label for="user-phone" class="am-u-sm-3 am-form-label">作者 
+											<span class="tpl-form-line-small-title">Author</span>
+										</label>
 										<div class="am-u-sm-9">
-											<select data-am-selected="{searchBox: 1}">
+											<select id="author" data-am-selected="{searchBox: 1}">
 												<option value="a">-The.CC</option>
 												<option value="b">夕风色</option>
 												<option value="o">Orange</option>
 											</select>
 										</div>
 									</div>
-
-									<div class="am-form-group">
-										<label class="am-u-sm-3 am-form-label">SEO关键字 <span class="tpl-form-line-small-title">SEO</span></label>
-										<div class="am-u-sm-9">
-											<input type="text" placeholder="输入SEO关键字">
-										</div>
-									</div>
-
 									<div class="am-form-group">
 										<label for="user-weibo" class="am-u-sm-3 am-form-label">封面图 <span class="tpl-form-line-small-title">Images</span></label>
 										<div class="am-u-sm-9">
@@ -340,11 +332,9 @@
 													<i class="am-icon-cloud-upload"></i> 添加封面图片</button>
 												<input id="file" type="file" accept="image/*" value="" multiple>
 											</div>
-
 										</div>
 									</div>
-
-									<div class="am-form-group">
+									<!-- <div class="am-form-group">
 										<label for="user-weibo" class="am-u-sm-3 am-form-label">添加分类 <span class="tpl-form-line-small-title">Type</span></label>
 										<div class="am-u-sm-9">
 											<input type="text" id="user-weibo" placeholder="请添加分类用点号隔开">
@@ -352,8 +342,7 @@
 
 											</div>
 										</div>
-									</div>
-
+									</div> --> 
 									<div class="am-form-group">
 										<label for="user-intro" class="am-u-sm-3 am-form-label">隐藏文章</label>
 										<div class="am-u-sm-9">
@@ -371,13 +360,13 @@
 									<div class="am-form-group">
 										<label for="user-intro" class="am-u-sm-3 am-form-label">文章内容</label>
 										<div class="am-u-sm-9">
-											<textarea class="" rows="10" id="user-intro" placeholder="请输入文章内容"></textarea>
+											<textarea class="" rows="10" id="content" placeholder="请输入文章内容"></textarea>
 										</div>
 									</div>
 
 									<div class="am-form-group">
 										<div class="am-u-sm-9 am-u-sm-push-3">
-											<button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+											<button type="button" id="send" class="am-btn am-btn-primary tpl-btn-bg-color-success">提交</button>
 										</div>
 									</div>
 								</form>
@@ -391,19 +380,55 @@
 		<script src="assets/js/amazeui.min.js"></script>
 		<script src="assets/js/app.js"></script>
 		<script>
-			var oUploadImg = document.querySelector("#uploadImg") //获取uploaImg节点,
-			oFile = document.querySelector("#file"); //获取input file节点
-			console.log(oUploadImg);
-			console.log(oFile);
-			console.log(oFile.files);
-			oFile.addEventListener('change', function() { 
-				console.log(this); //this指针指向input
-				console.log(this.files);
-				//创立FormData对象
-				var formData = new FormData(); //实例化一个formData对象
-				formData.append = ("file", this.files); //this.files对象转换为字符串
-				console.log(this.files)
-			})
+			$("#send").click(function () {
+			      let title = $("#title").val(); // 标题
+				  let author = $("#author").val(); // 作者
+				  let createtime = $("#createtime").val(); // 时间
+			      let content = $("#content").val(); // 内容
+						
+			      if (!title) {
+			        alert("请输入标题"); 
+			      } else if (title.length < 10) {
+			        alert("请输入不少于 10 位的标题"); 
+			      } else if (!createtime) {
+			        alert("请选择时间"); 
+			      }else if (!author) {
+			        alert("请选择作者"); 
+			      } else if (!content) {
+			        alert("请输入内容"); 
+			      }else {
+						
+			        $.ajax({
+			          url: "http://localhost:8888/api/blog/new",
+			          type: 'post',
+			          dataType: 'json',
+			          data: {
+			            title: title,
+			            author: author,
+						createtime: createtime,
+						content: content
+			          },
+			          success: function (res) {
+			            console.log(res);
+			            if (res.code == "200") { 
+			              alert("新建成功！"); 
+			            } else if (res.code == "300") {
+			              alert("新建失败！");
+			            }
+			          },
+			          error: function (err) {
+			            console.log(err);
+			            if (err) {
+			              
+			            } else {
+			              alert("未知错误！");
+			            }
+			          }
+			        })
+						
+			      }
+						
+			    })
 		</script>
 	</body>
 

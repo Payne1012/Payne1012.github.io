@@ -75,7 +75,7 @@
 					$("#userPassword").focus();
 				} else {
 					$.ajax({
-						url: "http://localhost:8888/adminLogin",
+						url: "http://localhost:8888/api/user/login",
 						type: 'post',
 						dataType: 'json',
 						data: {
@@ -84,16 +84,15 @@
 						},
 						success: function(res) {
 							progress.done();
-							if (res.code == "200") {
-								sessionStorage.setItem("adminId", res.data.id);
-								sessionStorage.setItem("adminUser", res.data.userName);
-								window.location.href = "index.html";
+							console.log(res)
+							if (res.code == "200") { 
 							} else if (res.code == "300") {
 								alert(res.message);
 							}
 						},
 						error: function(err) {
 							progress.done();
+							console.log(err)
 							if (err.responseText) {
 								alert(err.responseText);
 							} else {
