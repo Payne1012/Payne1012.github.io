@@ -858,7 +858,8 @@
 										<div class="form-group"><input class="form-control" name="username" id="userName" type="text" placeholder="账号"></div>
 									</div>
 									<div class="col-12">
-										<div class="form-group"><input class="form-control" name="password" id="userPassword" type="password" placeholder="密码"></div>
+										<div class="form-group"><input class="form-control" name="password" id="userPassword" type="password"
+											 placeholder="密码"></div>
 									</div>
 								</div>
 								<div class="form-group" style="text-align: center;"><button type="submit" id="login" class="button button-contactForm">login</button></div>
@@ -1075,7 +1076,7 @@
 			</footer>
 		</div> <!-- Main Wrap End-->
 		<div class="dark-mark"></div>
-		<!-- Vendor JS--> 
+		<!-- Vendor JS-->
 		<script src="static/js/modernizr-3.5.0.min.js"></script>
 		<script src="static/js/jquery-1.12.4.min.js"></script>
 		<script src="static/js/popper.min.js"></script>
@@ -1098,56 +1099,55 @@
 		<!-- UltraNews JS -->
 		<script src="static/js/main.js"></script>
 		<script type="text/javascript">
-			  $("#login").click(function () {
-			        let userName = $("#userName").val(); // 用户名
-			        let userPassword = $("#userPassword").val(); // 密码
-			
-			        if (!userName) {
-			          alert("请输入用户名");
-			          $("#userName").focus();
-			        } else if (!userPassword) {
-			          alert("请输入密码");
-			          $("#userPassword").focus();
-			        } else if (userName.length > 10) {
-			          alert("请输入少于 10 位的用户名");
-			          $("#userName").focus();
-			        } else if (userPassword.length > 20) {
-			          alert("请输入少于 20 位的密码");
-			          $("#userPassword").focus();
-			        } else {
-			
-			          $.ajax({
-			            url: "http://localhost:8888/login",
-			            type: 'post',
-			            dataType: 'json',
-			            data: {
-			              username: userName,
-			              password: userPassword
-			            },
-			            success: function (res) {
-			              console.log(res);
-			              if (res.code == "200") {
-			                sessionStorage.setItem("id", res.data.id);
-			                sessionStorage.setItem("userName", res.data.userName);
-			                alert("登录成功！");
-			                window.location.href = "index.html";
-			              } else if (res.code == "300") {
-			                alert("登录失败，密码错误！");
-			              }
-			            },
-			            error: function (err) {
-			              console.log(err.responseText);
-			              if (err.responseText) {
-			                alert(err.responseText);
-			              } else {
-			                alert("未知错误！");
-			              }
-			            }
-			          })
-			
-			        }
-			
-			      })
+			$("#login").click(function() {
+				let userName = $("#userName").val(); // 用户名
+				let userPassword = $("#userPassword").val(); // 密码
+
+				if (!userName) {
+					alert("请输入用户名");
+					$("#userName").focus();
+				} else if (!userPassword) {
+					alert("请输入密码");
+					$("#userPassword").focus();
+				} else if (userName.length > 10) {
+					alert("请输入少于 10 位的用户名");
+					$("#userName").focus();
+				} else if (userPassword.length > 20) {
+					alert("请输入少于 20 位的密码");
+					$("#userPassword").focus();
+				} else {
+					$.ajax({
+						url: "http://localhost:8888/api/user/login",
+						type: 'post',
+						dataType: 'json',
+						data: {
+							username: userName,
+							password: userPassword
+						},
+						success: function(res) {
+							console.log(res);
+							if (res.code == "200") {
+								sessionStorage.setItem("userId", res.data.userId);
+								sessionStorage.setItem("userName", res.data.userName);
+								alert("登录成功！");
+								window.location.href = "index.html";
+							} else if (res.code == "300") {
+								alert("登录失败，密码错误！");
+							}
+						},
+						error: function(err) {
+							console.log(err.responseText);
+							if (err.responseText) {
+								alert(err.responseText);
+							} else {
+								alert("未知错误！");
+							}
+						}
+					})
+
+				}
+
+			})
 		</script>
 	</body>
 </html>

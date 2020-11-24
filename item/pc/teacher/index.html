@@ -211,7 +211,7 @@
 									</li>
 								</ul>
 								<div class="vline-space d-inline-block"></div>
-								<div class="user-account d-inline-block font-small">
+								<div class="user-account d-inline-block font-small" id="user-account">
 									<a class="dropdown-toggle" href="#" role="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true"
 									 aria-expanded="false">
 										<i class="ti-user"></i>
@@ -223,7 +223,7 @@
 										<a class="dropdown-item" href="#"><i class="ti-stats-up"></i>个人中心</a>
 										<a class="dropdown-item" href="#"><i class="ti-heart"></i>我的收藏</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="login.html"><i class="ti-share"></i>退出</a>
+										<a class="dropdown-item" id="logout" href="javascript:;"><i class="ti-share"></i>退出</a>
 									</div>
 								</div>
 							</div>
@@ -869,12 +869,12 @@
 															<span class="post-on">
 																<i class="ti-marker-alt"></i>25 April 2020
 															</span>
-																<span class="time-reading">
-																	<i class="ti-timer"></i>10 mins read
-																</span>
-																<span class="hit-count">
-																	<i class="ti-bolt"></i>159k Views
-																</span>
+															<span class="time-reading">
+																<i class="ti-timer"></i>10 mins read
+															</span>
+															<span class="hit-count">
+																<i class="ti-bolt"></i>159k Views
+															</span>
 														</div>
 														<p class="excerpt font-medium mt-25 mb-25">我们生活在一个颠覆和活力占主导地位的世界企业必须准备好适应随之而来的许多不可预测的变化。</p>
 														<div class="entry-meta meta-2">
@@ -916,12 +916,12 @@
 															<span class="post-on">
 																<i class="ti-marker-alt"></i>2020-04-25
 															</span>
-																<span class="time-reading">
-																	<i class="ti-timer"></i>10分钟前
-																</span>
-																<span class="hit-count">
-																	<i class="ti-bolt"></i>159k 浏览量
-																</span>
+															<span class="time-reading">
+																<i class="ti-timer"></i>10分钟前
+															</span>
+															<span class="hit-count">
+																<i class="ti-bolt"></i>159k 浏览量
+															</span>
 														</div>
 														<p class="excerpt font-medium mt-25 mb-25">只有经历过地狱般的折磨，才有征服天堂的力量。只有流过血的手，才能弹出世间的绝唱。</p>
 														<div class="entry-meta meta-2">
@@ -1133,11 +1133,16 @@
 										<!--Tab Nav -->
 										<nav class="tab-nav style-1">
 											<div class="nav nav-tabs" role="tablist">
-												<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><i class="mr-5 ti-pulse"></i>All</a>
-													<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Lifestyle</a>
-													<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Travel</a>
-													<a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Fashion</a>
-													<a class="nav-item nav-link" id="nav-Sports" data-toggle="tab" href="#nav-nav-Sport" role="tab" aria-controls="nav-contact" aria-selected="false">Sports</a>
+												<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+												 aria-controls="nav-home" aria-selected="true"><i class="mr-5 ti-pulse"></i>All</a>
+												<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+												 aria-controls="nav-profile" aria-selected="false">Lifestyle</a>
+												<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+												 aria-controls="nav-contact" aria-selected="false">Travel</a>
+												<a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact"
+												 aria-selected="false">Fashion</a>
+												<a class="nav-item nav-link" id="nav-Sports" data-toggle="tab" href="#nav-nav-Sport" role="tab"
+												 aria-controls="nav-contact" aria-selected="false">Sports</a>
 											</div>
 										</nav>
 										<!--End Tab Nav -->
@@ -1160,10 +1165,10 @@
 																			<a href="category.html">
 																				<span class="post-cat background1 color-white">Fashion</span>
 																			</a>
-																			</div>
-																			<span class="top-right-icon background8">
-																				<i class="mdi mdi-flash-on"></i>
-																			</span>
+																		</div>
+																		<span class="top-right-icon background8">
+																			<i class="mdi mdi-flash-on"></i>
+																		</span>
 																	</div>
 																</div>
 																<div class="post-content">
@@ -2308,5 +2313,19 @@
 		<script src="static/js/jquery.theia.sticky.js"></script>
 		<!-- UltraNews JS -->
 		<script src="static/js/main.js"></script>
+		<script type="text/javascript">
+			if (!sessionStorage.getItem("userName")) {
+				$('#user-account').html('<a href="login.html"><span>登录</span></a>')
+			}
+			if (sessionStorage.getItem("userName")) {
+				$('#userMenu span').text(sessionStorage.getItem("userName"))
+			}
+
+			$('#logout').click(function() {
+				sessionStorage.removeItem("userName"); //移除sessionStorage
+				sessionStorage.removeItem("userId");
+				location.href = "login.html"
+			});
+		</script>
 	</body>
 </html>
