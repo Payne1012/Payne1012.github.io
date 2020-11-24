@@ -7,6 +7,44 @@ const con = mysql.createConnection(MYSQL_CONF)
 // 开始连接
 con.connect()
 
+const adminLogin = (username, password, res) => {
+	let readSql = "SELECT * FROM users WHERE adminUserName  = '" + username + "'";
+	// 连接 SQL 并实施语句
+	con.query(readSql, (err, result) => {
+		if (err) {
+			throw err;
+		} else {
+			if (result == undefined || result.length == 0) { // 不存在用户
+				res.end("不存在该用户!");
+				return;
+			} else { // 存在用户
+				let newRes = JSON.parse(JSON.stringify(result));
+				if (newRes[0].adminPassword == password) { // 密码正确
+					// 返回数据
+					res.write(JSON.stringify({
+						code: "200",
+						message: "登录成功！",
+						data: {
+							adminUserId: newRes[0].adminUserId,
+							adminUserName: newRes[0].adminUserName
+						}
+					}));
+					res.end();
+				} else { // 密码错误
+					// 返回数据
+					res.write(JSON.stringify({
+						code: "300",
+						message: "登录失败，密码错误！"
+					}));
+					res.end();
+				}
+				// 判断密码正确与否完毕
+			}
+			// 存在用户处理结束
+		}
+	});
+}
+
 const login = (username, password, res) => {
 	let readSql = "SELECT * FROM user WHERE userName  = '" + username + "'";
 	// 连接 SQL 并实施语句
@@ -109,5 +147,6 @@ const register = (username, password, time, res) => {
 
 module.exports = {
 	login,
-	register
+	register,
+	adminLogin
 }

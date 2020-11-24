@@ -1136,9 +1136,9 @@
 							}
 						},
 						error: function(err) {
-							console.log(err.responseText);
-							if (err.responseText) {
-								alert(err.responseText);
+							console.log(err.message);
+							if (err.message) {
+								alert(err.message);
 							} else {
 								alert("未知错误！");
 							}

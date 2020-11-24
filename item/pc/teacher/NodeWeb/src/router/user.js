@@ -1,10 +1,27 @@
 const {
 	login,
-	register
+	register,
+	adminLogin
 } = require('../controller/user')
 // 引入 qs 模块：qs 是对路径进行 json 化或者将 json 转换为 string 路径
 const qs = require("querystring");
 const handleUserRouter = (req, res) => {
+	if (req.method === 'POST' && req.path === "/api/admin/login") { //登录
+		let tempResult = "";
+		req.addListener("data", function(chunk) {
+			tempResult += chunk;
+		});
+		// 数据接收完成
+		req.addListener("end", function() {
+			var result = JSON.stringify(qs.parse(tempResult));
+			resdata = JSON.parse(result);
+			let username = resdata.username; // 用户名
+			let password = resdata.password; // 密码 
+			adminLogin(username, password, res)
+	
+		})
+	}
+	
 	if (req.method === 'POST' && req.path === "/api/user/login") { //登录 
 		let tempResult = "";
 		req.addListener("data", function(chunk) {
