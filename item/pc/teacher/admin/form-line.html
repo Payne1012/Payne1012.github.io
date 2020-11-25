@@ -17,10 +17,7 @@
 		<link rel="stylesheet" href="assets/css/admin.css">
 		<link rel="stylesheet" href="assets/css/app.css">
 	</head>
-
 	<body data-type="generalComponents">
-
-
 		<header class="am-topbar am-topbar-inverse admin-header">
 			<div class="am-topbar-brand">
 				<a href="javascript:;" class="tpl-logo">
@@ -28,14 +25,10 @@
 				</a>
 			</div>
 			<div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
-
 			</div>
-
 			<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span
 				 class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
-
 			<div class="am-collapse am-topbar-collapse" id="topbar-collapse">
-
 				<ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
 					<li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
 						<a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
@@ -305,19 +298,20 @@
 									<div class="am-form-group">
 										<label for="user-email" class="am-u-sm-3 am-form-label">发布时间 <span class="tpl-form-line-small-title">Time</span></label>
 										<div class="am-u-sm-9">
-											<input type="text" id="createtime" class="am-form-field tpl-form-no-bg" placeholder="发布时间" data-am-datepicker="" readonly />
+											<input type="text" id="createtime" class="am-form-field tpl-form-no-bg" placeholder="发布时间"
+											 data-am-datepicker="" readonly />
 											<small>发布时间为必填</small>
 										</div>
 									</div>
 									<div class="am-form-group">
-										<label for="user-phone" class="am-u-sm-3 am-form-label">作者 
+										<label for="user-phone" class="am-u-sm-3 am-form-label">作者
 											<span class="tpl-form-line-small-title">Author</span>
 										</label>
 										<div class="am-u-sm-9">
 											<select id="author" data-am-selected="{searchBox: 1}">
-												<option value="a">-The.CC</option>
-												<option value="b">夕风色</option>
-												<option value="o">Orange</option>
+												<option value="The.CC">The.CC</option>
+												<option value="夕风色">夕风色</option>
+												<option value="Orange">Orange</option>
 											</select>
 										</div>
 									</div>
@@ -334,15 +328,15 @@
 											</div>
 										</div>
 									</div>
-									<!-- <div class="am-form-group">
+									<div class="am-form-group">
 										<label for="user-weibo" class="am-u-sm-3 am-form-label">添加分类 <span class="tpl-form-line-small-title">Type</span></label>
 										<div class="am-u-sm-9">
-											<input type="text" id="user-weibo" placeholder="请添加分类用点号隔开">
+											<input type="text" id="category" placeholder="请添加分类用点号隔开">
 											<div>
 
 											</div>
 										</div>
-									</div> --> 
+									</div>
 									<div class="am-form-group">
 										<label for="user-intro" class="am-u-sm-3 am-form-label">隐藏文章</label>
 										<div class="am-u-sm-9">
@@ -375,60 +369,64 @@
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/amazeui.min.js"></script>
 		<script src="assets/js/app.js"></script>
 		<script>
-			$("#send").click(function () {
-			      let title = $("#title").val(); // 标题
-				  let author = $("#author").val(); // 作者
-				  let createtime = $("#createtime").val(); // 时间
-			      let content = $("#content").val(); // 内容
-						
-			      if (!title) {
-			        alert("请输入标题"); 
-			      } else if (title.length < 10) {
-			        alert("请输入不少于 10 位的标题"); 
-			      } else if (!createtime) {
-			        alert("请选择时间"); 
-			      }else if (!author) {
-			        alert("请选择作者"); 
-			      } else if (!content) {
-			        alert("请输入内容"); 
-			      }else {
-						
-			        $.ajax({
-			          url: "http://localhost:8888/api/blog/new",
-			          type: 'post',
-			          dataType: 'json',
-			          data: {
-			            title: title,
-			            author: author,
-						createtime: createtime,
-						content: content
-			          },
-			          success: function (res) {
-			            console.log(res);
-			            if (res.code == "200") { 
-			              alert("新建成功！"); 
-			            } else if (res.code == "300") {
-			              alert("新建失败！");
-			            }
-			          },
-			          error: function (err) {
-			            console.log(err);
-			            if (err) {
-			              
-			            } else {
-			              alert("未知错误！");
-			            }
-			          }
-			        })
-						
-			      }
-						
-			    })
+			$("#send").click(function() {
+				let title = $("#title").val(); // 标题
+				let author = $("#author").val(); // 作者
+				let createtime = $("#createtime").val(); // 时间
+				let category =  $("#category").val(); //分类
+				let content = $("#content").val(); // 内容
+
+				if (!title) {
+					alert("请输入标题");
+				} else if (title.length < 10) {
+					alert("请输入不少于 10 位的标题");
+				} else if (!createtime) {
+					alert("请选择时间");
+				} else if (!author) { 
+					alert("请选择作者");
+				} else if (!category) { 
+					alert("请选择分类");
+				} else if (!content) {
+					alert("请输入内容");
+				} else {
+
+					$.ajax({
+						url: "http://localhost:8888/api/blog/new",
+						type: 'post',
+						dataType: 'json',
+						data: {
+							title: title,
+							author: author,
+							createtime: createtime,
+							category: category,
+							content: content
+						},
+						success: function(res) {
+							console.log(res);
+							if (res.code == "200") {
+								alert("发表成功！");
+							} else if (res.code == "300") {
+								alert("新建失败！");
+							}
+						},
+						error: function(err) {
+							console.log(err);
+							if (err) {
+
+							} else {
+								alert("未知错误！");
+							}
+						}
+					})
+
+				}
+
+			})
 		</script>
 	</body>
 

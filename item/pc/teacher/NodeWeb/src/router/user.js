@@ -18,7 +18,6 @@ const handleUserRouter = (req, res) => {
 			let username = resdata.username; // 用户名
 			let password = resdata.password; // 密码 
 			adminLogin(username, password, res)
-	
 		})
 	}
 	
@@ -34,7 +33,6 @@ const handleUserRouter = (req, res) => {
 			let username = resdata.username; // 用户名
 			let password = resdata.password; // 密码 
 			login(username, password, res)
-
 		})
 	}
 	// 登录步骤结束
@@ -65,7 +63,6 @@ const handleUserRouter = (req, res) => {
 			} else {
 				register(username, password, time, res)
 			}
-
 		})
 	}
 	// 登录步骤结束

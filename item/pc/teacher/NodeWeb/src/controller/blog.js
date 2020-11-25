@@ -1,30 +1,78 @@
-// 这里where 1 = 1 是一个取巧的操作，这个操作既不会影响我们获取的数据，
-// 同时也可以简单了我们后面拼接其他条件，不然的话还需要在今天是否要加where的判断
-const getList = (author = '', keyword = '') => {
-	let sql = `select * from blogs where 1=1 `
+const mysql = require('mysql')
+const {
+	MYSQL_CONF
+} = require('../config/db')
+
+const con = mysql.createConnection(MYSQL_CONF)
+// 开始连接
+con.connect()
+
+const getList = (res, author = '', keyword = '') => {
+	let readSql = `select * from blogs where 1=1 `
 	if (author) {
-		sql += `and author='${author}' `
+		readSql += `and author='${author}' `
 	}
 	if (keyword) {
-		sql += `and title like '%${keyword}%' `
+		readSql += `and title like '%${keyword}%' `
 	}
-	sql += `order by createtime desc`
+
+	readSql += `order by createtime desc`
+
+	con.query(readSql, (err, result) => {
+		if (err) {
+			throw err;
+		} else {
+			res.write(JSON.stringify({
+				code: "200",
+				message: "成功",
+				data: result
+			}));
+			res.end();
+		}
+	});
 }
 
 const getDetail = (id) => {
 	// 返回假数据
-	const sql = `select * from blogs where id = ${id}`
-	
+	const readSql = `select * from blogs where id = ${id}`
+	con.query(readSql, (err, result) => {
+		if (err) {
+			res.write(JSON.stringify({
+				code: "100",
+				message: "失败",
+				data: err
+			}));
+		} else {
+			res.write(JSON.stringify({
+				code: "200",
+				message: "成功",
+				data: result
+			}));
+			res.end();
+		}
+	});
 }
 
-const newBlog = (blogData = {}) => {
-	// blogData 是一个博客对象，包含title、 content 、author、createtime属性
+const newBlog = (res, blogData = {}) => {
+	// blogData 是一个博客对象，包含title、 content 、category、author、createtime属性
 	const title = blogData.title
 	const content = blogData.content
 	const author = blogData.author
-	const createtime = blogData.author
-	const sql = `insert into blogs (title,content,createtime,author) values('${title}','${content}',${createtime},'${author}')`
-	
+	const category = blogData.category
+	const createtime = blogData.createtime
+	const readSql =
+		`insert into blogs (title,content,category,createtime,author) values('${title}','${content}','${category}','${createtime}','${author}')`
+	con.query(readSql, (err, result) => {
+		if (err) {
+			throw err;
+		} else {
+			res.write(JSON.stringify({
+				code: "200",
+				message: "成功"
+			}));
+			res.end();
+		}
+	});
 }
 
 const updataBlog = (id, blogData = {}) => {
@@ -33,7 +81,7 @@ const updataBlog = (id, blogData = {}) => {
 	const title = blogData.title
 	const content = blogData.content
 	const sql = `update blogs set title = '${title}' , content = '${content}' where id = ${id}`
-	
+
 }
 
 const delBlog = (id, author) => {
