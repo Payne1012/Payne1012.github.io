@@ -19,7 +19,7 @@ const handleBlogRouter = (req, res) => {
 	}
 	// 获取博客详情
 	if (method === "GET" && req.path === '/api/blog/detail') {
-		const result = getDetail(id)
+		const result = getDetail(res,id)
 	}
 	// 新建一篇博客
 	if (method === "POST" && req.path === "/api/blog/new") {
@@ -36,12 +36,29 @@ const handleBlogRouter = (req, res) => {
 	}
 	// 更新一篇博客
 	if (method === "POST" && req.path === "/api/blog/update") {
-		const result = updataBlog(id, req.body)
+		let tempResult = "";
+		req.addListener("data", function(chunk) {
+			tempResult += chunk;
+		})
+		// 数据接收完成
+		req.addListener("end", function() {
+			var result = JSON.stringify(qs.parse(tempResult));
+			resdata = JSON.parse(result); 
+			updataBlog(res,resdata)
+		})
 	}
 	// 删除一篇博客
 	if (method === "POST" && req.path === "/api/blog/del") {
-		const author = req.session.username
-		const result = delBlog(id, author)
+		let tempResult = "";
+		req.addListener("data", function(chunk) {
+			tempResult += chunk;
+		})
+		// 数据接收完成
+		req.addListener("end", function() {
+			var result = JSON.stringify(qs.parse(tempResult));
+			resdata = JSON.parse(result);  
+			delBlog(res,resdata.id)
+		})
 	}
 }
 

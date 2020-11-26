@@ -50,8 +50,8 @@
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/amazeui.min.js"></script>
 		<script src="assets/js/app.js"></script>
+		<script src="assets/js/base.js"></script>
 		<script type="text/javascript">
-			var progress = $.AMUI.progress;
 			$("#login").click(function() {
 				var $btn = $(this)
 				$btn.button('loading');
@@ -75,7 +75,7 @@
 					$("#userPassword").focus();
 				} else {
 					$.ajax({
-						url: "http://localhost:8888/api/admin/login",
+						url: baseUrl+ "api/admin/login",
 						type: 'post',
 						dataType: 'json',
 						data: {
@@ -96,17 +96,14 @@
 						},
 						error: function(err) {
 							progress.done();
-							console.log(err)
-							if (err.message) {
-								alert(err.message);
+							if (err.responseText) {
+								alert(err.responseText);
 							} else {
 								alert("未知错误！");
 							}
 						}
 					})
-
 				}
-
 			})
 		</script>
 	</body>

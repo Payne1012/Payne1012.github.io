@@ -73,7 +73,7 @@
 									<span class="tpl-dropdown-content-photo">
 										<img src="assets/img/user02.png" alt=""> </span>
 									<span class="tpl-dropdown-content-subject">
-										<span class="tpl-dropdown-content-from"> 禁言小张 </span>
+										<span class="tpl-dropdown-content-from"> 登录 </span>
 										<span class="tpl-dropdown-content-time">10分钟前 </span>
 									</span>
 									<span class="tpl-dropdown-content-font"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。
@@ -147,7 +147,8 @@
 
 					<li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
 						<a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-							<span class="tpl-header-list-user-nick" id="admin-user">禁言小张</span><span class="tpl-header-list-user-ico"> <img src="assets/img/user01.png"></span>
+							<span class="tpl-header-list-user-nick" id="admin-user">禁言小张</span><span class="tpl-header-list-user-ico"> <img
+								 src="assets/img/user01.png"></span>
 						</a>
 						<ul class="am-dropdown-content">
 							<li><a href="javascript:;"><span class="am-icon-bell-o"></span> 资料</a></li>
@@ -159,7 +160,7 @@
 				</ul>
 			</div>
 		</header>
- 
+
 
 		<div class="tpl-page-container tpl-page-header-fixed">
 
@@ -185,7 +186,22 @@
 								</i>
 							</a>
 						</li>
-
+						<li class="tpl-left-nav-item">
+							<a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+								<i class="am-icon-table"></i>
+								<span>文章</span>
+								<i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+							</a>
+							<ul class="tpl-left-nav-sub-menu">
+								<li>
+									<a href="news-list.html">
+										<i class="am-icon-angle-right"></i>
+										<span>文章列表</span>
+										<i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
+									</a>
+								</li>
+							</ul>
+						</li>
 						<li class="tpl-left-nav-item">
 							<a href="javascript:;" class="nav-link tpl-left-nav-link-list">
 								<i class="am-icon-table"></i>
@@ -220,8 +236,8 @@
 												<span>文字列表</span>
 
 											</a>
-											</a>
-											</a>
+										</a>
+									</a>
 								</li>
 							</ul>
 						</li>
@@ -1039,11 +1055,12 @@
 						</div>
 					</div>
 				</div>
-			</div> 
+			</div>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/amazeui.min.js"></script>
 			<script src="assets/js/iscroll.js"></script>
 			<script src="assets/js/app.js"></script>
+			<script src="assets/js/base.js"></script>
 			<script type="text/javascript">
 				if (!sessionStorage.getItem("adminUserName")) {
 					$('#admin-user').text('登录')
@@ -1051,7 +1068,7 @@
 				if (sessionStorage.getItem("adminUserName")) {
 					$('#admin-user').text(sessionStorage.getItem("adminUserName"))
 				}
-				
+
 				$('.logout').click(function() {
 					sessionStorage.removeItem("adminUserName"); //移除sessionStorage
 					sessionStorage.removeItem("adminUserId");

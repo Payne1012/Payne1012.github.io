@@ -2325,26 +2325,7 @@
 				sessionStorage.removeItem("userName"); //移除sessionStorage
 				sessionStorage.removeItem("userId");
 				location.href = "login.html"
-			});
-			
-			$.ajax({
-				url: "http://localhost:8888/api/blog/list",
-				type: 'get',
-				dataType: 'json',
-				success: function(res) {
-					if (res.code == "200") {
-						
-					} 
-				},
-				error: function(err) {
-					if (err.message) {
-						alert(err.message);
-					} else {
-						alert("未知错误！");
-					}
-				}
-			})
-			
+			}); 	
 		</script>
 	</body>
 </html>

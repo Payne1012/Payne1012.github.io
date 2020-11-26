@@ -16,12 +16,8 @@
 		<link rel="stylesheet" href="assets/css/amazeui.min.css" />
 		<link rel="stylesheet" href="assets/css/admin.css">
 		<link rel="stylesheet" href="assets/css/app.css">
-		<script src="assets/js/echarts.min.js"></script>
 	</head>
-
-	<body data-type="chart">
-
-
+	<body data-type="generalComponents">
 		<header class="am-topbar am-topbar-inverse admin-header">
 			<div class="am-topbar-brand">
 				<a href="javascript:;" class="tpl-logo">
@@ -29,14 +25,10 @@
 				</a>
 			</div>
 			<div class="am-icon-list tpl-header-nav-hover-ico am-fl am-margin-right">
-
 			</div>
-
 			<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span
 				 class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
-
 			<div class="am-collapse am-topbar-collapse" id="topbar-collapse">
-
 				<ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
 					<li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
 						<a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
@@ -167,7 +159,6 @@
 
 
 		<div class="tpl-page-container tpl-page-header-fixed">
-
 			<div class="tpl-left-nav tpl-left-nav-hover">
 				<div class="tpl-left-nav-title">
 					Amaze UI 列表
@@ -181,7 +172,7 @@
 							</a>
 						</li>
 						<li class="tpl-left-nav-item">
-							<a href="chart.html" class="nav-link tpl-left-nav-link-list active">
+							<a href="chart.html" class="nav-link tpl-left-nav-link-list">
 								<i class="am-icon-bar-chart"></i>
 								<span>数据表</span>
 								<i class="tpl-left-nav-content tpl-badge-danger">
@@ -229,12 +220,15 @@
 						</li>
 
 						<li class="tpl-left-nav-item">
-							<a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+							<!-- 打开状态 a 标签添加 active 即可   -->
+							<a href="javascript:;" class="nav-link tpl-left-nav-link-list active">
 								<i class="am-icon-wpforms"></i>
 								<span>表单</span>
-								<i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right"></i>
+								<!-- 列表打开状态的i标签添加 tpl-left-nav-more-ico-rotate 图表即90°旋转  -->
+								<i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
 							</a>
-							<ul class="tpl-left-nav-sub-menu">
+							<!-- 打开状态 添加 display:block-->
+							<ul class="tpl-left-nav-sub-menu" style="display: block;">
 								<li>
 									<a href="form-amazeui.html">
 										<i class="am-icon-angle-right"></i>
@@ -242,7 +236,7 @@
 										<i class="am-icon-star tpl-left-nav-content-ico am-fr am-margin-right"></i>
 									</a>
 
-									<a href="form-line.html">
+									<a href="form-line.html" class="active">
 										<i class="am-icon-angle-right"></i>
 										<span>线条表单</span>
 									</a>
@@ -264,7 +258,6 @@
 
 
 
-
 			<div class="tpl-content-wrapper">
 				<div class="tpl-content-page-title">
 					Amaze UI 表单
@@ -277,7 +270,7 @@
 				<div class="tpl-portlet-components">
 					<div class="portlet-title">
 						<div class="caption font-green bold">
-							<span class="am-icon-code"></span> 折线图
+							<span class="am-icon-code"></span> 表单
 						</div>
 						<div class="tpl-portlet-input tpl-fz-ml">
 							<div class="portlet-input input-small input-inline">
@@ -289,85 +282,180 @@
 
 
 					</div>
+
 					<div class="tpl-block">
+
 						<div class="am-g">
-							<div class="am-u-sm-12 am-u-md-6">
-								<div class="am-btn-toolbar">
-									<div class="am-btn-group am-btn-group-xs">
-										<button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
-										<button type="button" class="am-btn am-btn-default am-btn-secondary"><span class="am-icon-save"></span> 保存</button>
-										<button type="button" class="am-btn am-btn-default am-btn-warning"><span class="am-icon-archive"></span> 审核</button>
-										<button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
+							<div class="tpl-form-body tpl-form-line">
+								<form class="am-form tpl-form-line-form">
+									<div class="am-form-group">
+										<label for="title" class="am-u-sm-3 am-form-label">标题 <span class="tpl-form-line-small-title">Title</span></label>
+										<div class="am-u-sm-9">
+											<input type="text" class="tpl-form-input" id="title" placeholder="请输入标题文字">
+											<small>请填写标题文字10-20字左右。</small>
+										</div>
 									</div>
-								</div>
+									<div class="am-form-group">
+										<label for="user-email" class="am-u-sm-3 am-form-label">发布时间 <span class="tpl-form-line-small-title">Time</span></label>
+										<div class="am-u-sm-9">
+											<input type="text" id="createtime" class="am-form-field tpl-form-no-bg" placeholder="发布时间"
+											 data-am-datepicker="" readonly />
+											<small>发布时间为必填</small>
+										</div>
+									</div>
+									<div class="am-form-group">
+										<label for="user-phone" class="am-u-sm-3 am-form-label">作者
+											<span class="tpl-form-line-small-title">Author</span>
+										</label>
+										<div class="am-u-sm-9">
+											<select id="author" data-am-selected="{searchBox: 1}">
+												<option value="The.CC">The.CC</option>
+												<option value="夕风色">夕风色</option>
+												<option value="Orange">Orange</option>
+											</select>
+										</div>
+									</div>
+									<div class="am-form-group">
+										<label for="user-weibo" class="am-u-sm-3 am-form-label">封面图 <span class="tpl-form-line-small-title">Images</span></label>
+										<div class="am-u-sm-9">
+											<div class="am-form-group am-form-file">
+												<div class="tpl-form-file-img">
+													<img id="uploadImg" src="assets/img/a5.png" alt="">
+												</div>
+												<button type="button" class="am-btn am-btn-danger am-btn-sm">
+													<i class="am-icon-cloud-upload"></i> 添加封面图片</button>
+												<input id="file" type="file" accept="image/*" value="" multiple>
+											</div>
+										</div>
+									</div>
+									<div class="am-form-group">
+										<label for="user-weibo" class="am-u-sm-3 am-form-label">添加分类 <span class="tpl-form-line-small-title">Type</span></label>
+										<div class="am-u-sm-9">
+											<input type="text" id="category" placeholder="请添加分类用点号隔开">
+											<div>
+
+											</div>
+										</div>
+									</div>
+									<div class="am-form-group">
+										<label for="user-intro" class="am-u-sm-3 am-form-label">隐藏文章</label>
+										<div class="am-u-sm-9">
+											<div class="tpl-switch">
+												<input type="checkbox" class="ios-switch bigswitch tpl-switch-btn" checked />
+												<div class="tpl-switch-btn-view">
+													<div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+
+									<div class="am-form-group">
+										<label for="user-intro" class="am-u-sm-3 am-form-label">文章内容</label>
+										<div class="am-u-sm-9">
+											<textarea class="" rows="10" id="content" placeholder="请输入文章内容"></textarea>
+										</div>
+									</div>
+
+									<div class="am-form-group">
+										<div class="am-u-sm-9 am-u-sm-push-3">
+											<button type="button" id="send" class="am-btn am-btn-primary tpl-btn-bg-color-success">提交</button>
+										</div>
+									</div>
+								</form>
 							</div>
-							<div class="am-u-sm-12 am-u-md-3">
-								<div class="am-form-group">
-									<select data-am-selected="{btnSize: 'sm'}">
-										<option value="option1">所有类别</option>
-										<option value="option2">IT业界</option>
-										<option value="option3">数码产品</option>
-										<option value="option3">笔记本电脑</option>
-										<option value="option3">平板电脑</option>
-										<option value="option3">只能手机</option>
-										<option value="option3">超极本</option>
-									</select>
-								</div>
-							</div>
-							<div class="am-u-sm-12 am-u-md-3">
-								<div class="am-input-group am-input-group-sm">
-									<input type="text" class="am-form-field">
-									<span class="am-input-group-btn">
-										<button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search" type="button"></button>
-									</span>
-								</div>
-							</div>
-						</div>
-
-
-						<!--此部分数据请在 js文件夹下中的 app.js 中的 “百度图表A” 处修改数据 插件使用的是 百度echarts-->
-						<div class="tpl-echarts tpl-chart-mb" id="tpl-echarts-A">
-
-						</div>
-						<div class="portlet-title">
-							<div class="caption font-green bold">
-								<span class="am-icon-code"></span> 雷达图
-							</div>
-						</div>
-						<div class="tpl-echarts tpl-chart-mb" id="tpl-echarts-B">
-
-						</div>
-
-						<div class="portlet-title">
-							<div class="caption font-green bold">
-								<span class="am-icon-code"></span> 折线柱图
-							</div>
-						</div>
-						<div class="tpl-echarts tpl-chart-mb" id="tpl-echarts-C">
-
 						</div>
 					</div>
-
 				</div>
-
-
-
-
-
-
-
-
-
-
 			</div>
-
 		</div>
-
-
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/amazeui.min.js"></script>
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/base.js"></script>
-	</body>
+		<script>
+			var urlData  = addr_obj(); 
+			progress.start();
+			$.ajax({
+				url: baseUrl + "api/blog/detail?id="+urlData.id,
+				type: 'get',
+				dataType: 'json',
+				success: function(res) {
+					if (res.code == "200") { 
+						let title = $("#title").val(res.data[0].title); // 标题
+						let author = $("#author").val(res.data[0].author); // 作者
+						let createtime = $("#createtime").val(res.data[0].createtime); // 时间
+						let category =  $("#category").val(res.data[0].category); //分类
+						let content = $("#content").val(res.data[0].content); // 内容 
+						progress.done();
+					}
+				},
+				error: function(err) {
+					progress.done();
+					if (err.message) {
+						alert(err.message);
+					} else {
+						alert("未知错误！");
+					}
+				}
+			})
+			$("#send").click(function() {
+				progress.start();
+				let title = $("#title").val(); // 标题
+				let author = $("#author").val(); // 作者
+				let createtime = $("#createtime").val(); // 时间
+				let category =  $("#category").val(); //分类
+				let content = $("#content").val(); // 内容
 
+				if (!title) {
+					alert("请输入标题");
+				} else if (title.length < 10) {
+					alert("请输入不少于 10 位的标题");
+				} else if (!createtime) {
+					alert("请选择时间");
+				} else if (!author) { 
+					alert("请选择作者");
+				} else if (!category) { 
+					alert("请选择分类");
+				} else if (!content) {
+					alert("请输入内容");
+				} else {
+
+					$.ajax({
+						url: baseUrl+ "api/blog/update",
+						type: 'post',
+						dataType: 'json',
+						data: {
+							id:urlData.id,
+							title: title,
+							author: author,
+							createtime: createtime,
+							category: category,
+							content: content
+						},
+						success: function(res) {
+							progress.done();
+							console.log(res);
+							if (res.code == "200") {
+								alert("修改成功！");
+								window.location.href = "news-list.html"
+							} else if (res.code == "300") {
+								alert("修改失败！");
+							}
+						},
+						error: function(err) {
+							progress.done();
+							console.log(err);
+							if (err) {
+
+							} else {
+								alert("未知错误！");
+							}
+						}
+					})
+				}
+			})
+		</script>
+	</body>
 </html>
