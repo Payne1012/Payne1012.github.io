@@ -14,6 +14,8 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "multer": "^1.4.2",
     "multiparty": "^4.2.2",
     "mysql": "^2.17.1"
   },

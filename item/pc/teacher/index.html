@@ -2320,12 +2320,11 @@
 			if (sessionStorage.getItem("userName")) {
 				$('#userMenu span').text(sessionStorage.getItem("userName"))
 			}
-
 			$('#logout').click(function() {
 				sessionStorage.removeItem("userName"); //移除sessionStorage
 				sessionStorage.removeItem("userId");
 				location.href = "login.html"
-			}); 	
+			});
 		</script>
 	</body>
 </html>

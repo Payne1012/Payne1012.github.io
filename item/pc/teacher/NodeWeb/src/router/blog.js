@@ -7,6 +7,7 @@ const {
 } = require('../controller/blog') // 解构赋值的方式直接取相应的方法
 // 引入 qs 模块：qs 是对路径进行 json 化或者将 json 转换为 string 路径
 const qs = require("querystring");
+
 const handleBlogRouter = (req, res) => {
 	const method = req.method
 	const id = req.query.id
@@ -15,11 +16,11 @@ const handleBlogRouter = (req, res) => {
 		let author = req.query.author || ''
 		const keyword = req.query.keyword || ''
 		// 调用方法获取博客列表
-		const result = getList(res,author, keyword)
+		const result = getList(res, author, keyword)
 	}
 	// 获取博客详情
 	if (method === "GET" && req.path === '/api/blog/detail') {
-		const result = getDetail(res,id)
+		const result = getDetail(res, id)
 	}
 	// 新建一篇博客
 	if (method === "POST" && req.path === "/api/blog/new") {
@@ -31,7 +32,7 @@ const handleBlogRouter = (req, res) => {
 		req.addListener("end", function() {
 			var result = JSON.stringify(qs.parse(tempResult));
 			resdata = JSON.parse(result);
-			newBlog(res,resdata)
+			newBlog(res, resdata)
 		})
 	}
 	// 更新一篇博客
@@ -43,8 +44,8 @@ const handleBlogRouter = (req, res) => {
 		// 数据接收完成
 		req.addListener("end", function() {
 			var result = JSON.stringify(qs.parse(tempResult));
-			resdata = JSON.parse(result); 
-			updataBlog(res,resdata)
+			resdata = JSON.parse(result);
+			updataBlog(res, resdata)
 		})
 	}
 	// 删除一篇博客
@@ -56,8 +57,8 @@ const handleBlogRouter = (req, res) => {
 		// 数据接收完成
 		req.addListener("end", function() {
 			var result = JSON.stringify(qs.parse(tempResult));
-			resdata = JSON.parse(result);  
-			delBlog(res,resdata.id)
+			resdata = JSON.parse(result);
+			delBlog(res, resdata.id)
 		})
 	}
 }

@@ -116,6 +116,7 @@ const updataBlog = (res, blogData = {}) => {
 const delBlog = (res,id) => {
 	// id 是删除博客的id
 	const readSql = `delete from blogs where id = ${id}`
+	
 	con.query(readSql, (err, result) => {
 		if (err) {
 			res.write(JSON.stringify({

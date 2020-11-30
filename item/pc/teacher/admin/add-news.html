@@ -152,12 +152,6 @@
 			</div>
 		</header>
 
-
-
-
-
-
-
 		<div class="tpl-page-container tpl-page-header-fixed">
 			<div class="tpl-left-nav tpl-left-nav-hover">
 				<div class="tpl-left-nav-title">
@@ -375,30 +369,30 @@
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/base.js"></script>
 		<script>
-			
+			let file = ''
+			let fileName = ''
+
 			$("#send").click(function() {
 				let title = $("#title").val(); // 标题
 				let author = $("#author").val(); // 作者
 				let createtime = $("#createtime").val(); // 时间
-				let category =  $("#category").val(); //分类
+				let category = $("#category").val(); //分类
 				let content = $("#content").val(); // 内容
-
 				if (!title) {
 					alert("请输入标题");
 				} else if (title.length < 10) {
 					alert("请输入不少于 10 位的标题");
 				} else if (!createtime) {
 					alert("请选择时间");
-				} else if (!author) { 
+				} else if (!author) {
 					alert("请选择作者");
-				} else if (!category) { 
+				} else if (!category) {
 					alert("请选择分类");
 				} else if (!content) {
 					alert("请输入内容");
 				} else {
-
 					$.ajax({
-						url: baseUrl+ "api/blog/new",
+						url: baseUrl + "api/blog/new",
 						type: 'post',
 						dataType: 'json',
 						data: {
@@ -428,6 +422,28 @@
 					})
 				}
 			})
+
+			$("#file").change(function() {
+				
+				$("#uploadImg").attr("src", URL.createObjectURL($(this)[0].files[0]));
+				// 获取file域里的图片信息
+				var formData = new FormData()
+				var imgUrl = $(this)[0].files[0]
+				console.log(imgUrl)
+				//创建formdata对象
+				formData.append("test", imgUrl)
+				$.ajax({
+					url: baseUrl + "api/image",
+					type: 'POST',
+					data: formData,
+					cache: false,
+					contentType: false,
+					processData: false,
+					success: function(data) {
+						console.log(data)
+					}
+				})
+			});
 		</script>
 	</body>
 </html>
