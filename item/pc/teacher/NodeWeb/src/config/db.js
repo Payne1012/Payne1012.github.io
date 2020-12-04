@@ -17,11 +17,6 @@ if (env === 'dev') {
         database: 'myblog',
         port: 3306
     }
-    // redis 配置
-    REDIS_CONF = {
-        port: 6379,
-        host: '127.0.0.1'
-    }
 }
 
 // 线上环境
@@ -32,11 +27,6 @@ if (env === 'production') {
         password: 'root',
         database: 'myblog',
         port: 3306
-    }
-    // redis 配置
-    REDIS_CONF = {
-        port: 6379,
-        host: '127.0.0.1'
     }
 }
 

@@ -314,11 +314,11 @@
 										<div class="am-u-sm-9">
 											<div class="am-form-group am-form-file">
 												<div class="tpl-form-file-img">
-													<img id="uploadImg" src="assets/img/a5.png" alt="">
+													<img id="uploadImg" src="assets/img/slide-2.jpg" alt="">
 												</div>
 												<button type="button" class="am-btn am-btn-danger am-btn-sm">
 													<i class="am-icon-cloud-upload"></i> 添加封面图片</button>
-												<input id="file" type="file" accept="image/*" value="" multiple>
+												<input id="file" type="file" name="file" multiple="multiple" />
 											</div>
 										</div>
 									</div>
@@ -341,7 +341,6 @@
 													</div>
 												</div>
 											</div>
-
 										</div>
 									</div>
 
@@ -369,30 +368,40 @@
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/base.js"></script>
 		<script>
-			let file = ''
-			let fileName = ''
-
 			$("#send").click(function() {
 				let title = $("#title").val(); // 标题
 				let author = $("#author").val(); // 作者
 				let createtime = $("#createtime").val(); // 时间
 				let category = $("#category").val(); //分类
 				let content = $("#content").val(); // 内容
+				let imgurl = $("#uploadImg").attr("imgurl") //封面图
 				if (!title) {
 					alert("请输入标题");
+					return false
 				} else if (title.length < 10) {
 					alert("请输入不少于 10 位的标题");
+					return false
+				} else if (title.length > 20) {
+					alert("请输入不超过 20 位的标题");
+					return false
 				} else if (!createtime) {
 					alert("请选择时间");
+					return false
 				} else if (!author) {
 					alert("请选择作者");
+					return false
 				} else if (!category) {
 					alert("请选择分类");
+					return false
 				} else if (!content) {
 					alert("请输入内容");
-				} else {
+					return false
+				} else if (!imgurl) {
+					alert("请输上传封面图");
+					return false
+				}else{
 					$.ajax({
-						url: baseUrl + "api/blog/new",
+						url: baseUrl + "/api/blog/new",
 						type: 'post',
 						dataType: 'json',
 						data: {
@@ -400,7 +409,8 @@
 							author: author,
 							createtime: createtime,
 							category: category,
-							content: content
+							content: content,
+							imgurl: imgurl
 						},
 						success: function(res) {
 							console.log(res);
@@ -424,23 +434,24 @@
 			})
 
 			$("#file").change(function() {
-				
 				$("#uploadImg").attr("src", URL.createObjectURL($(this)[0].files[0]));
 				// 获取file域里的图片信息
-				var formData = new FormData()
-				var imgUrl = $(this)[0].files[0]
-				console.log(imgUrl)
+				file = this.files;
+				formData = new FormData();
+				for (var i = 0; i < file.length; i++) {
+					file = this.files[i];
+					formData.append("file", file);
+				}
 				//创建formdata对象
-				formData.append("test", imgUrl)
 				$.ajax({
-					url: baseUrl + "api/image",
+					url: baseUrl + "/api/image",
 					type: 'POST',
 					data: formData,
-					cache: false,
-					contentType: false,
-					processData: false,
+					cache: false, //上传文件不需要缓存
+					processData: false, // 告诉jQuery不要去处理发送的数据
+					contentType: false, // 告诉jQuery不要去设置Content-Type请求头
 					success: function(data) {
-						console.log(data)
+						$("#uploadImg").attr("imgurl", baseUrl + data.data);
 					}
 				})
 			});

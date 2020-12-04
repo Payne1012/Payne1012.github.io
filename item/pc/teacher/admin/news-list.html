@@ -405,7 +405,7 @@
 			
 		function getList(){
 				$.ajax({
-					url: baseUrl + "api/blog/list",
+					url: baseUrl + "/api/blog/list",
 					type: 'get',
 					dataType: 'json',
 					success: function(res) {
@@ -439,7 +439,7 @@
 			}
 			function deleteNews(id){
 				$.ajax({
-					url: baseUrl + "api/blog/del",
+					url: baseUrl + "/api/blog/del",
 					type: 'post',
 					dataType: 'json',
 					data:{
@@ -447,8 +447,8 @@
 					},
 					success: function(res) {
 						if (res.code == "200") {
-							getList()
 							alert('删除成功！')
+							location.reload();
 							progress.done();
 						}
 					},

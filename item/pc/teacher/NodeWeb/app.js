@@ -15,8 +15,6 @@ var router = express.Router();
 
 var fs = require("fs");
 
-
-
 // 设置返回格式 JSON
 const serverHandle = (req, res) => {
 	// 设置 cors 跨域
@@ -31,18 +29,18 @@ const serverHandle = (req, res) => {
 	// 获取请求参数，增加true后会转换成一个对象
 	req.query = url.parse(req.url, true).query
 
-		const blogResult = handleBlogRouter(req, res)
-		if (blogResult) {
-			return
-		}
-		const userResult = handleUserRouter(req, res)
-		if (userResult) {
-			return
-		}
+	const blogResult = handleBlogRouter(req, res)
+	if (blogResult) {
+		return
+	}
+	const userResult = handleUserRouter(req, res)
+	if (userResult) {
+		return
+	}
 }
 
 // 获取当前时间
-function getNowFormatDate() {
+function getNowFormatDate(){
 	var date = new Date();
 	var year = date.getFullYear(); // 年
 	var month = date.getMonth() + 1; // 月
@@ -61,5 +59,4 @@ function getNowFormatDate() {
 	return currentdate;
 }
 
- 
 module.exports = serverHandle

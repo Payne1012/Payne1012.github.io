@@ -5,6 +5,8 @@ const {
 } = require('../controller/user')
 // 引入 qs 模块：qs 是对路径进行 json 化或者将 json 转换为 string 路径
 const qs = require("querystring");
+
+
 const handleUserRouter = (req, res) => {
 	if (req.method === 'POST' && req.path === "/api/admin/login") { //登录
 		let tempResult = "";
